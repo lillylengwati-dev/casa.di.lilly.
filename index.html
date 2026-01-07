@@ -1,0 +1,1964 @@
+<!doctype doctype>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case di Lilly - Digital Agency Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    .main-wrapper {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    
+    .smooth-scroll {
+      scroll-behavior: smooth;
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: currentColor;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.6s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .whatsapp-btn {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .whatsapp-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+    }
+    
+    .page-section {
+      display: none;
+      animation: fadeIn 0.5s ease-in;
+    }
+    
+    .page-section.active {
+      display: block;
+    }
+    
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #25d366 0%, #1c1917 100%);
+      z-index: 100;
+      transition: width 0.1s ease;
+    }
+    
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .stat-number {
+      font-variant-numeric: tabular-nums;
+    }
+    
+    .flip-card {
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    
+    .flip-card-front,
+    .flip-card-back {
+      width: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    
+    .flip-card-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotateY(180deg);
+    }
+    
+    .price-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 12px; 
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div class="scroll-progress"></div>
+  <div class="main-wrapper w-full h-full overflow-auto" style="background-color: #fafaf9;"><!-- Navigation -->
+   <nav class="w-full sticky top-0 z-50" style="background-color: #ffffff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+     <div class="flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+       <div class="flex items-center flex-shrink-0">
+       <img src="logo.png"
+       alt="Casa di Lilly Logo"
+       class="h-12 w-auto object-contain">
+       </div>
+       <div>
+        <h1 class="text-2xl font-bold" style="color: #000000;" id="nav-business-name">Case di Lilly</h1>
+        <p class="text-sm" style="color: #e45dc2;">Where Stories And Strategy Meet</p>
+       </div>
+      </div>
+      <div class="hidden md:flex space-x-8"><a href="#" class="nav-link active" style="color: #1c1917;" data-page="home">Home</a> <a href="#" class="nav-link" style="color: #57534e;" data-page="about">About</a> <a href="#" class="nav-link" style="color: #57534e;" data-page="services">Services</a> <a href="#" class="nav-link" style="color: #57534e;" data-page="portfolio">Portfolio</a> <a href="#" class="nav-link" style="color: #57534e;" data-page="process">Process</a> <a href="#" class="nav-link" style="color: #57534e;" data-page="contact">Contact</a>
+      </div><button id="mobile-menu-btn" class="md:hidden p-2" style="color: #1c1917;">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+       </svg></button>
+     </div><!-- Mobile Menu -->
+     <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3"><a href="#" class="block nav-link active" style="color: #1c1917;" data-page="home">Home</a> <a href="#" class="block nav-link" style="color: #57534e;" data-page="about">About</a> <a href="#" class="block nav-link" style="color: #57534e;" data-page="services">Services</a> <a href="#" class="block nav-link" style="color: #57534e;" data-page="portfolio">Portfolio</a> <a href="#" class="block nav-link" style="color: #57534e;" data-page="process">Process</a> <a href="#" class="block nav-link" style="color: #57534e;" data-page="contact">Contact</a>
+     </div>
+    </div>
+   </nav><!-- HOME PAGE -->
+   <div id="home-page" class="page-section active"><!-- Hero Section -->
+    <section class="w-full py-32 bg-cover bg-center relative" style="background-image: linear-gradient(rgba(28,25,23,0.6), rgba(28,25,23,0.6)), url('hero\,img.jpg');">
+     <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+       <div class="text-center lg:text-left">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6" style="color:#ff9ae6" id="hero-headline">Elevate Your Digital Presence</h2>
+        <p g md:text-xl mb-8" style="color: #ff9ae6" id="hero-subheading">Professional websites and social media solutions for small businesses ready to grow online</p><button id="hero-whatsapp-btn" class="whatsapp-btn inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold" style="background-color: #25d366; color: #ffffff;">
+         <svg class="w-6 h-6 mr-2" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+         </svg> Let's Talk on WhatsApp </button>
+       </div>
+       <div class="text-lclass="hidden lg:flex items-center justify-center">
+        <div class="relative w-full max-w-md">
+         <div class="absolute inset-0 rounded-3xl" style="background: linear-gradient(135deg, #1c1917 0%, #44403c 100%); opacity: 0.1; transform: rotate(6deg);"></div>
+         <div class="relative p-8 rounded-3xl" style="background-color: #ffffff; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);">
+          <svg class="w-full h-auto" viewbox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg"><!-- Monitor/Screen --> <rect x="40" y="40" width="320" height="200" rx="8" fill="#1c1917" /> <rect x="55" y="55" width="290" height="155" rx="4" fill="#fafaf9" /> <!-- Browser Window Elements --> <circle cx="75" cy="75" r="5" fill="#ef4444" /> <circle cx="95" cy="75" r="5" fill="#fbbf24" /> <circle cx="115" cy="75" r="5" fill="#10b981" /> <!-- Content Lines --> <rect x="75" y="100" width="180" height="8" rx="4" fill="#d4d4d4" /> <rect x="75" y="120" width="140" height="8" rx="4" fill="#e5e5e5" /> <rect x="75" y="140" width="200" height="8" rx="4" fill="#d4d4d4" /> <!-- Button --> <rect x="75" y="165" width="80" height="25" rx="12" fill="#25d366" /> <!-- Mobile Phone --> <g transform="translate(240, 100)">
+            <rect x="0" y="0" width="100" height="160" rx="12" fill="#1c1917" />
+            <rect x="8" y="8" width="84" height="144" rx="6" fill="#fafaf9" /> <!-- WhatsApp icon -->
+            <circle cx="50" cy="70" r="25" fill="#25d366" />
+            <path d="M50 55 L50 70 L60 75" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none" /> <!-- Message bubbles -->
+            <rect x="15" y="100" width="50" height="15" rx="7" fill="#e5e5e5" />
+            <rect x="35" y="120" width="55" height="15" rx="7" fill="#25d366" opacity="0.3" />
+           </g> <!-- Decorative Elements --> <circle cx="30" cy="30" r="20" fill="#25d366" opacity="0.2" /> <circle cx="370" cy="270" r="30" fill="#1c1917" opacity="0.1" />
+          </svg>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Introduction -->
+    <section class="w-full py-16 md:py-24">
+     <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-lg md:text-xl leading-relaxed animate-on-scroll" style="color: #44403c;">Hi, I'm <span class="font-semibold" id="intro-owner-name">Phetogo</span>, founder of <span class="font-semibold" id="intro-business-name">Case di Lilly</span>. I help small businesses build a strong online presence through custom websites, strategic social media marketing, and smart WhatsApp automation. My mission is to make professional digital solutions accessible and effective for businesses ready to grow. A where stories and strategy meet. </p>
+     </div>
+    </section><!-- Services Overview -->
+    <section class="w-full py-16 md:py-24" style="background-color: #ffffff;">
+     <div class="max-w-7xl mx-auto px-6">
+      <h3 class="text-3xl md:text-4xl font-bold text-center mb-4" style="color: #1c1917;">What I Offer</h3>
+      <p class="text-center mb-12 text-lg" style="color: #78716c;">Complete digital solutions tailored to your business needs</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"><!-- Service Card 1: Brand Design -->
+       <div class="flip-card animate-on-scroll" data-service="brand">
+        <div class="flip-card-inner"><!-- Front -->
+         <div class="flip-card-front p-8 rounded-2xl" style="background-color: #fafaf9; border: 1px solid #e7e5e4;">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: #ff9ae6;">
+           <svg class="w-8 h-8" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+           </svg>
+          </div>
+          <h4 class="text-xl font-bold mb-3" style="color: #ff9ae6;">Logo &amp; Brand Design</h4>
+          <p class="mb-6" style="color: #57534e;">Professional logo design and complete brand identity packages that make your business memorable and stand out from competitors.</p>
+          <p class="text-sm font-semibold" style="color: #25d366;">Click to see pricing →</p>
+         </div><!-- Back -->
+         <div class="flip-card-back p-8 rounded-2xl" style="background-color: #ffffff; border: 2px solid #ff9ae6;">
+          <h4 class="text-xl font-bold mb-6 text-center" style="color: #ff9ae6;">Brand Design Packages</h4>
+          <div class="space-y-6">
+           <div class="p-4 rounded-lg" style="background-color: #fafaf9;">
+            <h5 class="font-bold mb-2" style="color: #1c1917;">Logo Only</h5>
+            <p class="text-2xl font-bold mb-3" style="color: #1c1917;">$150</p>
+            <ul class="space-y-1 text-sm" style="color: #57534e;">
+             <li>✓ 3 logo concepts</li>
+             <li>✓ 2 revision rounds</li>
+             <li>✓ High-res files (PNG, JPG)</li>
+             <li>✓ Social media formats</li>
+             <li>✓ Perfect for startups</li>
+            </ul>
+           </div>
+           <div class="p-4 rounded-lg" style="background-color: #fafaf9;">
+            <h5 class="font-bold mb-2" style="color: #1c1917;">Full Brand Identity</h5>
+            <p class="text-2xl font-bold mb-3" style="color: #1c1917;">$300</p>
+            <ul class="space-y-1 text-sm" style="color: #57534e;">
+             <li>✓ Custom logo design</li>
+             <li>✓ Color palette</li>
+             <li>✓ Typography guide</li>
+             <li>✓ Business card design</li>
+             <li>✓ Brand style guide</li>
+            </ul>
+           </div>
+           <div class="p-4 rounded-lg" style="background-color: #f5f5f4;">
+            <h5 class="font-bold mb-2" style="color: #1c1917;">Brand Refresh</h5>
+            <p class="text-sm font-semibold" style="color: #57534e;">Contact for custom quote</p>
+           </div>
+          </div>
+          <p class="text-xs text-center mt-4" style="color: #78716c;">Click to flip back</p>
+         </div>
+        </div>
+       </div><!-- Service Card 2: Website Design -->
+       <div class="flip-card animate-on-scroll" data-service="website">
+        <div class="flip-card-inner"><!-- Front -->
+         <div class="flip-card-front p-8 rounded-2xl" style="background-color: #fafaf9; border: 1px solid #e7e5e4;">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: #ff9ae6;">
+           <svg class="w-8 h-8" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+           </svg>
+          </div>
+          <h4 class="text-xl font-bold mb-3" style="color: #ff9ae6;">Website Design</h4>
+          <p class="mb-6" style="color: #57534e;">Custom HTML/CSS websites hosted on GitHub. Fast, professional, and mobile-friendly designs that convert visitors into customers.</p>
+          <p class="text-sm font-semibold" style="color: #25d366;">Click to see pricing →</p>
+         </div><!-- Back -->
+         <div class="flip-card-back p-8 rounded-2xl" style="background-color: #ffffff; border: 2px solid #ff9ae6;">
+          <h4 class="text-xl font-bold mb-6 text-center" style="color: #ff9ae6;">Website Packages</h4>
+          <div class="space-y-6">
+           <div class="p-4 rounded-lg" style="background-color: #fafaf9;">
+            <h5 class="font-bold mb-2" style="color: #1c1917;">Standard Website</h5>
+            <p class="text-2xl font-bold mb-3" style="color: #1c1917;">$300</p>
+            <ul class="space-y-1 text-sm" style="color: #57534e;">
+             <li>✓ 4–6 page custom website</li>
+             <li>✓ Custom layout &amp; branding</li>
+             <li>✓ WhatsApp booking + enquiry form</li>
+             <li>✓ SEO-ready structure</li>
+             <li>✓ Best for growing businesses</li>
+            </ul>
+           </div>
+           <div class="p-4 rounded-lg" style="background-color: #fafaf9;">
+            <h5 class="font-bold mb-2" style="color: #1c1917;">Premium Website</h5>
+            <p class="text-2xl font-bold mb-3" style="color: #1c1917;">$400</p>
+            <ul class="space-y-1 text-sm" style="color: #57534e;">
+             <li>✓ 6–10 page website</li>
+             <li>✓ Advanced design &amp; structure</li>
+             <li>✓ SEO optimisation</li>
+             <li>✓ Google Analytics setup</li>
+             <li>✓ Perfect for established brands</li>
+            </ul>
+           </div>
+           <div class="p-4 rounded-lg" style="background-color: #f5f5f4;">
+            <h5 class="font-bold mb-2" style="color: #1c1917;">E-commerce Website</h5>
+            <p class="text-sm font-semibold" style="color: #57534e;">Contact for custom quote</p>
+           </div>
+          </div>
+          <p class="text-xs text-center mt-4" style="color: #78716c;">Click to flip back</p>
+         </div>
+        </div>
+       </div><!-- Service Card 3: Social Media -->
+       <div class="flip-card animate-on-scroll" data-service="social" style="transition-delay: 0.1s;">
+        <div class="flip-card-inner"><!-- Front -->
+         <div class="flip-card-front p-8 rounded-2xl" style="background-color: #fafaf9; border: 1px solid #e7e5e4;">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: #ff9ae6;">
+           <svg class="w-8 h-8" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+           </svg>
+          </div>
+          <h4 class="text-xl font-bold mb-3" style="color: #ff9ae6;">Social Media Marketing</h4>
+          <p class="mb-6" style="color: #57534e;">Strategic content creation and management to grow your brand, engage your audience, and drive real business results.</p>
+          <p class="text-sm font-semibold" style="color: #25d366;">Click to see pricing →</p>
+         </div><!-- Back -->
+         <div class="flip-card-back p-8 rounded-2xl" style="background-color: #ffffff; border: 2px solid #ff9ae6;">
+          <h4 class="text-xl font-bold mb-4 text-center" style="color: #ff9ae6;">Monthly Plans</h4>
+          <div class="space-y-4">
+           <div class="p-4 rounded-lg" style="background-color: #fafaf9;"><span class="price-badge" style="background-color: #e7e5e4; color: #1c1917;">STARTER</span>
+            <p class="text-2xl font-bold mb-2" style="color: #1c1917;">$350<span class="text-sm font-normal">/mo</span></p>
+            <ul class="space-y-1 text-xs" style="color: #57534e;">
+             <li>✓ 12 posts (8 static + 4 reels)</li>
+             <li>✓ 12 stories/month</li>
+             <li>✓ Community engagement (30/week)</li>
+             <li>✓ Basic content strategy</li>
+             <li>✓ Monthly report</li>
+            </ul>
+           </div>
+           <div class="p-4 rounded-lg" style="background-color: #ff9ae6;"><span class="price-badge" style="background-color: #4ee083; color: #ffffff;">MOST POPULAR</span>
+            <p class="text-2xl font-bold mb-2" style="color: #1c1917;">$750<span class="text-sm font-normal">/mo</span></p>
+            <ul class="space-y-1 text-xs" style="color: #1c1917;">
+             <li>✓ 20 posts (12 static + 8 reels)</li>
+             <li>✓ 20 stories/month</li>
+             <li>✓ Community engagement (50/week)</li>
+             <li>✓ Tailor-made growth strategy</li>
+             <li>✓ Monthly analytics &amp; insights</li>
+            </ul>
+           </div>
+           <div class="p-4 rounded-lg" style="background-color: #fafaf9;"><span class="price-badge" style="background-color: #e7e5e4; color: #1c1917;">PREMIUM</span>
+            <p class="text-2xl font-bold mb-2" style="color: #1c1917;">$1050<span class="text-sm font-normal">/mo</span></p>
+            <ul class="space-y-1 text-xs" style="color: #57534e;">
+             <li>✓ 28 posts (16 static + 12 reels)</li>
+             <li>✓ 28 stories/month</li>
+             <li>✓ Community engagement (70/week)</li>
+             <li>✓ Advanced strategy</li>
+             <li>✓ Detailed performance reports</li>
+            </ul>
+           </div>
+          </div>
+          <p class="text-xs text-center mt-4" style="color: #78716c;">Click to flip back</p>
+         </div>
+        </div>
+       </div><!-- Service Card 4: WhatsApp -->
+       <div class="flip-card animate-on-scroll" data-service="whatsapp" style="transition-delay: 0.2s;">
+        <div class="flip-card-inner"><!-- Front -->
+         <div class="flip-card-front p-8 rounded-2xl" style="background-color: #fafaf9; border: 1px solid #e7e5e4;">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: #4ee083;">
+           <svg class="w-8 h-8" style="color: #ffffff;" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+           </svg>
+          </div>
+          <h4 class="text-xl font-bold mb-3" style="color: #4ee083;">WhatsApp Automation</h4>
+          <p class="mb-6" style="color: #57534e;">Automated booking systems and customer communication that save time and improve your customer experience.</p>
+          <p class="text-sm font-semibold" style="color: #ff9ae6;">Click to see pricing →</p>
+         </div><!-- Back -->
+         <div class="flip-card-back p-8 rounded-2xl" style="background-color: #ffffff; border: 2px solid #25d366;">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background-color: #25d366;">
+           <svg class="w-8 h-8" style="color: #ffffff;" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+           </svg>
+          </div>
+          <h4 class="text-xl font-bold mb-4 text-center" style="color: #1c1917;">WhatsApp Automation</h4>
+          <p class="text-center mb-6 text-lg font-bold" style="color: #25d366;">Optional Add-On</p>
+          <div class="p-6 rounded-lg mb-6" style="background-color: #f5f5f4;">
+           <p class="text-center text-2xl font-bold mb-4" style="color: #1c1917;">Price on Request</p>
+           <ul class="space-y-2 text-sm" style="color: #57534e;">
+            <li class="flex items-start">
+             <svg class="w-5 h-5 mr-2 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+             </svg><span>Auto-replies during working hours</span></li>
+            <li class="flex items-start">
+             <svg class="w-5 h-5 mr-2 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+             </svg><span>FAQ &amp; greeting messages</span></li>
+            <li class="flex items-start">
+             <svg class="w-5 h-5 mr-2 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+             </svg><span>Lead capture setup</span></li>
+            <li class="flex items-start">
+             <svg class="w-5 h-5 mr-2 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+             </svg><span>Custom automation workflows</span></li>
+           </ul>
+          </div>
+          <p class="text-xs text-center" style="color: #78716c;">Click to flip back</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Featured Projects -->
+    <section class="w-full py-16 md:py-24">
+     <div class="max-w-7xl mx-auto px-6">
+      <h3 class="text-3xl md:text-4xl font-bold text-center mb-4" style="color: #1c1917;">Featured Work</h3>
+      <p class="text-center mb-12 text-lg" style="color: #78716c;">Recent projects that delivered real results</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Project 1 -->
+       <div class="card-hover rounded-2xl overflow-hidden cursor-pointer nav-to-portfolio" style="background-color: #ffffff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+        <div class="h-48 flex items-center justify-center" style="background: linear-gradient(135deg, #fdb6ee 0%, #e45dc2 100%);">
+         <svg class="w-20 h-20" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+         </svg>
+        </div>
+        <div class="p-6">
+         <h5 class="text-xl font-bold mb-2" style="color: #1c1917;">Boutique Clothing Store</h5>
+         <p class="mb-3" style="color: #78716c;">E-commerce website with WhatsApp ordering</p>
+         <p class="text-sm font-semibold" style="color: #44403c;">Result: 200% increase in online orders</p>
+        </div>
+       </div><!-- Project 2 -->
+       <div class="card-hover rounded-2xl overflow-hidden cursor-pointer nav-to-portfolio" style="background-color: #ffffff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+        <div class="h-48 flex items-center justify-center" style="background: linear-gradient(135deg, #b4ffab 0%,#65e433 100%);">
+         <svg class="w-20 h-20" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+         </svg>
+        </div>
+        <div class="p-6">
+         <h5 class="text-xl font-bold mb-2" style="color: #1c1917;">Local Consultancy</h5>
+         <p class="mb-3" style="color: #78716c;">Professional portfolio with automated booking</p>
+         <p class="text-sm font-semibold" style="color: #44403c;">Result: 150% more qualified leads</p>
+        </div>
+       </div><!-- Project 3 -->
+       <div class="card-hover rounded-2xl overflow-hidden cursor-pointer nav-to-portfolio" style="background-color: #ffffff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+        <div class="h-48 flex items-center justify-center" style="background: linear-gradient(135deg, #fdb6ee 0%, #e45dc2 100%);">
+         <svg class="w-20 h-20" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+         </svg>
+        </div>
+        <div class="p-6">
+         <h5 class="text-xl font-bold mb-2" style="color: #1c1917;">Real Estate Agent</h5>
+         <p class="mb-3" style="color: #78716c;">Property showcase with social media integration</p>
+         <p class="text-sm font-semibold" style="color: #44403c;">Result: 300% more property inquiries</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Benefits Section -->
+    <section class="w-full py-16 md:py-24" style="background-color: #ffffff;">
+     <div class="max-w-7xl mx-auto px-6">
+      <h3 class="text-3xl md:text-4xl font-bold text-center mb-4" style="color: #1c1917;">Why Work With Me</h3>
+      <p class="text-center mb-12 text-lg" style="color: #78716c;">Professional results without the agency price tag</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+       <div class="flex items-start space-x-4">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #ff9ae6;">
+         <svg class="w-6 h-6" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+         </svg>
+        </div>
+        <div>
+         <h5 class="font-bold mb-2 text-lg" style="color: #1c1917;">Fast Turnaround</h5>
+         <p style="color: #57534e;">Most projects completed within 2-3 weeks</p>
+        </div>
+       </div>
+       <div class="flex items-start space-x-4">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #ff9ae6;">
+         <svg class="w-6 h-6" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+         </svg>
+        </div>
+        <div>
+         <h5 class="font-bold mb-2 text-lg" style="color: #1c1917;">Affordable Pricing</h5>
+         <p style="color: #57534e;">Quality work that fits small business budgets</p>
+        </div>
+       </div>
+       <div class="flex items-start space-x-4">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #ff9ae6;">
+         <svg class="w-6 h-6" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+         </svg>
+        </div>
+        <div>
+         <h5 class="font-bold mb-2 text-lg" style="color: #1c1917;">Personal Service</h5>
+         <p style="color: #57534e;">Direct communication, no middlemen</p>
+        </div>
+       </div>
+       <div class="flex items-start space-x-4">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #4ee083">
+         <svg class="w-6 h-6" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+         </svg>
+        </div>
+        <div>
+         <h5 class="font-bold mb-2 text-lg" style="color: #1c1917;">Results-Focused</h5>
+         <p style="color: #57534e;">Designs that convert visitors to customers</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- CTA Section -->
+    <section class="w-full py-20 md:py-32" style="background: linear-gradient(135deg, #1c1917 0%, #44403c 100%);">
+     <div class="max-w-4xl mx-auto px-6 text-center">
+      <h3 class="text-3xl md:text-5xl font-bold mb-6" style="color: #ffffff;">Ready to Grow Your Business?</h3>
+      <p class="text-lg md:text-xl mb-8" style="color: #e7e5e4;">Let's discuss how I can help you build a powerful online presence</p><button id="cta-whatsapp-btn" class="whatsapp-btn inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold" style="background-color: #25d366; color: #ffffff;">
+       <svg class="w-6 h-6 mr-2" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+       </svg> Start Your Project Today </button>
+     </div>
+    </section>
+   </div><!-- ABOUT PAGE -->
+   <div id="about-page" class="page-section">
+    <section class="w-full py-20 md:py-32 fade-in" style="background: linear-gradient(135deg, #f5f5f4 0%, #e7e5e4 100%);">
+     <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center" style="color: #ff9ae6;">About Me</h2>
+      <p class="text-xl text-center mb-12" style="color: #ff9ae6;">Building digital solutions that help businesses thrive</p>
+      <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+       <div class="flex-shrink-0">
+        <div class="w-48 h-48 rounded-full overflow-hidden flex items-center justify-center"
+              style="background: linear-gradient(135deg, #1c1917 0%, #44403c 100%);box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
+          <img 
+           src="about-1.png"
+           alt="Phetogo – Founder of Casa di Lilly"
+           class="w-full h-full object-cover"
+            />
+        </div>
+       </div>
+       <div class="flex-1 prose prose-lg max-w-none" style="color: #44403c;">
+        <p class="text-lg leading-relaxed mb-4">Hi, I'm Phetogo, the founder of Casa di Lilly. I graduated in Digital Marketing and Business Management, and I started this company with one clear purpose: to help businesses stand out from the competition and confidently sell online.</p>
+        <p class="text-lg leading-relaxed mb-4">I work with small and growing businesses to build a strong digital presence through custom websites, strategic social media marketing, and smart WhatsApp automation. I understand that many great businesses struggle not because their service is poor, but because they don't have the right platform to showcase their value.</p>
+        <p class="text-lg leading-relaxed">My mission is to make professional, trustworthy, and results-driven digital solutions accessible to businesses that are ready to grow, attract the right clients, and turn online attention into real sales. At Casa di Lilly, everything is built with intention — clean design, clear messaging, and systems that actually work for your business.</p>
+        </div>
+      </div>
+     </div>
+    </section>
+    <section class="w-full py-16 md:py-24" style="background-color: #ffffff;">
+     <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #1c1917;">Skills &amp; Expertise</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+       <div class="text-center p-6">
+        <div class="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center" style="background-color: #f5f5f4;">
+         <svg class="w-10 h-10" style="color: #ff9ae6;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+         </svg>
+        </div>
+        <h4 class="text-xl font-bold mb-3" style="color: #1c1917;">Web Development</h4>
+        <p style="color: #57534e;">HTML, CSS, responsive design, GitHub Pages hosting, and modern web standards</p>
+       </div>
+       <div class="text-center p-6">
+        <div class="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center" style="background-color: #f5f5f4;">
+         <svg class="w-10 h-10" style="color: #ff9ae6;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+         </svg>
+        </div>
+        <h4 class="text-xl font-bold mb-3" style="color: #1c1917;">Digital Marketing</h4>
+        <p style="color: #57534e;">Social media strategy, content creation, audience engagement, and analytics</p>
+       </div>
+       <div class="text-center p-6">
+        <div class="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center" style="background-color: #f5f5f4;">
+         <svg class="w-10 h-10" style="color: #4ee083;" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+         </svg>
+        </div>
+        <h4 class="text-xl font-bold mb-3" style="color: #1c1917;">Automation</h4>
+        <p style="color: #57534e;">WhatsApp Business setup, automated responses, booking systems, and workflows</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="w-full py-16 md:py-24" style="background-color: #fafaf9;">
+     <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl md:text-4xl font-bold text-center mb-4" style="color: #1c1917;">Businesses I Serve</h3>
+      <p class="text-center mb-12 text-lg" style="color: #78716c;">I work with various small businesses across industries</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+       <div class="text-center p-4">
+        <div class="text-4xl mb-3">
+         <img 
+          src="image-1.jpg"  
+          alt="Retail & E-commerce"
+          class="w-full rounded-2xl shadow-lg object-cover"
+           >
+        </div>
+        <p class="font-semibold" style="color: #1c1917;">Retail &amp; E-commerce</p>
+       </div>
+       <div class="text-center p-4">
+        <div class="text-4xl mb-3">
+         <img 
+          src="image-2.jpg"  
+          alt="Retail & E-commerce"
+          class="w-full rounded-2xl shadow-lg object-cover"
+           >
+        </div>
+        <p class="font-semibold" style="color: #1c1917;">Professional Services</p>
+       </div>
+       <div class="text-center p-4">
+        <div class="text-4xl mb-3">
+          <img 
+          src="image-3.jpg"  
+          alt="Retail & E-commerce"
+          class="w-full rounded-2xl shadow-lg object-cover"
+           >
+        </div>
+        <p class="font-semibold" style="color: #1c1917;">Real Estate</p>
+       </div>
+       <div class="text-center p-4">
+        <div class="text-4xl mb-3">
+         <img 
+          src="image-4.jpg"  
+          alt="Retail & E-commerce"
+          class="w-full rounded-2xl shadow-lg object-cover"
+           >
+        </div>
+        <p class="font-semibold" style="color: #1c1917;">Beauty &amp; Wellness</p>
+       </div>
+       <div class="text-center p-4">
+        <div class="text-4xl mb-3">
+          <img 
+          src="image-5.jpg"  
+          alt="Retail & E-commerce"
+          class="w-full rounded-2xl shadow-lg object-cover"
+           >
+        </div>
+        <p class="font-semibold" style="color: #1c1917;">Food &amp; Hospitality</p>
+       </div>
+       <div class="text-center p-4">
+        <div class="text-4xl mb-3">
+         <img 
+          src="image-6.jpg"  
+          alt="Retail & E-commerce"
+          class="w-full rounded-2xl shadow-lg object-cover"
+           >
+        </div>
+        <p class="font-semibold" style="color: #1c1917;">Education &amp; Training</p>
+       </div>
+       <div class="text-center p-4">
+        <div class="text-4xl mb-3">
+         <img 
+          src="image-7.jpg"  
+          alt="Retail & E-commerce"
+          class="w-full rounded-2xl shadow-lg object-cover"
+           >
+        </div>
+        <p class="font-semibold" style="color: #1c1917;">Creative Services</p>
+       </div>
+       <div class="text-center p-4">
+        <div class="text-4xl mb-3">
+         <img 
+          src="image-8.jpg"  
+          alt="Retail & E-commerce"
+          class="w-full rounded-2xl shadow-lg object-cover"
+           >
+        </div>
+        <p class="font-semibold" style="color: #1c1917;">Home Services</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="w-full py-16 md:py-24" style="background-color: #ffffff;">
+     <div class="max-w-4xl mx-auto px-6">
+      <h3 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #1c1917;">My Work Values</h3>
+      <div class="space-y-8">
+       <div class="flex items-start space-x-4">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #ff9ae6"><span class="text-xl font-bold" style="color: #ffffff;">1</span>
+        </div>
+        <div>
+         <h5 class="font-bold mb-2 text-xl" style="color: #ff9ae6">Transparency</h5>
+         <p class="text-lg" style="color: #57534e;">Clear communication, honest timelines, and no hidden costs. You'll always know what to expect.</p>
+        </div>
+       </div>
+       <div class="flex items-start space-x-4">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #ff9ae6"><span class="text-xl font-bold" style="color: #ffffff;">2</span>
+        </div>
+        <div>
+         <h5 class="font-bold mb-2 text-xl" style="color: #ff9ae6">Quality</h5>
+         <p class="text-lg" style="color: #57534e;">Every project gets the same attention to detail, whether it's a simple landing page or a complex system.</p>
+        </div>
+       </div>
+       <div class="flex items-start space-x-4">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #ff9ae6"><span class="text-xl font-bold" style="color: #ffffff;">3</span>
+        </div>
+        <div>
+         <h5 class="font-bold mb-2 text-xl" style="color: #ff9ae6">Partnership</h5>
+         <p class="text-lg" style="color: #57534e;">Your success is my success. I'm invested in helping your business grow long after the project launches.</p>
+        </div>
+       </div>
+       <div class="flex items-start space-x-4">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color:#4ee083"><span class="text-xl font-bold" style="color: #ffffff;">4</span>
+        </div>
+        <div>
+         <h5 class="font-bold mb-2 text-xl" style="color: #4ee083">Accessibility</h5>
+         <p class="text-lg" style="color: #57534e;">Professional digital services should be accessible to all businesses, not just those with big budgets.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- SERVICES PAGE -->
+   <div id="services-page" class="page-section">
+   <section class="w-full py-32 bg-cover bg-center relative" style="background-image: linear-gradient(rgba(28,25,23,0.6), rgba(28,25,23,0.6)), url('hero\,img.jpg');">
+     <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6" style="color: #ff9ae6">Services</h2>
+      <p class="text-xl" style="color: #ff9ae6;">Complete digital solutions to help your business succeed online</p>
+     </div>
+    </section>
+    <section class="w-full py-16 md:py-24">
+     <div class="max-w-5xl mx-auto px-6 space-y-8"><!-- Service 1: Logo & Brand Design -->
+      <div class="flip-card service-flip-card">
+       <div class="flip-card-inner"><!-- Front -->
+        <div class="flip-card-front card-hover p-8 md:p-12 rounded-2xl" style="background-color: #ffffff; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+         <div class="flex items-center mb-6">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center mr-6" style="background-color: #ff9ae6;">
+           <svg class="w-8 h-8" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+           </svg>
+          </div>
+          <h3 class="text-3xl font-bold" style="color: #ff9ae6">Logo &amp; Brand Design</h3>
+         </div>
+         <p class="text-lg mb-6" style="color: #44403c;">Professional logo design and complete brand identity creation. I craft unique, memorable logos and cohesive brand systems that communicate your business values and make you stand out in your market.</p>
+         <h4 class="text-xl font-bold mb-3" style="color: #1c1917;">What's Included:</h4>
+         <ul class="space-y-2 mb-6">
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Custom logo concepts based on your brand</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Multiple design variations</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Revision rounds to perfect your logo</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">High-resolution files in multiple formats</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Brand color palette and typography</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Social media and print-ready formats</span></li>
+         </ul>
+         <div class="p-6 rounded-xl" style="background-color: #f5f5f4;">
+          <h5 class="font-bold mb-2" style="color: #1c1917;">Benefits for Your Business:</h5>
+          <p style="color: #57534e;">A professional logo builds instant credibility, helps customers remember you, and sets you apart from competitors. Your brand identity becomes the visual foundation for all your marketing materials.</p>
+         </div>
+         <p class="text-sm font-semibold text-center mt-6" style="color: #25d366;">Click to see pricing →</p>
+        </div><!-- Back -->
+        <div class="flip-card-back p-8 md:p-12 rounded-2xl" style="background-color: #ffffff; border: 2px solid #ff9ae6; min-height: 100%;">
+         <div class="flex items-center mb-6">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center mr-6" style="background-color: #ff9ae6;">
+           <svg class="w-8 h-8" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+           </svg>
+          </div>
+          <h3 class="text-3xl font-bold" style="color: #ff9ae6;">Brand Design Packages</h3>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <div class="p-6 rounded-lg" style="background-color: #fafaf9;">
+           <h5 class="font-bold mb-2 text-lg" style="color: #1c1917;">Logo Only</h5>
+           <p class="text-3xl font-bold mb-4" style="color: #1c1917;">$150</p>
+           <ul class="space-y-2 text-sm" style="color: #57534e;">
+            <li>✓ 3 logo concepts</li>
+            <li>✓ 2 revision rounds</li>
+            <li>✓ High-res files (PNG, JPG, SVG)</li>
+            <li>✓ Black &amp; white versions</li>
+            <li>✓ Social media formats</li>
+            <li>✓ Perfect for startups</li>
+           </ul>
+          </div>
+          <div class="p-6 rounded-lg" style="background-color: #ff9ae6;"><span class="price-badge" style="background-color: #4ee083; color: #ffffff;">RECOMMENDED</span>
+           <h5 class="font-bold mb-2 text-lg" style="color: #1c1917;">Full Brand Identity</h5>
+           <p class="text-3xl font-bold mb-4" style="color: #1c1917;">$300</p>
+           <ul class="space-y-2 text-sm" style="color: #1c1917;">
+            <li>✓ Custom logo design</li>
+            <li>✓ Complete color palette</li>
+            <li>✓ Typography guide</li>
+            <li>✓ Business card design</li>
+            <li>✓ Brand style guide (PDF)</li>
+            <li>✓ All file formats included</li>
+           </ul>
+          </div>
+          <div class="p-6 rounded-lg" style="background-color: #fafaf9;">
+           <h5 class="font-bold mb-2 text-lg" style="color: #1c1917;">Brand Refresh</h5>
+           <p class="text-lg font-semibold mb-4" style="color: #57534e;">Custom Quote</p>
+           <ul class="space-y-2 text-sm" style="color: #57534e;">
+            <li>✓ Modernize existing logo</li>
+            <li>✓ Update brand colors</li>
+            <li>✓ Refine typography</li>
+            <li>✓ New brand guidelines</li>
+            <li>✓ Best for rebranding</li>
+           </ul>
+          </div>
+         </div>
+         <div class="p-4 rounded-lg text-center" style="background-color: #f5f5f4;">
+          <p class="text-sm font-semibold" style="color: #1c1917;">💡 50% deposit required to start • 7-10 day turnaround</p>
+         </div>
+         <p class="text-xs text-center mt-4" style="color: #78716c;">Click to flip back</p>
+        </div>
+       </div>
+      </div><!-- Service 2: Website Design -->
+      <div class="flip-card service-flip-card">
+       <div class="flip-card-inner"><!-- Front -->
+        <div class="flip-card-front card-hover p-8 md:p-12 rounded-2xl" style="background-color: #ffffff; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+         <div class="flex items-center mb-6">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center mr-6" style="background-color: #ff9ae6;">
+           <svg class="w-8 h-8" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+           </svg>
+          </div>
+          <h3 class="text-3xl font-bold" style="color: #ff9ae6">Website Design &amp; Development</h3>
+         </div>
+         <p class="text-lg mb-6" style="color: #44403c;">Custom-built websites using HTML and CSS, hosted reliably. Clean code, fast loading, and mobile-responsive designs that look professional and convert visitors into customers.</p>
+         <h4 class="text-xl font-bold mb-3" style="color: #1c1917;">What's Included:</h4>
+         <ul class="space-y-2 mb-6">
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Custom design tailored to your brand</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Mobile-responsive layouts</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Fast, optimized performance</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Reliable hosting included</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Contact forms and call-to-action buttons</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Basic SEO setup</span></li>
+         </ul>
+         <div class="p-6 rounded-xl" style="background-color: #f5f5f4;">
+          <h5 class="font-bold mb-2" style="color: #1c1917;">Benefits for Your Business:</h5>
+          <p style="color: #57534e;">A professional website establishes credibility, attracts more customers, and works for you 24/7. Perfect for service businesses, portfolios, and online stores.</p>
+         </div>
+         <p class="text-sm font-semibold text-center mt-6" style="color: #25d366;">Click to see pricing →</p>
+        </div><!-- Back -->
+        <div class="flip-card-back p-8 md:p-12 rounded-2xl" style="background-color: #ffffff; border: 2px solid #ff9ae6; min-height: 100%;">
+         <div class="flex items-center mb-6">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center mr-6" style="background-color: #ff9ae6;">
+           <svg class="w-8 h-8" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+           </svg>
+          </div>
+          <h3 class="text-3xl font-bold" style="color: #ff9ae6;">Website Packages</h3>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <div class="p-6 rounded-lg" style="background-color: #fafaf9;">
+           <h5 class="font-bold mb-2 text-lg" style="color: #1c1917;">Standard Website</h5>
+           <p class="text-3xl font-bold mb-4" style="color: #1c1917;">$300</p>
+           <ul class="space-y-2 text-sm" style="color: #57534e;">
+            <li>✓ 4–6 page custom website</li>
+            <li>✓ Custom layout &amp; branding</li>
+            <li>✓ WhatsApp booking + enquiry form</li>
+            <li>✓ SEO-ready structure</li>
+            <li>✓ Best for growing businesses</li>
+           </ul>
+          </div>
+          <div class="p-6 rounded-lg" style="background-color: #fafaf9;">
+           <h5 class="font-bold mb-2 text-lg" style="color: #1c1917;">Premium Website</h5>
+           <p class="text-3xl font-bold mb-4" style="color: #1c1917;">$400</p>
+           <ul class="space-y-2 text-sm" style="color: #57534e;">
+            <li>✓ 6–10 page website</li>
+            <li>✓ Advanced design &amp; structure</li>
+            <li>✓ SEO optimisation</li>
+            <li>✓ Google Analytics setup</li>
+            <li>✓ Perfect for established brands</li>
+           </ul>
+          </div>
+          <div class="p-6 rounded-lg" style="background-color: #f5f5f4;">
+           <h5 class="font-bold mb-2 text-lg" style="color: #1c1917;">E-commerce Website</h5>
+           <p class="text-lg font-semibold mb-4" style="color: #57534e;">Contact for quote</p>
+           <ul class="space-y-2 text-sm" style="color: #57534e;">
+            <li>✓ Full online store</li>
+            <li>✓ Product catalog</li>
+            <li>✓ Shopping cart</li>
+            <li>✓ Payment integration</li>
+            <li>✓ Inventory management</li>
+           </ul>
+          </div>
+         </div>
+         <div class="p-4 rounded-lg text-center" style="background-color: #f5f5f4;">
+          <p class="text-sm font-semibold" style="color: #1c1917;">💡 50% deposit required to start • Custom packages available</p>
+         </div>
+         <p class="text-xs text-center mt-4" style="color: #78716c;">Click to flip back</p>
+        </div>
+       </div>
+      </div><!-- Service 3: Social Media Marketing -->
+      <div class="flip-card service-flip-card">
+       <div class="flip-card-inner"><!-- Front -->
+        <div class="flip-card-front card-hover p-8 md:p-12 rounded-2xl" style="background-color: #ffffff; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+         <div class="flex items-center mb-6">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center mr-6" style="background-color: #ff9ae6;">
+           <svg class="w-8 h-8" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+           </svg>
+          </div>
+          <h3 class="text-3xl font-bold" style="color: #ff9ae6;">Social Media Marketing</h3>
+         </div>
+         <p class="text-lg mb-6" style="color: #44403c;">Strategic social media management that builds your brand, engages your audience, and drives real business results. I create content that resonates and grows your following organically.</p>
+         <h4 class="text-xl font-bold mb-3" style="color: #1c1917;">What's Included:</h4>
+         <ul class="space-y-2 mb-6">
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Content strategy and planning</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Post creation and graphics</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Consistent posting schedule</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Audience engagement and community management</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Monthly performance reports</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #e45dc2;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Platform optimization (Instagram, Facebook, LinkedIn)</span></li>
+         </ul>
+         <div class="p-6 rounded-xl" style="background-color: #f5f5f4;">
+          <h5 class="font-bold mb-2" style="color: #1c1917;">Benefits for Your Business:</h5>
+          <p style="color: #57534e;">Build brand awareness, connect with your target audience, and create a loyal community. Social media done right drives traffic, leads, and sales consistently.</p>
+         </div>
+         <p class="text-sm font-semibold text-center mt-6" style="color: #25d366;">Click to see pricing →</p>
+        </div><!-- Back -->
+        <div class="flip-card-back p-8 md:p-12 rounded-2xl" style="background-color: #ffffff; border: 2px solid #ff9ae6; min-height: 100%;">
+         <div class="flex items-center mb-6">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center mr-6" style="background-color: #ff9ae6;">
+           <svg class="w-8 h-8" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+           </svg>
+          </div>
+          <h3 class="text-3xl font-bold" style="color: #ff9ae6;">Monthly Plans</h3>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <div class="p-6 rounded-lg" style="background-color: #fafaf9;"><span class="price-badge" style="background-color: #e7e5e4; color: #1c1917;">STARTER</span>
+           <p class="text-3xl font-bold mb-4" style="color: #1c1917;">$350<span class="text-sm font-normal">/mo</span></p>
+           <ul class="space-y-2 text-sm" style="color: #57534e;">
+            <li>✓ 12 posts (8 static + 4 reels)</li>
+            <li>✓ 12 stories/month</li>
+            <li>✓ Community engagement (30/week)</li>
+            <li>✓ Basic content strategy</li>
+            <li>✓ Monthly report</li>
+           </ul>
+           <p class="text-xs mt-3" style="color: #78716c;">Best for small brands getting started</p>
+          </div>
+          <div class="p-6 rounded-lg" style="background-color: #ff9ae6;"><span class="price-badge" style="background-color: #4ee083; color: #ffffff;">MOST POPULAR</span>
+           <p class="text-3xl font-bold mb-4" style="color: #1c1917;">$750<span class="text-sm font-normal">/mo</span></p>
+           <ul class="space-y-2 text-sm" style="color: #1c1917;">
+            <li>✓ 20 posts (12 static + 8 reels)</li>
+            <li>✓ 20 stories/month</li>
+            <li>✓ Community engagement (50/week)</li>
+            <li>✓ Tailor-made growth strategy</li>
+            <li>✓ Monthly analytics &amp; insights</li>
+           </ul>
+           <p class="text-xs mt-3" style="color: #1c1917;">Best for growing businesses ready to scale</p>
+          </div>
+          <div class="p-6 rounded-lg" style="background-color: #fafaf9;"><span class="price-badge" style="background-color: #e7e5e4; color: #1c1917;">PREMIUM</span>
+           <p class="text-3xl font-bold mb-4" style="color: #1c1917;">$1050<span class="text-sm font-normal">/mo</span></p>
+           <ul class="space-y-2 text-sm" style="color: #57534e;">
+            <li>✓ 28 posts (16 static + 12 reels)</li>
+            <li>✓ 28 stories/month</li>
+            <li>✓ Community engagement (70/week)</li>
+            <li>✓ Advanced strategy</li>
+            <li>✓ Detailed performance reports</li>
+           </ul>
+           <p class="text-xs mt-3" style="color: #78716c;">Best for established brands &amp; e-commerce</p>
+          </div>
+         </div>
+         <p class="text-xs text-center mt-4" style="color: #78716c;">Click to flip back</p>
+        </div>
+       </div>
+      </div><!-- Service 4: WhatsApp Automation -->
+      <div class="flip-card service-flip-card">
+       <div class="flip-card-inner"><!-- Front -->
+        <div class="flip-card-front card-hover p-8 md:p-12 rounded-2xl" style="background-color: #ffffff; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+         <div class="flex items-center mb-6">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center mr-6" style="background-color: #4ee083;">
+           <svg class="w-8 h-8" style="color: #ffffff;" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+           </svg>
+          </div>
+          <h3 class="text-3xl font-bold" style="color: #4ee083;">WhatsApp Booking &amp; Automation</h3>
+         </div>
+         <p class="text-lg mb-6" style="color: #44403c;">Transform your WhatsApp Business into a powerful customer service and booking tool. Automated responses, appointment scheduling, and seamless communication that saves you time and improves customer experience.</p>
+         <h4 class="text-xl font-bold mb-3" style="color: #1c1917;">What's Included:</h4>
+         <ul class="space-y-2 mb-6">
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">WhatsApp Business setup and optimization</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Automated greeting and away messages</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Quick reply templates for common questions</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Booking workflow setup</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Catalog setup for products/services</span></li>
+          <li class="flex items-start">
+           <svg class="w-6 h-6 mr-2 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+           </svg><span style="color: #57534e;">Label organization system</span></li>
+         </ul>
+         <div class="p-6 rounded-xl" style="background-color: #f5f5f4;">
+          <h5 class="font-bold mb-2" style="color: #1c1917;">Benefits for Your Business:</h5>
+          <p style="color: #57534e;">Respond to customers instantly, streamline bookings, and never miss an opportunity. Automation saves hours every week while improving customer satisfaction.</p>
+         </div>
+         <p class="text-sm font-semibold text-center mt-6" style="color: #ff9ae6;">Click to see pricing →</p>
+        </div><!-- Back -->
+        <div class="flip-card-back p-8 md:p-12 rounded-2xl" style="background-color: #ffffff; border: 2px solid #4ee083; min-height: 100%;">
+         <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background-color:#4ee083;">
+          <svg class="w-8 h-8" style="color: #ffffff;" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+          </svg>
+         </div>
+         <h3 class="text-3xl font-bold mb-6 text-center" style="color: #4ee083;">WhatsApp Automation</h3>
+         <p class="text-center mb-6 text-xl font-bold" style="color: #4ee083;">Optional Add-On</p>
+         <div class="p-8 rounded-lg mb-6" style="background-color: #f5f5f4;">
+          <p class="text-center text-4xl font-bold mb-6" style="color: #1c1917;">Price on Request</p>
+          <ul class="space-y-3" style="color: #57534e;">
+           <li class="flex items-start">
+            <svg class="w-6 h-6 mr-3 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg><span>Auto-replies during working hours</span></li>
+           <li class="flex items-start">
+            <svg class="w-6 h-6 mr-3 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg><span>FAQ &amp; greeting messages</span></li>
+           <li class="flex items-start">
+            <svg class="w-6 h-6 mr-3 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg><span>Lead capture setup</span></li>
+           <li class="flex items-start">
+            <svg class="w-6 h-6 mr-3 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg><span>Custom automation workflows</span></li>
+           <li class="flex items-start">
+            <svg class="w-6 h-6 mr-3 flex-shrink-0" style="color: #25d366;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg><span>Integration with existing systems</span></li>
+          </ul>
+         </div>
+         <p class="text-xs text-center" style="color: #78716c;">Click to flip back</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="w-full py-20 md:py-32" style="background: linear-gradient(135deg, #1c1917 0%, #44403c 100%);">
+     <div class="max-w-4xl mx-auto px-6 text-center">
+      <h3 class="text-3xl md:text-5xl font-bold mb-6" style="color: #ffffff;">Interested in Working Together?</h3>
+      <p class="text-lg md:text-xl mb-8" style="color: #e7e5e4;">Let's discuss which services will help your business grow</p><button id="services-whatsapp-btn" class="whatsapp-btn inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold" style="background-color: #25d366; color: #ffffff;">
+       <svg class="w-6 h-6 mr-2" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+       </svg> Get a Free Consultation </button>
+     </div>
+    </section>
+   </div><!-- PORTFOLIO PAGE -->
+   <div id="portfolio-page" class="page-section">
+    <section class="w-full py-32 bg-cover bg-center relative" style="background-image: linear-gradient(rgba(28,25,23,0.6), rgba(28,25,23,0.6)), url('hero\,img.jpg');">
+     <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6" style="color: #ff9ae6;">Portfolio</h2>
+      <p class="text-xl" style="color: #ff9ae6;">Recent projects showcasing real results for real businesses</p>
+     </div>
+    </section>
+    <section class="w-full py-16 md:py-24">
+     <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Portfolio Item 1: Website - Boutique Clothing Store -->
+       <div class="card-hover rounded-2xl overflow-hidden" style="background-color: #ffffff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+        <div class="h-64 flex flex-col items-center justify-center p-8" style="background: linear-gradient(135deg, #ff9ae6 0%, #e45dc2 100%);">
+         <svg class="w-24 h-24 mb-4" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+         </svg>
+         <div class="mt-2 px-4  rounded-full text-xs font-bold" style="background-color: rgba(255,255,255,0.2); color: #f7f4f4;">
+          WEBSITE DESIGN
+         </div>
+        </div>
+        <div class="p-6">
+         <h5 class="text-2xl font-bold mb-2" style="color: #1c1917;">Luxe Boutique</h5>
+         <p class="mb-3 text-sm font-semibold" style="color: #78716c;">E-COMMERCE WEBSITE</p>
+         <p class="mb-4" style="color: #57534e;">Modern, conversion-focused online store featuring a structured product catalogue, seamless checkout experience, and mobile-first design. Built to showcase products clearly while delivering a smooth and intuitive shopping journey.</p>
+         <div class="p-4 rounded-lg mb-4" style="background-color: #f5f5f4;">
+          <p class="text-sm font-bold mb-1" style="color: #1c1917;">Result:</p>
+          <p class="text-sm" style="color: #44403c;">200% increase in online orders within the first month, with improved customer navigation and a streamlined purchasing process that significantly boosted sales performance.</p>
+          </div><a  href="assets/portfolio/project1.pdf" target="_blank"
+             class="inline-block px-4 py-2 rounded-full text-sm font-semibold"
+             style="background-color: #4ee083; color:#ffffff;">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg> View  </a>
+        </div>
+       </div><!-- Portfolio Item 2: Website - Business Consultancy -->
+       <div class="card-hover rounded-2xl overflow-hidden" style="background-color: #ffffff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+        <div class="h-64 flex flex-col items-center justify-center p-8" style="background: linear-gradient(135deg, #ff9ae6 0%, #e45dc2 100%);">
+         <svg class="w-24 h-24 mb-4" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+         </svg>
+         <div class="mt-2 px-4 py-1 rounded-full text-xs font-bold" style="background-color: rgba(255,255,255,0.2); color: #ffffff;">
+          WEBSITE DESIGN
+         </div>
+        </div>
+        <div class="p-6">
+         <h5 class="text-2xl font-bold mb-2" style="color: #1c1917;">The Alon Hotel</h5>
+         <p class="mb-3 text-sm font-semibold" style="color: #78716c;">Hotel Booking Website</p>
+         <p class="mb-4" style="color: #57534e;">Elegant hotel website designed to showcase rooms, amenities, and guest experiences. Features include a modern room listing layout, image galleries, and an easy-to-use booking enquiry system optimized for mobile and desktop.</p>
+         <div class="p-4 rounded-lg mb-4" style="background-color: #f5f5f4;">
+          <p class="text-sm font-bold mb-1" style="color: #1c1917;">Result:</p>
+          <p class="text-sm" style="color: #44403c;">150% Increased direct booking enquiries and improved guest trust. The streamlined enquiry and reservation flow reduced response time and improved overall guest experience.</p>
+         </div><a  href="assets/portfolio/project2.pdf" target="_blank"
+             class="inline-block px-4 py-2 rounded-full text-sm font-semibold"
+             style="background-color:#4ee083; color:#ffffff;">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg> View  </a>
+        </div>
+       </div><!-- Portfolio Item 3: Website - Real Estate -->
+       <div class="card-hover rounded-2xl overflow-hidden" style="background-color: #ffffff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+        <div class="h-64 flex flex-col items-center justify-center p-8" style="background: linear-gradient(135deg, #ff9ae6 0%, #e45dc2 100%);">
+         <svg class="w-24 h-24 mb-4" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+         </svg>
+         <div class="mt-2 px-4 py-1 rounded-full text-xs font-bold" style="background-color: rgba(255,255,255,0.2); color: #ffffff;">
+          WEBSITE DESIGN
+         </div>
+        </div>
+        <div class="p-6">
+         <h5 class="text-2xl font-bold mb-2" style="color: #1c1917;">Thomas Larson Group </h5>
+         <p class="mb-3 text-sm font-semibold" style="color: #78716c;">REAL ESTATE WEBSITE</p>
+         <p class="mb-4" style="color: #57534e;">Sophisticated real estate website for Thomas Larson Group, showcasing premium properties through high-resolution galleries, filterable listings, and immersive virtual tour links. Designed to attract high-end clients and present properties with clarity and elegance.</p>
+         <div class="p-4 rounded-lg mb-4" style="background-color: #f5f5f4;">
+          <p class="text-sm font-bold mb-1" style="color: #1c1917;">Result:</p>
+          <p class="text-sm" style="color: #44403c;">300% increase in property inquiries, with improved engagement and faster decision-making from prospective buyers and renters.</p>
+         </div><a href="assets/portfolio/project3.pdf" target="_blank"
+             class="inline-block px-4 py-2 rounded-full text-sm font-semibold"
+             style="background-color:#4ee083; color:#ffffff;">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg> View </a>
+        </div>
+       </div><!-- Portfolio Item 4: MULTI-BRAND LOGO & BRAND IDENTITY DESIGN -->
+       <div class="card-hover rounded-2xl overflow-hidden" style="background-color: #ffffff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+        <div class="h-64 flex flex-col items-center justify-center p-8" style="background: linear-gradient(135deg, #ff9ae6 0%, #e45dc2 100%);">
+         <svg class="w-24 h-24 mb-4" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+         </svg>
+         <div class="mt-2 px-4 py-1 rounded-full text-xs font-bold" style="background-color: rgba(255,255,255,0.2); color: #ffffff;">
+          BRAND DESIGN
+         </div>
+        </div>
+        <div class="p-6">
+         <h5 class="text-2xl font-bold mb-2" style="color: #1c1917;">Logo & Brand Identity projects</h5>
+         <p class="mb-3 text-sm font-semibold" style="color: #78716c;">FULL BRAND IDENTITY</p>
+         <p class="mb-4" style="color: #57534e;">Designed refined logo and brand identity systems for various businesses, tailored to their industry, target market, and growth goals. Each brand package focused on clarity, consistency, and visual impact — from logo creation to cohesive color and typography systems.</p>
+         <div class="p-4 rounded-lg mb-4" style="background-color: #f5f5f4;">
+          <p class="text-sm font-bold mb-1" style="color: #1c1917;">Result:</p>
+          <p class="text-sm" style="color: #44403c;">Brand recognition increased by 85%. Professional image attracted premium clients willing to pay 30% higher rates.</p>
+         </div>
+         <div class="flex items-center space-x-2 text-sm" style="color: #78716c;"><span>🎨 Logo Design</span> <span>•</span> <span>📘 Brand Guide</span> <span>•</span> <span>💳 Business Cards</span>
+         <a href="assets/portfolio/project4.pdf" target="_blank"
+             class="inline-block px-4 py-2 rounded-full text-sm font-semibold"
+             style="background-color:#4ee083; color:#ffffff;">
+            View 
+          </a>
+          </div>
+        </div>
+       </div><!-- Portfolio Item 5: Social Media -->
+       <div class="card-hover rounded-2xl overflow-hidden" style="background-color: #ffffff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+        <div class="h-64 flex flex-col items-center justify-center p-8" style="background: linear-gradient(135deg, #ff9ae6 0%, #e45dc2 100%);">
+         <svg class="w-24 h-24 mb-4" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+         </svg>
+         <div class="mt-2 px-4 py-1 rounded-full text-xs font-bold" style="background-color: rgba(255,255,255,0.2); color: #ffffff;">
+          SOCIAL MEDIA
+         </div>
+        </div>
+        <div class="p-6">
+         <h5 class="text-2xl font-bold mb-2" style="color: #1c1917;">SOCIAL MEDIA MARKETING</h5>
+         <p class="mb-3 text-sm font-semibold" style="color: #78716c;">Various Client Brands</p>
+         <p class="mb-4" style="color: #57534e;">Created and managed social media content for multiple brands, including lifestyle, travel, service-based, and local businesses. Content focused on engaging visuals, promotional posts, brand storytelling, and consistent posting to build trust and visibility.</p>
+         <div class="p-4 rounded-lg mb-4" style="background-color: #f5f5f4;">
+          <p class="text-sm font-bold mb-1" style="color: #1c1917;">Result:</p>
+          <p class="text-sm" style="color: #44403c;">Improved audience engagement, steady follower growth, and increased brand awareness, leading to more inquiries, walk-ins, and online interest driven directly from social platforms.</p>
+         </div>
+         <div class="flex items-center space-x-2 text-sm" style="color: #78716c;"><span>📸 20 posts/month</span> <span>•</span> <span>💬 Daily engagement</span>
+         <a href="assets/portfolio/project5.pdf" target="_blank"
+             class="inline-block px-4 py-2 rounded-full text-sm font-semibold"
+             style="background-color:#4ee083; color:#ffffff;">
+            View 
+          </a>
+          </div>
+        </div>
+       </div><!-- Portfolio Item 6: WhatsApp Automation - Clinic -->
+       <div class="card-hover rounded-2xl overflow-hidden" style="background-color: #ffffff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+        <div class="h-64 flex flex-col items-center justify-center p-8" style="background: linear-gradient(135deg, #86f0a6 0%, #25d366 100%);">
+         <svg class="w-24 h-24 mb-4" style="color: #ffffff;" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+         </svg>
+         <div class="mt-2 px-4 py-1 rounded-full text-xs font-bold" style="background-color: rgba(255,255,255,0.2); color: #ffffff;">
+          WHATSAPP AUTOMATION
+         </div>
+        </div>
+        <div class="p-6">
+         <h5 class="text-2xl font-bold mb-2" style="color: #1c1917;">WhatsApp Automation</h5>
+         <p class="mb-3 text-sm font-semibold" style="color: #78716c;">WHATSAPP BUSINESS AUTOMATION</p>
+         <p class="mb-4" style="color: #57534e;">Complete WhatsApp Business setup with automated appointment booking, prescription reminders, FAQ responses, and patient follow-up messages. Streamlined entire communication workflow.</p>
+         <div class="p-4 rounded-lg mb-4" style="background-color: #f5f5f4;">
+          <p class="text-sm font-bold mb-1" style="color: #1c1917;">Result:</p>
+          <p class="text-sm" style="color: #44403c;">Receptionist workload reduced by 65%. Patient satisfaction scores increased by 40%. Missed appointments dropped by 75% due to automated reminders.</p>
+         </div>
+         <div class="flex items-center space-x-2 text-sm" style="color: #78716c;"><span>⚡ Auto-booking</span> <span>•</span> <span>🔔 Reminders</span> <span>•</span> <span>❓ FAQ Bot</span>
+         <a href="assets/portfolio/project6.pdf" target="_blank"
+             class="inline-block px-4 py-2 rounded-full text-sm font-semibold"
+             style="background-color:#ff9ae6; color:#ffffff;">
+            View 
+          </a>
+          </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="w-full py-20 md:py-32" style="background-color: #ffffff;">
+     <div class="max-w-4xl mx-auto px-6 text-center">
+      <h3 class="text-3xl md:text-5xl font-bold mb-6" style="color: #1c1917;">Want Results Like These?</h3>
+      <p class="text-lg md:text-xl mb-8" style="color: #57534e;">Let's create a custom digital solution for your business</p><button id="portfolio-whatsapp-btn" class="whatsapp-btn inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold" style="background-color: #25d366; color: #ffffff;">
+       <svg class="w-6 h-6 mr-2" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+       </svg> Discuss Your Project </button>
+     </div>
+    </section>
+   </div><!-- PROCESS PAGE -->
+   <div id="process-page" class="page-section">
+    <section class="w-full py-32 bg-cover bg-center relative" style="background-image: linear-gradient(rgba(28,25,23,0.6), rgba(28,25,23,0.6)), url('hero\,img.jpg');">
+     <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6" style="color: #ff9ae6;">My Process</h2>
+      <p class="text-xl" style="color: #ff9ae6;">A simple, transparent workflow from first contact to launch</p>
+     </div>
+    </section>
+    <section class="w-full py-16 md:py-24">
+     <div class="max-w-4xl mx-auto px-6">
+      <div class="space-y-12"><!-- Step 1 -->
+       <div class="flex items-start space-x-6">
+        <div class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center" style="background-color: #ff9ae6;"><span class="text-2xl font-bold" style="color: #ffffff;">1</span>
+        </div>
+        <div class="flex-1">
+         <h3 class="text-2xl font-bold mb-3" style="color: #ff9ae6">Discovery Call</h3>
+         <p class="text-lg mb-4" style="color: #57534e">We start with a friendly conversation on WhatsApp or phone. I'll ask about your business, goals, target audience, and what you want to achieve online.</p>
+         <div class="p-4 rounded-lg" style="background-color: #f5f5f4;">
+          <p class="text-sm font-semibold mb-1" style="color: #1c1917;">What to Expect:</p>
+          <p class="text-sm" style="color: #57534e;">15-30 minute chat • No pressure • Free advice • Clear next steps</p>
+         </div>
+        </div>
+       </div><!-- Step 2 -->
+       <div class="flex items-start space-x-6">
+        <div class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center" style="background-color:#ff9ae6;"><span class="text-2xl font-bold" style="color: #ffffff;">2</span>
+        </div>
+        <div class="flex-1">
+         <h3 class="text-2xl font-bold mb-3" style="color: #ff9ae6;">Proposal &amp; Agreement</h3>
+         <p class="text-lg mb-4" style="color: #57534e;">I'll send you a clear proposal outlining the scope, timeline, and pricing. No hidden fees or surprises—just straightforward terms.</p>
+         <div class="p-4 rounded-lg" style="background-color: #f5f5f4;">
+          <p class="text-sm font-semibold mb-1" style="color: #1c1917;">What You'll Get:</p>
+          <p class="text-sm" style="color: #57534e;">Detailed scope • Fixed pricing • Realistic timeline • Payment terms</p>
+         </div>
+        </div>
+       </div><!-- Step 3 -->
+       <div class="flex items-start space-x-6">
+        <div class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center" style="background-color: #ff9ae6; "><span class="text-2xl font-bold" style="color: #ffffff;">3</span>
+        </div>
+        <div class="flex-1">
+         <h3 class="text-2xl font-bold mb-3" style="color: #ff9ae6;">Content Gathering</h3>
+         <p class="text-lg mb-4" style="color: #57534e;">I'll need some information from you: brand colors, logos, text content, photos, and any specific features you want. Don't worry—I'll guide you through what I need.</p>
+         <div class="p-4 rounded-lg" style="background-color: #f5f5f4;">
+          <p class="text-sm font-semibold mb-1" style="color: #1c1917;">My Help:</p>
+          <p class="text-sm" style="color: #57534e;">Simple questionnaire • Content templates • Stock photo suggestions • Writing assistance if needed</p>
+         </div>
+        </div>
+       </div><!-- Step 4 -->
+       <div class="flex items-start space-x-6">
+        <div class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center" style="background-color: #ff9ae6;"><span class="text-2xl font-bold" style="color: #ffffff;">4</span>
+        </div>
+        <div class="flex-1">
+         <h3 class="text-2xl font-bold mb-3" style="color:#ff9ae6;">Design &amp; Development</h3>
+         <p class="text-lg mb-4" style="color: #57534e;">I'll create your website or set up your social media/WhatsApp systems. This typically takes 1-3 weeks depending on the project complexity.</p>
+         <div class="p-4 rounded-lg" style="background-color: #f5f5f4;">
+          <p class="text-sm font-semibold mb-1" style="color: #1c1917;">During This Phase:</p>
+          <p class="text-sm" style="color: #57534e;">Regular updates • Preview links • Open communication • Your input welcomed</p>
+         </div>
+        </div>
+       </div><!-- Step 5 -->
+       <div class="flex items-start space-x-6">
+        <div class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center" style="background-color:#ff9ae6;"><span class="text-2xl font-bold" style="color: #ffffff;">5</span>
+        </div>
+        <div class="flex-1">
+         <h3 class="text-2xl font-bold mb-3" style="color: #ff9ae6;">Review &amp; Revisions</h3>
+         <p class="text-lg mb-4" style="color: #57534e;">You'll review everything and provide feedback. I include two rounds of revisions to make sure you're 100% happy with the final product.</p>
+         <div class="p-4 rounded-lg" style="background-color: #f5f5f4;">
+          <p class="text-sm font-semibold mb-1" style="color: #1c1917;">What's Included:</p>
+          <p class="text-sm" style="color: #57534e;">2 revision rounds • Detailed feedback form • Video walkthroughs • Quick turnaround</p>
+         </div>
+        </div>
+       </div><!-- Step 6 -->
+       <div class="flex items-start space-x-6">
+        <div class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center" style="background-color:#ff9ae6;"><span class="text-2xl font-bold" style="color: #ffffff;">6</span>
+        </div>
+        <div class="flex-1">
+         <h3 class="text-2xl font-bold mb-3" style="color: #ff9ae6;">Launch &amp; Training</h3>
+         <p class="text-lg mb-4" style="color: #57534e;">Once you approve everything, I'll launch your website or activate your systems. I'll also provide training so you can manage basic updates yourself.</p>
+         <div class="p-4 rounded-lg" style="background-color: #f5f5f4;">
+          <p class="text-sm font-semibold mb-1" style="color: #1c1917;">You'll Receive:</p>
+          <p class="text-sm" style="color: #57534e;">Live website/system • Training session • Documentation • How-to videos</p>
+         </div>
+        </div>
+       </div><!-- Step 7 -->
+       <div class="flex items-start space-x-6">
+        <div class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center" style="background-color: #4ee083;"><span class="text-2xl font-bold" style="color: #ffffff;">7</span>
+        </div>
+        <div class="flex-1">
+         <h3 class="text-2xl font-bold mb-3" style="color: #4ee083;">Ongoing Support</h3>
+         <p class="text-lg mb-4" style="color: #57534e;">I don't disappear after launch. You'll get 30 days of free support for any questions or minor tweaks. After that, ongoing support packages are available.</p>
+         <div class="p-4 rounded-lg" style="background-color: #f5f5f4;">
+          <p class="text-sm font-semibold mb-1" style="color: #1c1917;">Support Options:</p>
+          <p class="text-sm" style="color: #57534e;">30-day warranty • Technical assistance • Update services • Growth consultations</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="w-full py-16 md:py-24" style="background-color: #ffffff;">
+     <div class="max-w-4xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-6" style="color: #1c1917;">Timeline Overview</h3>
+      <p class="text-center mb-12 text-lg" style="color: #78716c;">From first contact to launch</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+       <div class="text-center p-6 rounded-xl" style="background-color: #fafaf9; border: 2px solid #ff9ae6">
+        <div class="text-4xl font-bold mb-2" style="color: #1c1917;">
+         Week 1
+        </div>
+        <p style="color: #57534e;">Discovery, proposal, content gathering</p>
+       </div>
+       <div class="text-center p-6 rounded-xl" style="background-color: #fafaf9; border: 2px solid #ff9ae6">
+        <div class="text-4xl font-bold mb-2" style="color: #1c1917;">
+         Week 2-3
+        </div>
+        <p style="color: #57534e;">Design, development, and your review</p>
+       </div>
+       <div class="text-center p-6 rounded-xl" style="background-color: #fafaf9; border: 2px solid #25d366;">
+        <div class="text-4xl font-bold mb-2" style="color: #1c1917;">
+         Week 4
+        </div>
+        <p style="color: #57534e;">Final revisions, launch, and training</p>
+       </div>
+      </div>
+      <p class="text-center mt-8 text-sm" style="color: #78716c;">*Timelines may vary based on project complexity and content availability</p>
+     </div>
+    </section>
+    <section class="w-full py-20 md:py-32" style="background: linear-gradient(135deg, #1c1917 0%, #44403c 100%);">
+     <div class="max-w-4xl mx-auto px-6 text-center">
+      <h3 class="text-3xl md:text-5xl font-bold mb-6" style="color: #ffffff;">Ready to Get Started?</h3>
+      <p class="text-lg md:text-xl mb-8" style="color: #e7e5e4;">Let's begin with a free discovery call</p><button id="process-whatsapp-btn" class="whatsapp-btn inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold" style="background-color: #25d366; color: #ffffff;">
+       <svg class="w-6 h-6 mr-2" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+       </svg> Schedule Free Consultation </button>
+     </div>
+    </section>
+   </div><!-- CONTACT PAGE -->
+   <div id="contact-page" class="page-section">
+     <section class="w-full py-32 bg-cover bg-center relative" style="background-image: linear-gradient(rgba(28,25,23,0.6), rgba(28,25,23,0.6)), url('hero\,img.jpg');">
+     <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6" style="color:#ff9ae6;">Get In Touch</h2>
+      <p class="text-xl" style="color: #ff9ae6;">Ready to grow your business? Let's start a conversation</p>
+     </div>
+    </section>
+    <section class="w-full py-16 md:py-24">
+     <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16"><!-- Contact Options -->
+       <div>
+        <h3 class="text-3xl font-bold mb-8" style="color: #ff9ae6;">Contact Methods</h3>
+        <div class="space-y-6"><!-- WhatsApp -->
+         <div class="p-6 rounded-xl" style="background-color: #ffffff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+          <div class="flex items-start space-x-4">
+           <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #25d366;">
+            <svg class="w-6 h-6" style="color: #ffffff;" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+           </div>
+           <div class="flex-1">
+            <h4 class="font-bold text-lg mb-2" style="color: #1c1917;">WhatsApp (Preferred)</h4>
+            <p class="mb-3" style="color: #57534e;">Fast responses, usually within 1 hour</p><button id="contact-whatsapp-btn" class="whatsapp-btn inline-flex items-center px-6 py-3 rounded-full font-semibold" style="background-color: #25d366; color: #ffffff;">
+             <svg class="w-5 h-5 mr-2" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+             </svg> Chat on WhatsApp </button>
+           </div>
+          </div>
+         </div><!-- Email -->
+         <div class="p-6 rounded-xl" style="background-color: #ffffff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+          <div class="flex items-start space-x-4">
+           <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #ff9ae6;">
+            <svg class="w-6 h-6" style="color: #ffffff;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+           </div>
+           <div class="flex-1">
+            <h4 class="font-bold text-lg mb-2" style="color: #1c1917;">Email</h4>
+            <p class="mb-3" style="color: #57534e;">For detailed inquiries and proposals</p><a href="mailto:casa.di.lilly4@gmail.com" id="contact-email-link" class="inline-flex items-center font-semibold hover:underline" style="color: #1c1917;"> casa.di.lilly4@gmail.com
+             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+             </svg></a>
+           </div>
+          </div>
+         </div><!-- Response Time -->
+         <div class="p-6 rounded-xl" style="background-color: #f5f5f4;">
+          <h4 class="font-bold text-lg mb-2" style="color: #1c1917;">Response Time</h4>
+          <p style="color: #57534e;">WhatsApp: Within 1 hour (business hours)<br>
+           Email: Within 24 hours</p>
+         </div>
+        </div>
+       </div><!-- Inquiry Form -->
+       <div>
+        <h3 class="text-3xl font-bold mb-8" style="color: #ff9ae6;">Quick Inquiry Form</h3>
+        <form action="https://formsubmit.co/casa.di.lilly4@gmail.com" method="post"  id="contact-form" class="space-y-6"> 
+          <input type="hidden" name="_subject" value="New Website Inquiry - Case di Lilly">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+         <div><label for="name" class="block text-sm font-semibold mb-2" style="color: #1c1917;">Your Name *</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:border-opacity-100" style="border-color: #e7e5e4; background-color: #ffffff; color: #1c1917;">
+         </div>
+         <div><label for="email" class="block text-sm font-semibold mb-2" style="color: #1c1917;">Email Address *</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:border-opacity-100" style="border-color: #e7e5e4; background-color: #ffffff; color: #1c1917;">
+         </div>
+         <div><label for="phone" class="block text-sm font-semibold mb-2" style="color: #1c1917;">Phone Number</label> <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:border-opacity-100" style="border-color: #e7e5e4; background-color: #ffffff; color: #1c1917;">
+         </div>
+         <div><label for="service" class="block text-sm font-semibold mb-2" style="color: #1c1917;">Service Interested In *</label> <select id="service" name="service" required class="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:border-opacity-100" style="border-color: #e7e5e4; background-color: #ffffff; color: #1c1917;"> <option value="">Select a service...</option> <option value="brand-design">Logo &amp; Brand Design</option> <option value="website">Website Design</option> <option value="social-media">Social Media Marketing</option> <option value="whatsapp">WhatsApp Automation</option> <option value="multiple">Multiple Services</option> <option value="not-sure">Not Sure Yet</option> </select>
+         </div>
+         <div><label for="message" class="block text-sm font-semibold mb-2" style="color: #1c1917;">Tell Me About Your Project *</label> <textarea id="message" name="message" required rows="5" class="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:border-opacity-100" style="border-color: #e7e5e4; background-color: #ffffff; color: #1c1917;" placeholder="What are your goals? What challenges are you facing?"></textarea>
+         </div><button type="submit" class="w-full px-8 py-4 rounded-full font-semibold transition-all" style="background-color: #1c1917; color: #ffffff;"> Send Message </button>
+         <div id="form-message" class="hidden p-4 rounded-lg text-center"></div>
+        </form>
+       </div>
+      </div><!-- Additional Info -->
+      <div class="max-w-4xl mx-auto">
+       <div class="p-8 rounded-2xl text-center" style="background-color: #ffffff; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+        <h4 class="text-2xl font-bold mb-4" style="color: #1c1917;">What Happens Next?</h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+         <div>
+          <div class="text-3xl mb-2">
+           ���
+          </div>
+          <p class="font-semibold mb-1" style="color: #1c1917;">1. Quick Response</p>
+          <p class="text-sm" style="color: #57534e;">I'll get back to you within 1-24 hours</p>
+         </div>
+         <div>
+          <div class="text-3xl mb-2">
+           💬
+          </div>
+          <p class="font-semibold mb-1" style="color: #1c1917;">2. Discovery Call</p>
+          <p class="text-sm" style="color: #57534e;">We'll discuss your needs and goals</p>
+         </div>
+         <div>
+          <div class="text-3xl mb-2">
+           📋
+          </div>
+          <p class="font-semibold mb-1" style="color: #1c1917;">3. Custom Proposal</p>
+          <p class="text-sm" style="color: #57534e;">Receive a tailored plan and pricing</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- Footer -->
+   <footer class="w-full py-12" style="background-color: #1c1917; color: #e45dc2">
+    <div class="max-w-7xl mx-auto px-6">
+     <div class="text-center">
+      <h3 class="text-2xl font-bold mb-2" id="footer-business-name">Case di Lilly</h3>
+      <p class="mb-6" style="color: #e45dc2;">Digital Solutions for Small Businesses</p>
+      <div class="flex justify-center space-x-6 mb-6"><button class="footer-whatsapp-btn whatsapp-btn px-6 py-2 rounded-full text-sm font-semibold" style="background-color: #25d366; color: #ffffff;"> WhatsApp </button> <a href="mailto:casa.di.lilly4@gmail.com" id="footer-email-link" class="px-6 py-2 rounded-full text-sm font-semibold" style="background-color: #44403c; color: #ffffff;"> Email </a>
+      </div>
+      <p class="text-sm" style="color: #78716c;">© 2024 <span id="footer-business-name-copy">Case di Lilly</span>. All rights reserved.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      business_name: "Case di Lilly",
+      owner_name: "Phetogo",
+      hero_headline: "Elevate Your Digital Presence",
+      hero_subheading: "Professional websites and social media solutions for small businesses ready to grow online",
+      whatsapp_number: "+27693168961",
+      email_address: "casa.di.lilly4@gmail.com",
+      website_link_1: "#",
+      website_link_2: "#",
+      website_link_3: "#",
+      website_link_4: "#",
+      website_link_5: "#",
+      website_link_6: "#"
+    };
+
+    let config = window.elementSdk ? { ...window.elementSdk.config } : { ...defaultConfig };
+
+    async function onConfigChange(newConfig) {
+      config = { ...newConfig };
+      
+      // Update all business name references
+      const businessName = config.business_name || defaultConfig.business_name;
+      const ownerName = config.owner_name || defaultConfig.owner_name;
+      const heroHeadline = config.hero_headline || defaultConfig.hero_headline;
+      const heroSubheading = config.hero_subheading || defaultConfig.hero_subheading;
+      const whatsappNumber = config.whatsapp_number || defaultConfig.whatsapp_number;
+      const emailAddress = config.email_address || defaultConfig.email_address;
+      
+      // Navigation
+      const navBusinessName = document.getElementById('nav-business-name');
+      if (navBusinessName) navBusinessName.textContent = businessName;
+      
+      // Hero section
+      const heroHeadlineEl = document.getElementById('hero-headline');
+      if (heroHeadlineEl) heroHeadlineEl.textContent = heroHeadline;
+      
+      const heroSubheadingEl = document.getElementById('hero-subheading');
+      if (heroSubheadingEl) heroSubheadingEl.textContent = heroSubheading;
+      
+      // Introduction section
+      const introOwnerName = document.getElementById('intro-owner-name');
+      if (introOwnerName) introOwnerName.textContent = ownerName;
+      
+      const introBusinessName = document.getElementById('intro-business-name');
+      if (introBusinessName) introBusinessName.textContent = businessName;
+      
+      // About page
+      const aboutOwnerName = document.getElementById('about-owner-name');
+      if (aboutOwnerName) aboutOwnerName.textContent = ownerName;
+      
+      const aboutBusinessName = document.getElementById('about-business-name');
+      if (aboutBusinessName) aboutBusinessName.textContent = businessName;
+      
+      // Footer
+      const footerBusinessName = document.getElementById('footer-business-name');
+      if (footerBusinessName) footerBusinessName.textContent = businessName;
+      
+      const footerBusinessNameCopy = document.getElementById('footer-business-name-copy');
+      if (footerBusinessNameCopy) footerBusinessNameCopy.textContent = businessName;
+      
+      // Email links
+      const contactEmailLink = document.getElementById('contact-email-link');
+      if (contactEmailLink) {
+        contactEmailLink.href = `mailto:${emailAddress}`;
+        contactEmailLink.textContent = emailAddress;
+      }
+      
+      const footerEmailLink = document.getElementById('footer-email-link');
+      if (footerEmailLink) {
+        footerEmailLink.href = `mailto:${emailAddress}`;
+      }
+      
+      // Update all WhatsApp buttons
+      updateWhatsAppButtons(whatsappNumber);
+      
+      // Update portfolio website links
+      updatePortfolioLinks(config);
+    }
+    
+    function updatePortfolioLinks(config) {
+      const links = [
+        { id: 'portfolio-link-1', key: 'website_link_1' },
+        { id: 'portfolio-link-2', key: 'website_link_2' },
+        { id: 'portfolio-link-3', key: 'website_link_3' },
+        { id: 'portfolio-link-4', key: 'website_link_4' },
+        { id: 'portfolio-link-5', key: 'website_link_5' },
+        { id: 'portfolio-link-6', key: 'website_link_6' }
+      ];
+      
+      links.forEach(({ id, key }) => {
+        const linkEl = document.getElementById(id);
+        if (linkEl) {
+          const url = config[key] || defaultConfig[key] || '#';
+          linkEl.href = url;
+          linkEl.onclick = (e) => {
+            if (url && url !== '#') {
+              e.preventDefault();
+              e.stopPropagation();
+              window.open(url, '_blank', 'noopener,noreferrer');
+            } else {
+              e.preventDefault();
+            }
+          };
+        }
+      });
+    }
+
+    function updateWhatsAppButtons(phoneNumber) {
+      const whatsappButtons = [
+        'hero-whatsapp-btn',
+        'cta-whatsapp-btn',
+        'services-whatsapp-btn',
+        'portfolio-whatsapp-btn',
+        'process-whatsapp-btn',
+        'contact-whatsapp-btn'
+      ];
+      
+      whatsappButtons.forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+          btn.onclick = () => openWhatsApp(phoneNumber);
+        }
+      });
+      
+      // Footer WhatsApp buttons
+      const footerBtns = document.querySelectorAll('.footer-whatsapp-btn');
+      footerBtns.forEach(btn => {
+        btn.onclick = () => openWhatsApp(phoneNumber);
+      });
+    }
+
+    function openWhatsApp(phoneNumber) {
+      const cleanNumber = phoneNumber.replace(/\D/g, '');
+      const message = encodeURIComponent("Hi! I'm interested in learning more about your digital services.");
+      window.open(`https://wa.me/${cleanNumber}?text=${message}`, '_blank', 'noopener,noreferrer');
+    }
+
+    // Navigation
+    const navLinks = document.querySelectorAll('.nav-link');
+    const pages = document.querySelectorAll('.page-section');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function navigateToPage(targetPage) {
+      // Update active states
+      navLinks.forEach(l => {
+        l.classList.remove('active');
+        l.style.color = '#57534e';
+        if (l.dataset.page === targetPage) {
+          l.classList.add('active');
+          l.style.color = '#1c1917';
+        }
+      });
+      
+      // Show target page
+      pages.forEach(page => {
+        page.classList.remove('active');
+        if (page.id === `${targetPage}-page`) {
+          page.classList.add('active');
+        }
+      });
+      
+      // Close mobile menu
+      mobileMenu.classList.add('hidden');
+      
+      // Scroll to top
+      document.querySelector('.main-wrapper').scrollTo(0, 0);
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetPage = link.dataset.page;
+        navigateToPage(targetPage);
+      });
+    });
+
+    // Mobile menu toggle
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Service cards navigation
+    document.querySelectorAll('.nav-to-services').forEach(card => {
+      card.addEventListener('click', () => {
+        navigateToPage('services');
+      });
+    });
+
+    // About navigation
+    document.querySelectorAll('.nav-to-about').forEach(element => {
+      element.addEventListener('click', () => {
+        navigateToPage('about');
+      });
+    });
+
+    // Portfolio navigation
+    document.querySelectorAll('.nav-to-portfolio').forEach(element => {
+      element.addEventListener('click', () => {
+        navigateToPage('portfolio');
+      });
+    });
+
+    // Process navigation
+    document.querySelectorAll('.nav-to-process').forEach(element => {
+      element.addEventListener('click', () => {
+        navigateToPage('process');
+      });
+    });
+
+    // Contact navigation
+    document.querySelectorAll('.nav-to-contact').forEach(element => {
+      element.addEventListener('click', () => {
+        navigateToPage('contact');
+      });
+    });
+
+    // Contact form
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData);
+      
+      // Show success message
+      formMessage.textContent = 'Thank you! Your message has been sent. I\'ll get back to you soon!';
+      formMessage.style.backgroundColor = '#d1fae5';
+      formMessage.style.color = '#065f46';
+      formMessage.classList.remove('hidden');
+      
+      // Reset form
+      contactForm.reset();
+      
+      // Hide message after 5 seconds
+      setTimeout(() => {
+        formMessage.classList.add('hidden');
+      }, 5000);
+    });
+
+    // Element SDK initialization
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => {
+          return new Map([
+            ['business_name', config.business_name || defaultConfig.business_name],
+            ['owner_name', config.owner_name || defaultConfig.owner_name],
+            ['hero_headline', config.hero_headline || defaultConfig.hero_headline],
+            ['hero_subheading', config.hero_subheading || defaultConfig.hero_subheading],
+            ['whatsapp_number', config.whatsapp_number || defaultConfig.whatsapp_number],
+            ['email_address', config.email_address || defaultConfig.email_address],
+            ['website_link_1', config.website_link_1 || defaultConfig.website_link_1],
+            ['website_link_2', config.website_link_2 || defaultConfig.website_link_2],
+            ['website_link_3', config.website_link_3 || defaultConfig.website_link_3],
+            ['website_link_4', config.website_link_4 || defaultConfig.website_link_4],
+            ['website_link_5', config.website_link_5 || defaultConfig.website_link_5],
+            ['website_link_6', config.website_link_6 || defaultConfig.website_link_6]
+          ]);
+        }
+      });
+    }
+
+    // Initialize with default config
+    onConfigChange(defaultConfig);
+
+    // Scroll progress indicator
+    const mainWrapper = document.querySelector('.main-wrapper');
+    const scrollProgress = document.querySelector('.scroll-progress');
+
+    mainWrapper.addEventListener('scroll', () => {
+      const scrollTop = mainWrapper.scrollTop;
+      const scrollHeight = mainWrapper.scrollHeight - mainWrapper.clientHeight;
+      const scrollPercentage = (scrollTop / scrollHeight) * 100;
+      scrollProgress.style.width = scrollPercentage + '%';
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      root: mainWrapper,
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animate-on-scroll class
+    function observeElements() {
+      const animatedElements = document.querySelectorAll('.animate-on-scroll');
+      animatedElements.forEach(el => observer.observe(el));
+    }
+
+    // Initial observation
+    observeElements();
+
+    // Re-observe when changing pages
+    const originalNavigate = navigateToPage;
+    navigateToPage = function(targetPage) {
+      originalNavigate(targetPage);
+      setTimeout(observeElements, 100);
+    };
+
+    // Smooth scroll to top on page change
+    function smoothScrollTop() {
+      mainWrapper.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Add keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+
+    // Enhanced card hover effects with tilt
+    const cards = document.querySelectorAll('.card-hover');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
+      });
+      
+      card.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        
+        this.style.transform = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+    });
+
+    // Add loading state to WhatsApp buttons
+    function openWhatsAppWithFeedback(phoneNumber) {
+      const btn = event.target.closest('button');
+      if (btn) {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-5 h-5 animate-spin inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg> Opening...';
+        btn.disabled = true;
+        
+        setTimeout(() => {
+          openWhatsApp(phoneNumber);
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        }, 500);
+      } else {
+        openWhatsApp(phoneNumber);
+      }
+    }
+
+    // Update button handlers to use feedback version
+    function updateWhatsAppButtons(phoneNumber) {
+      const whatsappButtons = [
+        'hero-whatsapp-btn',
+        'cta-whatsapp-btn',
+        'services-whatsapp-btn',
+        'portfolio-whatsapp-btn',
+        'process-whatsapp-btn',
+        'contact-whatsapp-btn'
+      ];
+      
+      whatsappButtons.forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+          btn.onclick = () => openWhatsAppWithFeedback(phoneNumber);
+        }
+      });
+      
+      const footerBtns = document.querySelectorAll('.footer-whatsapp-btn');
+      footerBtns.forEach(btn => {
+        btn.onclick = () => openWhatsAppWithFeedback(phoneNumber);
+      });
+    }
+
+    // Add ripple effect to buttons
+    document.querySelectorAll('button, .card-hover').forEach(element => {
+      element.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.style.position = 'absolute';
+        ripple.style.borderRadius = '50%';
+        ripple.style.background = 'rgba(255, 255, 255, 0.5)';
+        ripple.style.pointerEvents = 'none';
+        ripple.style.animation = 'ripple 0.6s ease-out';
+        
+        this.style.position = 'relative';
+        this.style.overflow = 'hidden';
+        this.appendChild(ripple);
+        
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+
+    // Add CSS for ripple animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes ripple {
+        0% {
+          transform: scale(0);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Parallax effect on hero section
+    mainWrapper.addEventListener('scroll', () => {
+      const heroSection = document.querySelector('#home-page > section:first-child');
+      if (heroSection && window.getComputedStyle(heroSection.parentElement).display !== 'none') {
+        const scrolled = mainWrapper.scrollTop;
+        heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
+        heroSection.style.opacity = 1 - (scrolled / 500);
+      }
+    });
+
+    // Initialize WhatsApp buttons
+    updateWhatsAppButtons(config.whatsapp_number || defaultConfig.whatsapp_number);
+    
+    // Initialize portfolio links
+    updatePortfolioLinks(config);
+    
+    // Flip card functionality
+    const flipCards = document.querySelectorAll('.flip-card');
+    flipCards.forEach(card => {
+      card.addEventListener('click', function(e) {
+        // Prevent flipping if clicking on a link or button inside
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('button') || e.target.closest('a')) {
+          return;
+        }
+        this.classList.toggle('flipped');
+      });
+    });
+  </script>
+ <script>
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Collect form values
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value || "Not provided";
+  const service = document.getElementById("service").value;
+  const message = document.getElementById("message").value;
+
+  // Format WhatsApp message
+  const whatsappMessage = 
+`New Website Inquiry 🚀
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Service: ${service}
+
+Message:
+${message}`;
+
+  // ✅ YOUR WhatsApp number (SA format, no spaces)
+  const whatsappNumber = "27693168961";
+
+  // Open WhatsApp
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+  window.open(whatsappURL, "_blank");
+
+  // Open Email
+  const emailSubject = "New Website Inquiry – Case di Lilly";
+  const emailBody = whatsappMessage;
+  const mailtoLink = `mailto:hello@casedililly.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+  window.location.href = mailtoLink;
+
+  // Success message
+  const formMessage = document.getElementById("form-message");
+  formMessage.textContent = "Thank you! Your message has been sent via WhatsApp & Email.";
+  formMessage.style.backgroundColor = "#d1fae5";
+  formMessage.style.color = "#065f46";
+  formMessage.classList.remove("hidden");
+
+  // Reset form
+  this.reset();
+});
+</script>
+
+
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ae0be4865e54ed3',t:'MTc2NTc0NzIwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
