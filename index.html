@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caes di Lilly - AI-Powered Sales Machine</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --color-bg: #0a0a0f;
+      --color-surface: #15151f;
+      --color-text: #e8e8ed;
+      --color-primary: #6366f1;
+      --color-secondary: #818cf8;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+    
+    .app-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background: var(--color-bg);
+      position: relative;
+    }
+    
+    .font-display {
+      font-family: 'Sora', sans-serif;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .gradient-border {
+      position: relative;
+      background: var(--color-surface);
+      border-radius: 16px;
+    }
+    
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), #c084fc);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+    
+    .hero-glow {
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 60%;
+      background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(99, 102, 241, 0.4);
+    }
+    
+    .btn-primary:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .benefit-card {
+      background: var(--color-surface);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .benefit-card:hover {
+      border-color: rgba(99, 102, 241, 0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
+    }
+    
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(129, 140, 248, 0.08));
+      filter: blur(40px);
+      pointer-events: none;
+    }
+    
+    @keyframes float1 {
+      0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+      25% { transform: translate(60px, -50px) rotate(90deg) scale(1.1); }
+      50% { transform: translate(-40px, -80px) rotate(180deg) scale(0.95); }
+      75% { transform: translate(-70px, -30px) rotate(270deg) scale(1.05); }
+      100% { transform: translate(0, 0) rotate(360deg) scale(1); }
+    }
+    
+    @keyframes float2 {
+      0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+      33% { transform: translate(-70px, 60px) rotate(120deg) scale(1.15); }
+      66% { transform: translate(50px, 70px) rotate(240deg) scale(0.9); }
+      100% { transform: translate(0, 0) rotate(360deg) scale(1); }
+    }
+    
+    @keyframes float3 {
+      0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+      40% { transform: translate(50px, 80px) rotate(144deg) scale(1.08); }
+      80% { transform: translate(-30px, 40px) rotate(288deg) scale(0.92); }
+      100% { transform: translate(0, 0) rotate(360deg) scale(1); }
+    }
+    
+    .pulse-ring {
+      animation: pulse-ring 2s ease-out infinite;
+    }
+    
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 0.5; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .input-glow:focus {
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+    }
+    
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-weight: 500;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+    
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+    
+    .toast.success {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+    }
+    
+    .toast.error {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: white;
+    }
+    
+    .spots-counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      position: relative;
+    }
+    
+    .live-dot::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.3);
+      animation: pulse-ring 2s ease-out infinite;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+ </head>
+ <body class="h-full">
+  <div class="app-wrapper" id="app-wrapper"><!-- Floating Decorative Elements with enhanced movement -->
+   <div class="floating-shape" style="width: 400px; height: 400px; top: 5%; left: -10%; animation: float1 28s ease-in-out infinite;"></div>
+   <div class="floating-shape" style="width: 300px; height: 300px; top: 35%; right: -8%; animation: float2 35s ease-in-out infinite; animation-delay: -5s;"></div>
+   <div class="floating-shape" style="width: 250px; height: 250px; bottom: 15%; left: 8%; animation: float3 32s ease-in-out infinite; animation-delay: -10s;"></div>
+   <div class="floating-shape" style="width: 200px; height: 200px; top: 60%; left: 50%; animation: float1 40s ease-in-out infinite; animation-delay: -15s;"></div><!-- Hero Section -->
+   <section class="relative min-h-screen flex items-center justify-center px-6 py-20" style="min-height: 100%;">
+    <div class="hero-glow"></div>
+    <div class="max-w-5xl mx-auto text-center relative z-10"><!-- Logo -->
+     <div class="fade-in mb-8" style="animation-delay: 0.1s;">
+      <div class="inline-flex items-center gap-3">
+       <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
+        <svg width="28" height="28" viewbox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z" /> <path d="M2 17l10 5 10-5" /> <path d="M2 12l10 5 10-5" />
+        </svg>
+       </div><span class="font-display text-2xl font-semibold tracking-tight">Caes di Lilly</span>
+      </div>
+     </div><!-- Headline -->
+     <h1 id="headline" class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 fade-in" style="animation-delay: 0.2s;">Turn your local business into an <span class="gradient-text">AI-powered sales machine</span></h1><!-- Subheadline -->
+     <p id="subheadline" class="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 fade-in" style="animation-delay: 0.3s;">Capture more leads. Automate follow-ups. Book more appointments.<br class="hidden sm:block"><span class="text-gray-500">All without hiring more staff.</span></p><!-- Benefits Grid -->
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-16 fade-in" style="animation-delay: 0.4s;">
+      <div class="benefit-card rounded-xl p-5 text-left">
+       <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center mb-3">
+        <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+        </svg>
+       </div>
+       <p id="benefit-1" class="text-sm font-medium">AI follows up with every lead instantly</p>
+      </div>
+      <div class="benefit-card rounded-xl p-5 text-left">
+       <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center mb-3">
+        <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+        </svg>
+       </div>
+       <p id="benefit-2" class="text-sm font-medium">Never miss calls or messages again</p>
+      </div>
+      <div class="benefit-card rounded-xl p-5 text-left">
+       <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center mb-3">
+        <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /> <line x1="16" y1="2" x2="16" y2="6" /> <line x1="8" y1="2" x2="8" y2="6" /> <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+       </div>
+       <p id="benefit-3" class="text-sm font-medium">Automatic booking &amp; reminders</p>
+      </div>
+      <div class="benefit-card rounded-xl p-5 text-left">
+       <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center mb-3">
+        <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /> <circle cx="9" cy="7" r="4" /> <path d="M23 21v-2a4 4 0 00-3-3.87" /> <path d="M16 3.13a4 4 0 010 7.75" />
+        </svg>
+       </div>
+       <p id="benefit-4" class="text-sm font-medium">Centralized client management (CRM)</p>
+      </div>
+      <div class="benefit-card rounded-xl p-5 text-left">
+       <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center mb-3">
+        <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23" /> <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+        </svg>
+       </div>
+       <p id="benefit-5" class="text-sm font-medium">More sales without more work</p>
+      </div>
+     </div><!-- Founding Member Section -->
+     <div class="gradient-border p-8 sm:p-10 max-w-2xl mx-auto fade-in" style="animation-delay: 0.5s;">
+      <div class="spots-counter mb-6"><span class="live-dot"></span> <span>50 Founding Member Spots</span>
+      </div>
+      <h2 id="founding-title" class="font-display text-2xl sm:text-3xl font-bold mb-4">Be a Founding Member</h2>
+      <p id="founding-description" class="text-gray-400 mb-8">Early members get <span class="text-indigo-400 font-medium">lifetime discounted access</span>, free onboarding, and priority features.</p><!-- Email Form -->
+    <form action="https://forms.gle/APDXRYpqFxHDBrR49 "method="POST"target="hidden_iframe"onsubmit="formSubmitted()" class="flex flex-col sm:flex-row gap-3">
+       <div class="flex-1 relative"><label for="email-input" class="sr-only">Email Address</label> <input type="email" id="email-input" name="email" placeholder="Enter your email address" required class="w-full px-5 py-4 rounded-xl bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none input-glow transition-all">
+       </div><button type="submit" id="submit-btn" class="btn-primary px-8 py-4 rounded-xl font-semibold text-white whitespace-nowrap"> <span id="cta-text">Join Early Access</span> <span id="loading-spinner" class="hidden ml-2">
+         <svg class="animate-spin h-5 w-5 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" /> <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+         </svg></span> </button>
+      </form>
+      <iframe name="hidden_iframe" style="display:none;"></iframe> 
+      <p class="text-xs text-gray-500 mt-4">🔒 No spam, ever. Unsubscribe anytime.</p>
+     </div><!-- Social Proof -->
+     <div class="mt-16 fade-in" style="animation-delay: 0.6s;">
+      <p class="text-sm text-gray-500 mb-4">Trusted by local businesses in</p>
+      <div class="flex flex-wrap justify-center gap-6 text-gray-600"><span>🏥 Healthcare</span> <span>🏠 Real Estate</span> <span>💇 Salons &amp; Spas</span> <span>🔧 Home Services</span> <span>⚖️ Legal</span>
+      </div>
+     </div>
+    </div>
+   </section><!-- Toast Notification -->
+   <div id="toast" class="toast"></div>
+  </div>
+  <script>
+    const defaultConfig = {
+      headline: "Turn your local business into an AI-powered sales machine",
+      subheadline: "Capture more leads. Automate follow-ups. Book more appointments. All without hiring more staff.",
+      benefit_1: "AI follows up with every lead instantly",
+      benefit_2: "Never miss calls or messages again",
+      benefit_3: "Automatic booking & reminders",
+      benefit_4: "Centralized client management (CRM)",
+      benefit_5: "More sales without more work",
+      founding_title: "Be a Founding Member",
+      founding_description: "Early members get lifetime discounted access, free onboarding, and priority features.",
+      cta_text: "Join Early Access",
+      background_color: "#0a0a0f",
+      surface_color: "#15151f",
+      text_color: "#e8e8ed",
+      primary_color: "#6366f1",
+      secondary_color: "#818cf8",
+      font_family: "Sora",
+      font_size: 16
+    };
+
+    // Data SDK handler
+    const dataHandler = {
+      onDataChanged(data) {
+        // Write-only form, no need to display submitted data
+      }
+    };
+
+    // Show toast notification
+    function showToast(message, type) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.className = `toast ${type} show`;
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+
+    // Form submission handler
+   
+
+    // Element SDK implementation
+    async function onConfigChange(config) {
+      const c = { ...defaultConfig, ...config };
+      
+      // Update text content
+      const headlineEl = document.getElementById('headline');
+      headlineEl.innerHTML = c.headline.replace(/(AI-powered sales machine|AI-powered|sales machine)/gi, '<span class="gradient-text">$1</span>');
+      
+      document.getElementById('subheadline').innerHTML = c.subheadline.replace(/All without hiring more staff\.?/gi, '<span class="text-gray-500">$&</span>');
+      
+      document.getElementById('benefit-1').textContent = c.benefit_1;
+      document.getElementById('benefit-2').textContent = c.benefit_2;
+      document.getElementById('benefit-3').textContent = c.benefit_3;
+      document.getElementById('benefit-4').textContent = c.benefit_4;
+      document.getElementById('benefit-5').textContent = c.benefit_5;
+      
+      document.getElementById('founding-title').textContent = c.founding_title;
+      document.getElementById('founding-description').innerHTML = c.founding_description.replace(/(lifetime discounted access)/gi, '<span class="text-indigo-400 font-medium">$1</span>');
+      
+      document.getElementById('cta-text').textContent = c.cta_text;
+      
+      // Apply colors
+      document.documentElement.style.setProperty('--color-bg', c.background_color);
+      document.documentElement.style.setProperty('--color-surface', c.surface_color);
+      document.documentElement.style.setProperty('--color-text', c.text_color);
+      document.documentElement.style.setProperty('--color-primary', c.primary_color);
+      document.documentElement.style.setProperty('--color-secondary', c.secondary_color);
+      
+      document.body.style.background = c.background_color;
+      document.body.style.color = c.text_color;
+      document.getElementById('app-wrapper').style.background = c.background_color;
+      
+      // Apply fonts
+      const fontStack = `${c.font_family}, Inter, sans-serif`;
+      document.querySelectorAll('.font-display').forEach(el => {
+        el.style.fontFamily = fontStack;
+      });
+      
+      // Apply font sizes
+      const baseSize = c.font_size;
+      headlineEl.style.fontSize = '';
+      document.getElementById('subheadline').style.fontSize = `${baseSize * 1.25}px`;
+    }
+
+    function mapToCapabilities(config) {
+      const c = { ...defaultConfig, ...config };
+      
+      const createRecolorable = (key) => ({
+        get: () => c[key],
+        set: (value) => {
+          c[key] = value;
+          window.elementSdk.setConfig({ [key]: value });
+        }
+      });
+      
+      return {
+        recolorables: [
+          createRecolorable('background_color'),
+          createRecolorable('surface_color'),
+          createRecolorable('text_color'),
+          createRecolorable('primary_color'),
+          createRecolorable('secondary_color')
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => c.font_family,
+          set: (value) => {
+            c.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => c.font_size,
+          set: (value) => {
+            c.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      const c = { ...defaultConfig, ...config };
+      return new Map([
+        ['headline', c.headline],
+        ['subheadline', c.subheadline],
+        ['benefit_1', c.benefit_1],
+        ['benefit_2', c.benefit_2],
+        ['benefit_3', c.benefit_3],
+        ['benefit_4', c.benefit_4],
+        ['benefit_5', c.benefit_5],
+        ['founding_title', c.founding_title],
+        ['founding_description', c.founding_description],
+        ['cta_text', c.cta_text]
+      ]);
+    }
+
+    // Initialize SDKs
+    async function init() {
+      // Initialize Element SDK
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange,
+          mapToCapabilities,
+          mapToEditPanelValues
+        });
+      }
+      
+      // Initialize Data SDK
+      if (window.dataSdk) {
+        await window.dataSdk.init(dataHandler);
+      }
+      
+      // Setup form handler
+      
+      // Initial render
+      await onConfigChange(window.elementSdk?.config || defaultConfig);
+    }
+
+    init();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bd47ab010da750b',t:'MTc2ODMwMjk2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>
+function formSubmitted() {
+  showToast('🎉 Welcome to the founding members list!', 'success');
+  document.getElementById('email-input').value = '';
+}
+</script>
+ </body>
+</html>
