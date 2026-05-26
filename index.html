@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa di Lilly | Johannesburg's Digital Sanctuary for Brands Ready to Transcend</title>
+    <meta name="description" content="Casa di Lilly offers complete digital solutions in Johannesburg - brand identity, web design, AI-powered automation, and interior design consulting. Where soul meets silicon.">
+    <meta name="keywords" content="interior designer Johannesburg, brand identity design South Africa, web design Johannesburg, AI automation business, digital marketing agency, home staging South Africa, logo design Pretoria">
+    <meta property="og:title" content="Casa di Lilly | Digital Sanctuary for Brands">
+    <meta property="og:description" content="Complete digital solutions from brand identity to AI automation. Johannesburg's trusted creative partner.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.casadililly.co.za">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #0ea5e9;
+            --accent-light: #38bdf8;
+            --gold: #d4af37;
+            --cream: #faf9f6;
+            --text: #334155;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --gradient-start: #0c4a6e;
+            --gradient-end: #0284c7;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--cream); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+        .nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            padding: 1rem 5%;
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+        }
+        .hero-bg-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+        }
+        .shape-1 {
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            top: -10%;
+            right: -10%;
+            animation: float 20s infinite ease-in-out;
+        }
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #d4af37, #f59e0b);
+            bottom: -10%;
+            left: -5%;
+            animation: float 25s infinite ease-in-out reverse;
+        }
+        .shape-3 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            top: 40%;
+            left: 20%;
+            animation: float 30s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(14, 165, 233, 0.2);
+        }
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        .hero-title .line { display: block; overflow: hidden; }
+        .hero-title .line span { display: inline-block; }
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(14, 165, 233, 0.4);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+        }
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+        .scroll-indicator i { animation: bounce 2s infinite; }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .trust-badge i { color: var(--gold); }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--primary);
+            padding: 3rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+        .stat-item { color: white; position: relative; }
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 5%;
+            background: var(--white);
+            position: relative;
+        }
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .about-image-wrapper { position: relative; }
+        .about-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+        .about-image-accent {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--gold), #f59e0b);
+            border-radius: 20px;
+            bottom: -30px;
+            right: -30px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        .about-content h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .about-content .section-tag {
+            display: inline-block;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        .about-story {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        .mission-vision {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .mv-card {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .mv-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        .mv-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .mv-card h4 i { color: var(--accent); }
+        .mv-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        .floating-badge {
+            position: absolute;
+            background: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            z-index: 10;
+        }
+        .floating-badge.positive {
+            color: #10b981;
+            top: 20%;
+            right: -20px;
+            animation: float-badge 6s ease-in-out infinite;
+        }
+        .floating-badge.clients {
+            color: var(--accent);
+            bottom: 20%;
+            left: -20px;
+            animation: float-badge 8s ease-in-out infinite reverse;
+        }
+        @keyframes float-badge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        @media (max-width: 768px) { .floating-badge { display: none; } }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="Logo.png" alt="Casa di Lilly Logo" class="logo-icon">
+                <div class="logo-text">Casa di Lilly</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Get Started</a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" id="heroBadge">
+                <i data-lucide="sparkles"></i>
+                Johannesburg's Trusted Creative Partner
+            </div>
+            <h1 class="hero-title" id="heroTitle">
+                <span class="line"><span>Where Soul</span></span>
+                <span class="line"><span>Meets Silicon.</span></span>
+            </h1>
+            <p class="hero-subtitle" id="heroSubtitle">
+                We transform businesses into unforgettable brands through strategic design, 
+                cutting-edge web experiences, and AI-powered automation that works while you sleep.
+            </p>
+            <div class="hero-cta-group" id="heroCta">
+                <a href="#contact" class="btn-primary">
+                    Start Your Transformation
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#projects" class="btn-secondary">View Our Work</a>
+            </div>
+            <div class="trust-badges" id="trustBadges">
+                <div class="trust-badge"><i data-lucide="shield-check"></i>Trusted by 50+ Brands</div>
+                <div class="trust-badge"><i data-lucide="award"></i>Award-Winning Design</div>
+                <div class="trust-badge"><i data-lucide="clock"></i>5+ Years Experience</div>
+                <div class="trust-badge"><i data-lucide="map-pin"></i>Based in Johannesburg</div>
+            </div>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator">
+            <span>Scroll to explore</span>
+            <i data-lucide="chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number" data-target="150">0</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="98">0</span>
+                <span class="stat-label">Client Satisfaction %</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="12">0</span>
+                <span class="stat-label">Industry Awards</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="5">0</span>
+                <span class="stat-label">Years of Excellence</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=1000&fit=crop" alt="Lilly - Founder of Casa di Lilly" class="about-image">
+                <div class="about-image-accent"></div>
+                <div class="floating-badge positive">
+                    <i data-lucide="trending-up"></i>300% Avg. Growth
+                </div>
+                <div class="floating-badge clients">
+                    <i data-lucide="users"></i>50+ Happy Clients
+                </div>
+            </div>
+            <div class="about-content">
+                <span class="section-tag">Our Story</span>
+                <h2>From Passion to Purpose</h2>
+                <div class="about-story">
+                    <p>Casa di Lilly was born from a simple belief: that every business deserves to look as remarkable as the service it provides. What started as a one-woman creative studio in a small Johannesburg apartment has grown into a full-service digital sanctuary for brands ready to transcend the ordinary.</p>
+                    <p style="margin-top: 1rem;">I remember my first client—a local bakery that could not afford big-agency prices but deserved big-agency quality. That project taught me everything: that empathy, attention to detail, and relentless dedication create results that speak louder than any marketing budget. Today, that bakery has three locations, and I have carried that same spirit into every project since.</p>
+                </div>
+                <div class="mission-vision">
+                    <div class="mv-card">
+                        <h4><i data-lucide="target"></i>Our Mission</h4>
+                        <p>To empower South African businesses with world-class digital identity and strategic design that drives measurable growth, without the pretension or inflated costs of traditional agencies.</p>
+                    </div>
+                    <div class="mv-card">
+                        <h4><i data-lucide="eye"></i>Our Vision</h4>
+                        <p>To become the most trusted creative partner for ambitious brands across Africa—where innovation meets integrity, and where every pixel, every line of code, and every strategy is crafted with intention and soul.</p>
+                    </div>
+                    <div class="mv-card">
+                        <h4><i data-lucide="heart"></i>Our Values</h4>
+                        <p><strong>Transparency</strong> in every quote. <strong>Excellence</strong> in every deliverable. <strong>Partnership</strong> in every relationship. We do not just serve clients; we grow with them.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="section-header">
+                <span class="section-tag">What We Offer</span>
+                <h2>Complete Digital Solutions</h2>
+                <p>From brand identity to AI-powered automation — everything your business needs to thrive in the digital age, crafted with precision and soul.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="palette"></i></div>
+                    <h3>Brand Identity</h3>
+                    <p>Strategic brand development that captures your essence and speaks directly to your ideal customers.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check-circle"></i>Custom Logo Concepts</li>
+                        <li><i data-lucide="check-circle"></i>Brand Style Guide</li>
+                        <li><i data-lucide="check-circle"></i>Color Palette & Typography</li>
+                        <li><i data-lucide="check-circle"></i>Print-Ready Files</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="monitor"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Stunning, conversion-focused websites that turn visitors into loyal customers and brand advocates.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check-circle"></i>Responsive Design</li>
+                        <li><i data-lucide="check-circle"></i>SEO Optimization</li>
+                        <li><i data-lucide="check-circle"></i>E-commerce Integration</li>
+                        <li><i data-lucide="check-circle"></i>UI/UX Design</li>
+                    </ul>
+                </div>
+                 <div class="service-card">
+                    <div class="service-icon"><i data-lucide="bot"></i></div>
+                    <h3>AI Automation</h3>
+                    <p>Smart systems that handle repetitive tasks, nurture leads, and scale your operations effortlessly.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check-circle"></i>Chatbot Integration</li>
+                        <li><i data-lucide="check-circle"></i>Workflow Automation</li>
+                        <li><i data-lucide="check-circle"></i>CRM Integration</li>
+                        <li><i data-lucide="check-circle"></i>Analytics Dashboard</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="trending-up"></i></div>
+                    <h3>Digital Marketing</h3>
+                    <p>Data-driven strategies that put your brand in front of the right people at the right time.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check-circle"></i>Social Media Management</li>
+                        <li><i data-lucide="check-circle"></i>Content Strategy</li>
+                        <li><i data-lucide="check-circle"></i>Google Ads & SEO</li>
+                        <li><i data-lucide="check-circle"></i>Email Campaigns</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="process-container">
+            <div class="section-header">
+                <span class="section-tag">How We Work</span>
+                <h2>Our Proven Process</h2>
+                <p>A refined methodology that ensures every project delivers exceptional results, on time and on budget.</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3>Discovery</h3>
+                    <p>We dive deep into your brand, audience, and goals to build a strategic foundation for success.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3>Design</h3>
+                    <p>Creative concepts are crafted, refined, and aligned with your vision through collaborative feedback.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3>Develop</h3>
+                    <p>Pixel-perfect implementation with clean code, optimized assets, and rigorous testing.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <h3>Deliver</h3>
+                    <p>Launch with confidence, supported by training, documentation, and ongoing partnership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Services Section Styles */
+        .services {
+            padding: 8rem 5%;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+        }
+        .services-container { max-width: 1400px; margin: 0 auto; }
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-header .section-tag {
+            display: inline-block;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            transform: scale(1.1) rotate(5deg);
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        .service-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+        .service-features li i { color: var(--accent); width: 16px; height: 16px; }
+
+        /* Process Section */
+        .process {
+            padding: 8rem 5%;
+            background: var(--white);
+        }
+        .process-container { max-width: 1400px; margin: 0 auto; }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .step { text-align: center; position: relative; }
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -1rem;
+            width: 2rem;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+        }
+        .step h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+        .step p { color: var(--text-light); font-size: 0.95rem; }
+
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .step::after { display: none; }
+        }
+        @media (max-width: 768px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <!-- Results Slider Section -->
+    <section class="results" id="results">
+        <div class="results-container">
+            <div class="section-header">
+                <span class="section-tag" style="color: var(--gold);">Real Results</span>
+                <h2>Success Stories That Speak</h2>
+                <p>Measurable outcomes for real businesses. These are not just numbers—they are transformations.</p>
+            </div>
+            <div class="results-slider-wrapper">
+                <div class="results-track" id="resultsTrack">
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="result-avatar">SB</div>
+                            <div class="result-meta">
+                                <h4>Sunrise Bakery</h4>
+                                <span>Food & Beverage</span>
+                            </div>
+                        </div>
+                        <div class="result-stat">+340%</div>
+                        <div class="result-desc">Increase in online orders within 6 months of brand redesign and e-commerce launch.</div>
+                        <div class="result-divider"></div>
+                        <div class="result-metrics">
+                            <div class="metric">
+                                <div class="metric-value">3x</div>
+                                <div class="metric-label">Locations</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">12K</div>
+                                <div class="metric-label">Monthly Visitors</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="result-avatar">LW</div>
+                            <div class="result-meta">
+                                <h4>Luxe Wellness Spa</h4>
+                                <span>Health & Beauty</span>
+                            </div>
+                        </div>
+                        <div class="result-stat">+280%</div>
+                        <div class="result-desc">Booking conversion rate improvement after implementing AI chatbot and online scheduling system.</div>
+                        <div class="result-divider"></div>
+                        <div class="result-metrics">
+                            <div class="metric">
+                                <div class="metric-value">95%</div>
+                                <div class="metric-label">Retention</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">4.9</div>
+                                <div class="metric-label">Rating</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="result-avatar">AR</div>
+                            <div class="result-meta">
+                                <h4>African Realty Group</h4>
+                                <span>Real Estate</span>
+                            </div>
+                        </div>
+                        <div class="result-stat">+210%</div>
+                        <div class="result-desc">Lead generation increase through automated CRM integration and targeted landing pages.</div>
+                        <div class="result-divider"></div>
+                        <div class="result-metrics">
+                            <div class="metric">
+                                <div class="metric-value">500+</div>
+                                <div class="metric-label">New Leads</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">R500k</div>
+                                <div class="metric-label">Revenue</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="result-avatar">TF</div>
+                            <div class="result-meta">
+                                <h4>Trendy Fashion SA</h4>
+                                <span>Retail</span>
+                            </div>
+                        </div>
+                        <div class="result-stat">+175%</div>
+                        <div class="result-desc">Social media engagement growth and 40% increase in direct-to-consumer sales via Instagram integration.</div>
+                        <div class="result-divider"></div>
+                        <div class="result-metrics">
+                            <div class="metric">
+                                <div class="metric-value">85K</div>
+                                <div class="metric-label">Followers</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">R850K</div>
+                                <div class="metric-label">Sales</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicated for infinite scroll -->
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="result-avatar">SB</div>
+                            <div class="result-meta">
+                                <h4>Sunrise Bakery</h4>
+                                <span>Food & Beverage</span>
+                            </div>
+                        </div>
+                        <div class="result-stat">+340%</div>
+                        <div class="result-desc">Increase in online orders within 6 months of brand redesign and e-commerce launch.</div>
+                        <div class="result-divider"></div>
+                        <div class="result-metrics">
+                            <div class="metric">
+                                <div class="metric-value">3x</div>
+                                <div class="metric-label">Locations</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">12K</div>
+                                <div class="metric-label">Monthly Visitors</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="result-avatar">LW</div>
+                            <div class="result-meta">
+                                <h4>Luxe Wellness Spa</h4>
+                                <span>Health & Beauty</span>
+                            </div>
+                        </div>
+                        <div class="result-stat">+280%</div>
+                        <div class="result-desc">Booking conversion rate improvement after implementing AI chatbot and online scheduling system.</div>
+                        <div class="result-divider"></div>
+                        <div class="result-metrics">
+                            <div class="metric">
+                                <div class="metric-value">95%</div>
+                                <div class="metric-label">Retention</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">4.9</div>
+                                <div class="metric-label">Rating</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="result-avatar">AR</div>
+                            <div class="result-meta">
+                                <h4>African Realty Group</h4>
+                                <span>Real Estate</span>
+                            </div>
+                        </div>
+                        <div class="result-stat">+210%</div>
+                        <div class="result-desc">Lead generation increase through automated CRM integration and targeted landing pages.</div>
+                        <div class="result-divider"></div>
+                        <div class="result-metrics">
+                            <div class="metric">
+                                <div class="metric-value">500+</div>
+                                <div class="metric-label">New Leads</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">R500k</div>
+                                <div class="metric-label">Revenue</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="result-avatar">TF</div>
+                            <div class="result-meta">
+                                <h4>Trendy Fashion SA</h4>
+                                <span>Retail</span>
+                            </div>
+                        </div>
+                        <div class="result-stat">+175%</div>
+                        <div class="result-desc">Social media engagement growth and 40% increase in direct-to-consumer sales via Instagram integration.</div>
+                        <div class="result-divider"></div>
+                        <div class="result-metrics">
+                            <div class="metric">
+                                <div class="metric-value">85K</div>
+                                <div class="metric-label">Followers</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">R850K</div>
+                                <div class="metric-label">Sales</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="projects-container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2>Past Projects</h2>
+                <p>A curated selection of our most impactful work across branding, web design, and interior spaces.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="Bakery logo.png" alt="Sunrise Bakery Brand Identity">
+                    <div class="project-overlay">
+                        <span class="project-tag">Brand Identity</span>
+                        <h3>The Flour & Strong Bakery</h3>
+                        <p>Complete brand overhaul including logo, packaging, and store interior design for Johannesburg's fastest-growing bakery chain.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="Luxury Spa Website.png" alt="Luxe Wellness Spa Interior">
+                    <div class="project-overlay">
+                        <span class="project-tag">Website Design • Branding • UI/UX</span>
+                        <h3>Luxury Spa Website</h3>
+                        <p>A high-end spa concept built to demonstrate modern booking UX, elegant branding, and premium UI design.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="PMGS Construction.jpg" alt="PMGS Construction Corporate Website">
+                    <div class="project-overlay">
+                        <span class="project-tag">Website Design • Business Identity • Lead System</span>
+                        <h3>PMGS Construction</h3>
+                        <p>Corporate construction website focused on credibility, service clarity, and lead generation.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="Design By Porsche.jpg" alt="Design By Porsche Website">
+                    <div class="project-overlay">
+                        <span class="project-tag">Branding • Web Design • Premium UI</span>
+                        <h3>Design By Porsche</h3>
+                        <p>Premium design-focused website showcasing luxury branding and high-end digital presentation.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="Lead Generation • AI Automation.png" alt="Green Earth Organics Brand">
+                    <div class="project-overlay">
+                        <span class="project-tag">Lead Generation • AI Automation</span>
+                        <h3>Casa di Lilly AI Automation</h3>
+                        <p>Automated solutions for streamlined operations and enhanced productivity.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="SOCIAL MEDIA SYSTEM.png" alt="TechHub Co-working Space">
+                    <div class="project-overlay">
+                        <span class="project-tag">SOCIAL MEDIA SYSTEM</span>
+                        <h3>Marketing</h3>
+                        <p>Content strategy + posting system + engagement automation.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:3rem;">
+      <a href="portfolio.html" class="btn-primary inline-block mt-4 text-xs tracking-widest uppercase text-cyan-400 hover:text-white transition">View website →</a>
+        
+</div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="faq-container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about working with Casa di Lilly. Can not find your answer? Reach out directly.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How much does a brand identity or website design cost in South Africa?
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our pricing is transparent and tailored to your specific needs. Brand identity packages start from <strong>R8,500</strong> for startups, while comprehensive website design projects range from <strong>R15,000 to R75,000</strong> depending on complexity, e-commerce requirements, and custom features. We provide detailed quotes after our free discovery call—no hidden fees, ever. Payment plans are available for projects over R20,000.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What is the typical timeline for a website design project?
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most standard business websites take <strong>4-6 weeks</strong> from kickoff to launch. E-commerce sites or complex platforms with custom functionality typically require <strong>8-12 weeks</strong>. Brand identity projects usually wrap up in <strong>2-3 weeks</strong>. We always provide a detailed timeline during our proposal phase and keep you updated weekly through our project management portal.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do you offer interior design services for homes and offices in Johannesburg?
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We specialize in both <strong>residential and commercial interior design</strong> across Johannesburg, Pretoria, and surrounding areas. Our services include space planning, material selection, 3D visualization, furniture sourcing, and project management. Whether you are refreshing a single room or designing a full office space, we bring the same strategic thinking from our digital work into physical environments.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What makes Casa di Lilly different from other design agencies?
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Three things set us apart: <strong>Personalized attention</strong>—you work directly with the founder, not junior account managers. <strong>Results-driven design</strong>—every pixel is backed by strategy, not just aesthetics. And <strong>integrated services</strong>—we are one of the few agencies in South Africa that seamlessly blends brand identity, web development, AI automation, and interior design under one roof, ensuring complete brand consistency.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can you help my business with AI automation and chatbots?
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. We build <strong>custom AI solutions</strong> including WhatsApp chatbots, website chat assistants, automated email sequences, CRM integrations, and workflow automation. Our AI implementations have helped clients reduce response times by 80% and increase lead conversion by up to 40%. We use tools like Make, Zapier, and custom OpenAI integrations tailored to your business processes.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do you provide ongoing website maintenance and support?
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer <strong>monthly maintenance packages</strong> starting at R1,500/month that include security updates, performance monitoring, content updates, backup management, and priority support. Think of it as insurance for your digital presence—we handle the technical stuff so you can focus on running your business. All our websites come with 30 days of free post-launch support.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How do I get started working with Casa di Lilly?
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Simply click the <strong>"Get Started"</strong> button or send us an email at hello@casadililly.co.za. We will schedule a free 30-minute discovery call to understand your goals, challenges, and vision. From there, we provide a detailed proposal with scope, timeline, and investment within 48 hours. No pressure, no obligation—just clarity and honest advice.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What areas in South Africa do you serve?
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>While we are proudly based in <strong>Johannesburg</strong>, we serve clients nationwide including Pretoria, Cape Town, Durban, and Bloemfontein. Our digital services (web design, branding, AI) are fully remote-capable. For interior design projects, we primarily service Gauteng but are available for select projects in other provinces with travel arrangements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Related Articles -->
+    <section class="related-articles">
+        <div class="related-articles-container">
+            <div class="section-header">
+                <span class="section-tag">Resources</span>
+                <h2>Helpful Resources</h2>
+            </div>
+            <div class="articles-grid">
+                <a href="#" class="article-card">
+                    <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop" alt="Brand Identity Guide">
+                    <div class="article-content">
+                        <span class="article-tag">Branding</span>
+                        <h4>How to Prepare for Your Brand Identity Project</h4>
+                        <p>A checklist of everything you need to gather before starting your rebrand.</p>
+                    </div>
+                </a>
+                <a href="#" class="article-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Website Launch">
+                    <div class="article-content">
+                        <span class="article-tag">Web Design</span>
+                        <h4>Website Launch Checklist: 20 Things to Check</h4>
+                        <p>Ensure your new site is ready for visitors with this comprehensive checklist.</p>
+                    </div>
+                </a>
+                <a href="#" class="article-card">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=400&fit=crop" alt="Interior Design">
+                    <div class="article-content">
+                        <span class="article-tag">Interior Design</span>
+                        <h4>Interior Design Trends for South African Businesses 2026</h4>
+                        <p>What's shaping commercial spaces this year and how to apply it.</p>
+                    </div>
+                </a>
+            </div>
+            <div style="text-align:center; margin-top:3rem;">
+    <a href="#contact" class="btn-primary">
+        Read More Articles & Get Insights
+        <i data-lucide="book-open"></i>
+    </a>
+</div>
+        </div>
+    </section>
+
+    <style>
+        /* Results Section */
+        .results {
+            padding: 8rem 5%;
+            background: var(--primary);
+            color: white;
+            overflow: hidden;
+        }
+        .results-container { max-width: 1400px; margin: 0 auto; }
+        .results .section-header h2 { color: white; }
+        .results .section-header p { color: rgba(255, 255, 255, 0.7); }
+        .results-slider-wrapper {
+            position: relative;
+            margin-top: 4rem;
+            overflow: hidden;
+        }
+        .results-track {
+            display: flex;
+            gap: 2rem;
+            animation: scroll 40s linear infinite;
+            width: max-content;
+        }
+        .results-track:hover { animation-play-state: paused; }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .result-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            min-width: 350px;
+            transition: all 0.3s;
+        }
+        .result-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.02);
+        }
+        .result-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .result-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 1.2rem;
+        }
+        .result-meta h4 { font-size: 1.1rem; margin-bottom: 0.2rem; }
+        .result-meta span { font-size: 0.85rem; opacity: 0.7; }
+        .result-stat {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        .result-desc {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        .result-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 1.5rem 0;
+        }
+        .result-metrics {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .metric { text-align: center; }
+        .metric-value {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--accent-light);
+        }
+        .metric-label {
+            font-size: 0.75rem;
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 8rem 5%;
+            background: var(--white);
+        }
+        .projects-container { max-width: 1400px; margin: 0 auto; }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .project-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            cursor: pointer;
+        }
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .project-card:hover img { transform: scale(1.1); }
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.2) 50%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .project-card:hover .project-overlay { opacity: 1; }
+        .project-tag {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            transform: translateY(20px);
+            transition: transform 0.4s ease 0.1s;
+        }
+        .project-card:hover .project-tag { transform: translateY(0); }
+        .project-card h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            transform: translateY(20px);
+            transition: transform 0.4s ease 0.15s;
+        }
+        .project-card:hover h3 { transform: translateY(0); }
+        .project-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            transform: translateY(20px);
+            transition: transform 0.4s ease 0.2s;
+        }
+        .project-card:hover p { transform: translateY(0); }
+
+        /* FAQ Section */
+        .faq {
+            padding: 8rem 5%;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+        }
+        .faq-container { max-width: 900px; margin: 0 auto; }
+        .faq-list {
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .faq-item {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .faq-item:hover { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); }
+        .faq-item.active {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            transition: color 0.3s;
+        }
+        .faq-question:hover { color: var(--accent); }
+        .faq-question i {
+            transition: transform 0.3s;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 2rem 1.5rem;
+        }
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        .faq-answer strong { color: var(--primary); }
+
+        /* ARTICLE CARDS FIX */
+
+.article-card{
+    background:#ffffff;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid rgba(0,0,0,0.08);
+    transition:all 0.3s ease;
+    text-decoration:none;
+    color:var(--text);
+    box-shadow:0 4px 20px rgba(0,0,0,0.04);
+}
+
+.article-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+}
+
+.article-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+}
+
+.article-content{
+    padding:1.5rem;
+    background:#ffffff;
+}
+
+.article-tag{
+    display:inline-block;
+    background:#e0f2fe;
+    color:#0284c7;
+    padding:0.35rem 0.8rem;
+    border-radius:50px;
+    font-size:0.75rem;
+    font-weight:700;
+    margin-bottom:1rem;
+}
+
+.article-card h4{
+    font-size:1.4rem;
+    line-height:1.3;
+    color:#0f172a;
+    margin-bottom:0.75rem;
+    font-weight:700;
+}
+
+.article-card p{
+    color:#475569;
+    font-size:1rem;
+    line-height:1.7;
+}
+
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 5%;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+        }
+        .cta-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+        }
+        .cta-btn {
+            background: white;
+            color: var(--accent);
+            padding: 1.25rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s;
+        }
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        .footer-column h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+        }
+        .footer-column ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .footer-column a:hover { color: var(--accent-light); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-container { grid-template-columns: 1fr; gap: 3rem; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-container { grid-template-columns: repeat(2, 1fr); }
+            .footer-container { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero-title { font-size: 2.5rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .stats-container { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-container { grid-template-columns: 1fr; gap: 2rem; }
+            .about-image { height: 400px; }
+        }
+    </style>
+
+    <!-- CTA Section -->
+<section class="cta-section" id="contact">
+    <div class="cta-container">
+        <h2>Ready to Transform Your Brand?</h2>
+        <p>
+            Casa di Lilly helps businesses in Johannesburg and across South Africa 
+            build powerful brands, high-converting websites, and AI systems that generate real growth.
+        </p>
+
+        <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
+            
+            <a href="https://calendly.com/lillylengwati/30min" class="cta-btn">
+                Book Free Strategy Call
+                <i data-lucide="calendar"></i>
+            </a>
+
+            <a href="https://forms.gle/cZX7avPHPUjaa8ns7" class="cta-btn" style="background:#0f172a;color:white;">
+                Fill Contact Form
+                <i data-lucide="file-text"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>
+                    <div class="logo-icon" style="width: 30px; height: 30px; font-size: 0.9rem;">
+                        <i data-lucide="flower-2"></i>
+                    </div>
+                    Casa di Lilly
+                </h3>
+                <p>Johannesburg's digital sanctuary for brands ready to transcend. We blend creative soul with technical precision to build businesses that stand out and scale up.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Brand Identity</a></li>
+                    <li><a href="#services">Web Design</a></li>
+                    <li><a href="#services">AI Automation</a></li>
+                    <li><a href="#services">Interior Design</a></li>
+                    <li><a href="#services">Digital Marketing</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#projects">Portfolio</a></li>
+                    <li><a href="#results">Case Studies</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+<div class="footer-column">
+    <h4>Contact</h4>
+    <ul>
+        <li><a href="mailto:info@casadililly.co.za"><i data-lucide="mail"></i> info@casadililly.co.za</a></li>
+        <li><a href="tel:+27693168961"><i data-lucide="phone"></i> +27 69 316 8961</a></li>
+        <li><a href="https://wa.me/27693168961"><i data-lucide="message-circle"></i> WhatsApp Us</a></li>
+        <li><a href="#"><i data-lucide="map-pin"></i> Johannesburg, South Africa</a></li>
+        <li><a href="https://calendly.com/lillylengwati/30min"><i data-lucide="calendar"></i> Book a Call</a></li>
+    </ul>
+</div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Casa di Lilly. All rights reserved. Crafted with soul in Johannesburg.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // GSAP ScrollTrigger Registration
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Navigation Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Hero Animations (kept - these are entrance animations, not section animations)
+        const heroTl = gsap.timeline({ delay: 0.3 });
+        heroTl.from('#heroBadge', { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out' })
+        .from('.hero-title .line span', { y: '100%', duration: 1, stagger: 0.15, ease: 'power4.out' }, '-=0.4')
+        .from('#heroSubtitle', { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out' }, '-=0.6')
+        .from('#heroCta', { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out' }, '-=0.5')
+        .from('#trustBadges', { opacity: 0, duration: 0.8, ease: 'power3.out' }, '-=0.4')
+        .from('#scrollIndicator', { opacity: 0, duration: 0.6, ease: 'power2.out' }, '-=0.2');
+
+        // Stats Counter Animation (kept - this is a number counter, not section animation)
+        const statNumbers = document.querySelectorAll('.stat-number');
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-target'));
+            gsap.to(stat, {
+                innerHTML: target,
+                duration: 2,
+                snap: { innerHTML: 1 },
+                scrollTrigger: { trigger: stat, start: 'top 80%', once: true }
+            });
+        });
+
+        // About Section Animations (kept)
+        gsap.from('.about-image', {
+            x: -50, opacity: 0, duration: 1, ease: 'power3.out',
+            scrollTrigger: { trigger: '.about', start: 'top 60%' }
+        });
+        gsap.from('.about-content > *', {
+            y: 30, opacity: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+            scrollTrigger: { trigger: '.about', start: 'top 50%' }
+        });
+
+        // Process Steps Animation (kept)
+        gsap.from('.step', {
+            y: 40, opacity: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+            scrollTrigger: { trigger: '.process-steps', start: 'top 70%' }
+        });
+
+        // Projects Grid Animation (kept)
+        gsap.from('.project-card', {
+            y: 50, opacity: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out',
+            scrollTrigger: { trigger: '.projects-grid', start: 'top 70%' }
+        });
+
+        // CTA Section Animation (kept)
+        gsap.from('.cta-container > *', {
+            y: 40, opacity: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+            scrollTrigger: { trigger: '.cta-section', start: 'top 60%' }
+        });
+
+        // Section Headers Reveal Animation (kept)
+        document.querySelectorAll('.section-header').forEach(header => {
+            gsap.from(header.children, {
+                y: 30, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+                scrollTrigger: { trigger: header, start: 'top 75%' }
+            });
+        });
+
+        // Parallax Effect for Hero Shapes (kept)
+        gsap.to('.shape-1', {
+            y: -100,
+            scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 }
+        });
+        gsap.to('.shape-2', {
+            y: 80,
+            scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 }
+        });
+
+        // FAQ Toggle Function (NO GSAP - plain JS)
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+        }
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    gsap.to(window, {
+                        duration: 1,
+                        scrollTo: { y: target, offsetY: 80 },
+                        ease: 'power3.inOut'
+                    });
+                }
+            });
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.background = 'white';
+            navLinks.style.padding = '2rem';
+            navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+        }
+
+        // Refresh ScrollTrigger on window resize
+        window.addEventListener('resize', () => { ScrollTrigger.refresh(); });
+    </script>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/27693168961?text=Hello%20Casa%20di%20Lilly,%20I%20would%20like%20to%20enquire%20about%20your%20services"
+   style="
+   position:fixed;
+   bottom:20px;
+   right:20px;
+   background:#25D366;
+   color:white;
+   width:60px;
+   height:60px;
+   border-radius:50%;
+   display:flex;
+   align-items:center;
+   justify-content:center;
+   font-size:28px;
+   z-index:9999;
+   box-shadow:0 10px 25px rgba(0,0,0,0.3);
+   text-decoration:none;">
+   💬
+</a>
+
+</body>
+</html>
