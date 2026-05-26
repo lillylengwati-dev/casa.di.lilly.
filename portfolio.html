@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Casa di Lilly | Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<style>
+body{
+  background:#ffffff;
+  color:rgb(1, 162, 184);
+}
+.glow:hover{
+  box-shadow:0 0 30px rgba(255, 255, 255, 0.25);
+}
+.card{
+  transition:all .5s ease;
+}
+.card:hover{
+  transform:translateY(-8px);
+}
+</style>
+</head>
+<body class="font-sans">
+
+<!-- HERO -->
+<section class="min-h-[60vh] flex flex-col justify-center items-center text-center px-6">
+    <p class="text-xs tracking-[0.5em] text-gray-500 uppercase">Portfolio</p>
+    <h1 class="text-5xl md:text-7xl font-serif mt-4">
+        Real <span class="text-cyan-400">Case Studies</span>
+    </h1>
+    <p class="text-gray-400 max-w-xl mt-6">
+        Luxury digital builds, branding systems and automation flows crafted for real businesses.
+    </p>
+</section>
+
+<!-- GRID -->
+<section class="px-6 pb-32 max-w-7xl mx-auto">
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<!-- CARD 1 -->
+<div class="card glow bg-blue/5 border border-black/10 rounded-2xl overflow-hidden">
+    <div class="h-60 overflow-hidden">
+        <img src="Luxury Spa Website.png" alt="Luxury Spa Website"
+        class="w-full h-full object-cover hover:scale-110 duration-700" />
+    </div>
+    <div class="p-6">
+        <p class="text-xs text-cyan-400 tracking-widest">Website Design • Branding • UI/UX</p>
+        <h3 class="text-2xl font-serif mt-2">Luxury Spa Website</h3>
+        <p class="text-black text-sm mt-3">A high-end spa concept built to demonstrate modern booking UX, elegant branding, and premium UI design.</p>
+        <div class="mt-4 text-sm text-black">↗ 200% increase in online orders</div>
+        <a href="spa.html" class="inline-block mt-4 text-xs tracking-widest uppercase text-cyan-400 hover:text-white transition">View website →</a>  
+    </div>
+</div>
+
+<!-- CARD 2 -->
+<div class="card glow bg-blue/5 border border-black/10 rounded-2xl overflow-hidden">
+    <div class="h-60 overflow-hidden">
+        <img src="PMGS Construction.jpg" alt="PMGS Construction"
+        class="w-full h-full object-cover hover:scale-110 duration-700" />
+    </div>
+    <div class="p-6">
+        <p class="text-xs text-purple-400 tracking-widest">Website Design • Business Identity • Lead System</p>
+        <h3 class="text-2xl font-serif mt-2">PMGS Construction</h3>
+        <p class="text-black text-sm mt-3">Corporate construction website focused on credibility, service clarity, and lead generation. </p>
+        <div class="mt-4 text-sm text-black">↗ 150% more qualified leads</div>
+        <a href="https://pmgs.co.za/" class="inline-block mt-4 text-xs tracking-widest uppercase text-purple-400 hover:text-white transition">View website →</a>
+    </div>
+</div>
+
+<!-- CARD 3 -->
+<div class="card glow bg-blue/5 border border-black/10 rounded-2xl overflow-hidden">
+    <div class="h-60 overflow-hidden">
+        <img src="Design By Porsche.jpg" alt="Design By Porsche"
+        class="w-full h-full object-cover hover:scale-110 duration-700" />
+    </div>
+    <div class="p-6">
+        <p class="text-xs text-pink-400 tracking-widest">Branding • Web Design • Premium UI</p>
+        <h3 class="text-2xl font-serif mt-2">Design By Porsche</h3>
+        <p class="text-black text-sm mt-3">Premium design-focused website showcasing luxury branding and high-end digital presentation.</p>
+        <div class="mt-4 text-sm text-black">↗ 300% more enquiries</div>
+        <a href="https://www.designbyporsche.co.za/" class="inline-block mt-4 text-xs tracking-widest uppercase text-pink-400 hover:text-white transition">View website →</a>
+    </div>
+</div>
+
+<!-- CARD 4 -->
+<div class="card glow bg-blue/5 border border-black/10 rounded-2xl overflow-hidden">
+    <div class="h-60 overflow-hidden">
+        <img src="Lead Generation • AI Automation.png" alt="Lead Generation Automation"
+        class="w-full h-full object-cover hover:scale-110 duration-700" />
+    </div>
+    <div class="p-6">
+        <p class="text-xs text-cyan-400 tracking-widest">AI Systems</p>
+        <h3 class="text-2xl font-serif mt-2">AI AUTOMATION</h3>
+        <p class="text-black text-sm mt-3">Automated solutions for streamlined operations and enhanced productivity.</p>
+        <div class="mt-4 text-sm text-black">↗ 50% reduction in manual tasks</div>
+        <a href="Casa di Lilly AI Automation Services.html" class="inline-block mt-4 text-xs tracking-widest uppercase text-cyan-400 hover:text-white transition">View services→</a>
+    </div>
+</div>
+
+<!-- CARD 5 -->
+<div class="card glow bg-blue/5 border border-black/10 rounded-2xl overflow-hidden">
+    <div class="h-60 overflow-hidden">
+        <img src="Bakery logo.png" alt="Brand Identity"
+        class="w-full h-full object-cover hover:scale-110 duration-700" />
+    </div>
+    <div class="p-6">
+        <p class="text-xs text-purple-400 tracking-widest">BRAND IDENTITY</p>
+        <h3 class="text-2xl font-serif mt-2">The Flour & Strong Bakery</h3>
+        <p class="text-black text-sm mt-3">Full identity system, typography, logo & visual direction.</p>
+        <div class="mt-4 text-sm text-black">↗ High-end positioning unlocked</div>
+        <a href="The Flour & Strong Bakery.pdf" class="inline-block mt-4 text-xs tracking-widest uppercase text-purple-400 hover:text-white transition">View Case Study →</a>
+    </div>
+</div>
+
+<!-- CARD 6 -->
+<div class="card glow bg-blue/5 border border-black/10 rounded-2xl overflow-hidden">
+    <div class="h-60 overflow-hidden">
+        <img src="SOCIAL MEDIA SYSTEM.png" alt="Social Media"
+        class="w-full h-full object-cover hover:scale-110 duration-700" />
+    </div>
+    <div class="p-6">
+        <p class="text-xs text-pink-400 tracking-widest">SOCIAL MEDIA SYSTEM</p>
+        <h3 class="text-2xl font-serif mt-2">Local Business Growth</h3>
+        <p class="text-black text-sm mt-3">Content strategy + posting system + engagement automation.</p>
+        <div class="mt-4 text-sm text-black">↗ 4x engagement growth</div>
+        <a href="Social-Media.html" class="inline-block mt-4 text-xs tracking-widest uppercase text-pink-400 hover:text-white transition">View Case Study →</a>
+    </div>
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section class="text-center py-24 border-t border-white/10">
+    <h2 class="text-4xl md:text-6xl font-serif">Want results like this?</h2>
+    <p class="text-gray-400 mt-4">Let’s build your next digital system.</p>
+    <a href="casadililly_complete.html" class="inline-block mt-8 px-8 py-4 bg-cyan-500/10 border border-cyan-400 rounded-full glow hover:bg-cyan-500/20 transition">
+        Start your Project
+    </a>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa di Lilly AI | Premium Automation Services for Ambitious Businesses</title>
+    <meta name="description" content="Transform your business with world-class AI automation. Specializing in intelligent workflows, automated leads, WhatsApp bots, and CRM systems.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --primary: #0b1329;
+            --secondary: #1c2541;
+            --accent: #3a86ff;
+            --accent-glow: rgba(58, 134, 255, 0.5);
+            --soft-blue: #e0f2fe;
+            --sky-glow: rgba(56, 189, 248, 0.15);
+            --cream: #f8fafc;
+            --text: #334155;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --card-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.25;
+            color: var(--primary);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--cream); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+
+        /* Global Reusable Utilities */
+        .section-padding { padding: 8rem 5%; position: relative; z-index: 5; clear: both; }
+        .container { max-width: 1400px; margin: 0 auto; position: relative; z-index: 10; }
+        
+        .section-header { text-align: center; margin-bottom: 5rem; }
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            background: rgba(58, 134, 255, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+        }
+        .section-header h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 1.25rem; }
+        .section-header p { color: var(--text-light); max-width: 700px; margin: 0 auto; font-size: 1.15rem; }
+
+        /* Sticky Glassmorphic Navbar */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: transparent;
+        }
+        .nav.scrolled {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(15, 19, 41, 0.03);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 5%;
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.45rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 8px 20px var(--accent-glow);
+        }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--accent); }
+        
+        .btn-nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            box-shadow: 0 10px 25px rgba(11, 19, 41, 0.15);
+        }
+        .btn-nav-cta:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px var(--accent-glow);
+        }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; color: var(--primary); }
+
+        /* Premium Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 40%, #fafafa 100%);
+            padding-top: 120px;
+        }
+        .hero-bg-glows { position: absolute; width: 100%; height: 100%; top: 0; left: 0; overflow: hidden; pointer-events: none; }
+        .glow-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.6; mix-blend-mode: multiply; }
+        .orb-1 { width: 700px; height: 700px; background: var(--soft-blue); top: -20%; right: -10%; animation: floatOrb 22s infinite ease-in-out; }
+        .orb-2 { width: 500px; height: 500px; background: rgba(56, 189, 248, 0.3); bottom: -10%; left: -5%; animation: floatOrb 28s infinite ease-in-out reverse; }
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(40px, -60px) scale(1.1); }
+        }
+        .hero-content { text-align: center; max-width: 1000px; padding: 0 2rem; z-index: 10; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+            opacity: 0; transform: translateY(20px);
+        }
+        .hero-badge i { color: var(--accent); }
+        .hero-title { font-size: clamp(2.8rem, 6vw, 5.2rem); color: var(--primary); margin-bottom: 1.75rem; font-weight: 700; letter-spacing: -1px; }
+        .hero-title .line-span { display: block; overflow: hidden; }
+        .hero-title .line-span span { display: inline-block; transform: translateY(100%); }
+        .hero-subtitle { font-size: clamp(1.15rem, 2.5vw, 1.45rem); color: var(--text-light); margin-bottom: 3rem; max-width: 750px; margin-left: auto; margin-right: auto; opacity: 0; transform: translateY(20px); font-weight: 400; }
+        .hero-cta-group { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; opacity: 0; transform: translateY(20px); }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            border: 1px solid transparent;
+            box-shadow: 0 15px 35px rgba(11, 19, 41, 0.2);
+        }
+        .btn-primary:hover { background: var(--accent); transform: translateY(-3px); box-shadow: 0 20px 40px var(--accent-glow); }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--primary);
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            border: 1px solid var(--glass-border);
+        }
+        .btn-secondary:hover { background: var(--white); transform: translateY(-3px); box-shadow: var(--card-shadow); }
+
+        /* About Section */
+        .about { background: var(--white); position: relative; border-bottom: 1px solid rgba(0,0,0,0.02); }
+        .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 6rem; align-items: center; }
+        .about-tagline { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); color: var(--primary); line-height: 1.3; margin-bottom: 1.5rem; }
+        .about-text { color: var(--text-light); font-size: 1.15rem; line-height: 1.8; margin-bottom: 2rem; }
+        .about-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+        .about-glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 3rem;
+            width: 100%;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+        .about-glow-core {
+            position: absolute; width: 150px; height: 150px; background: var(--accent);
+            filter: blur(50px); top: 20%; left: 30%; opacity: 0.25; z-index: 1; animation: corePulse 6s infinite ease-in-out;
+        }
+        @keyframes corePulse { 0%, 100% { transform: scale(1); opacity: 0.25; } 50% { transform: scale(1.3); opacity: 0.4; } }
+        .ai-pulse-line { height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); margin: 1.5rem 0; position: relative; overflow: hidden; }
+        .ai-pulse-line::after {
+            content: ''; position: absolute; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, #fff, transparent); animation: pulseScan 3s infinite linear;
+        }
+        @keyframes pulseScan { 0% { left: -100%; } 100% { left: 100%; } }
+
+        /* Services Grid Section */
+        .services { background: var(--cream); position: relative; }
+        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-top: 2rem; }
+        
+        .service-card {
+            background: var(--white);
+            border-radius: 28px;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: var(--card-shadow);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .service-card::before {
+            content: ''; position: absolute; inset: 0; border-radius: 28px; padding: 2px;
+            background: linear-gradient(135deg, var(--white), transparent, transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
+            border-color: rgba(58, 134, 255, 0.2);
+        }
+        .service-icon-wrapper {
+            width: 60px; height: 60px; background: var(--soft-blue); border-radius: 18px;
+            display: flex; align-items: center; justify-content: center; color: var(--accent);
+            margin-bottom: 2rem; transition: all 0.4s ease;
+        }
+        .service-card:hover .service-icon-wrapper { background: var(--primary); color: var(--white); transform: scale(1.05) translateZ(20px); }
+        .service-card h3 { font-size: 1.6rem; color: var(--primary); margin-bottom: 1rem; transform: translateZ(15px); }
+        .service-card p { color: var(--text-light); font-size: 1rem; margin-bottom: 2rem; line-height: 1.7; transform: translateZ(10px); }
+        
+        .feature-list-title { font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary); margin-bottom: 1rem; }
+        .service-features { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; transform: translateZ(5px); }
+        .service-features li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem; color: var(--text); }
+        .service-features li i { color: var(--accent); width: 16px; height: 16px; flex-shrink: 0; }
+
+        /* Why Choose Us Section */
+        .why-choose { background: var(--white); position: relative; }
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+        .why-card {
+            background: rgba(248, 250, 252, 0.5); border: 1px solid rgba(15, 23, 42, 0.03);
+            border-radius: 24px; padding: 2.5rem; text-align: left; transition: all 0.4s ease;
+        }
+        .why-card:hover { background: var(--white); box-shadow: var(--card-shadow); transform: translateY(-5px); }
+        .why-icon { width: 50px; height: 50px; background: rgba(58, 134, 255, 0.08); color: var(--accent); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+        .why-card h3 { font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--primary); }
+        .why-card p { color: var(--text-light); font-size: 0.95rem; }
+
+        /* Process Section Timeline */
+        .process { background: var(--primary); color: white; position: relative; overflow: hidden; }
+        .process .section-header h2 { color: white; }
+        .process .section-header p { color: rgba(255,255,255,0.6); }
+        .process-bg-glow { position: absolute; width: 600px; height: 600px; background: var(--accent); filter: blur(140px); opacity: 0.15; top: 30%; left: 25%; pointer-events: none; }
+        
+        .timeline { position: relative; max-width: 1200px; margin: 4rem auto 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .timeline-line { position: absolute; top: 40px; left: 0; width: 100%; height: 2px; background: rgba(255,255,255,0.1); z-index: 1; }
+        .timeline-progress { position: absolute; top: 40px; left: 0; width: 0%; height: 2px; background: var(--accent); z-index: 2; }
+        
+        .timeline-step { text-align: center; position: relative; z-index: 3; }
+        .step-node {
+            width: 80px; height: 80px; background: var(--secondary); border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;
+            color: var(--accent); font-size: 1.5rem; font-weight: 700; font-family: 'Playfair Display', serif;
+            transition: all 0.4s ease; box-shadow: 0 0 0 0 rgba(58, 134, 255, 0);
+        }
+        .timeline-step.active .step-node {
+            background: var(--accent); color: white; border-color: var(--accent);
+            box-shadow: 0 0 30px var(--accent-glow); transform: scale(1.05);
+        }
+        .timeline-step h3 { font-size: 1.35rem; color: white; margin-bottom: 0.75rem; }
+        .timeline-step p { color: rgba(255,255,255,0.6); font-size: 0.95rem; padding: 0 1rem; }
+
+        /* Testimonials Section */
+        .testimonials { background: var(--white); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+        .testimonial-card {
+            background: var(--cream); border: 1px solid rgba(0,0,0,0.02); border-radius: 28px;
+            padding: 3rem; display: flex; flex-direction: column; justify-content: space-between;
+            position: relative; transition: all 0.4s ease;
+        }
+        .testimonial-card:hover { background: var(--white); box-shadow: var(--card-shadow); transform: translateY(-5px); }
+        .quote-icon { position: absolute; top: 2rem; right: 2rem; color: rgba(58, 134, 255, 0.1); font-size: 4rem; pointer-events: none; line-height: 1; }
+        .testimonial-text { font-size: 1.05rem; color: var(--text); font-style: italic; margin-bottom: 2.5rem; position: relative; z-index: 2; line-height: 1.7; }
+        .client-profile { display: flex; align-items: center; gap: 1rem; }
+        .client-avatar { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #bae6fd, #3a86ff); display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; }
+        .client-info h4 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.15rem; }
+        .client-info span { font-size: 0.85rem; color: var(--text-light); font-weight: 500; }
+
+        /* Premium Conversion Call To Action */
+        .cta-section { padding: 9rem 5%; background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%); color: white; overflow: hidden; }
+        .cta-container { max-width: 900px; margin: 0 auto; text-align: center; position: relative; z-index: 5; }
+        .cta-section h2 { font-size: clamp(2.5rem, 5vw, 4rem); color: white; margin-bottom: 1.5rem; }
+        .cta-section p { font-size: 1.25rem; color: rgba(255,255,255,0.7); margin-bottom: 3.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .cta-btn-group { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+        .btn-cta-white { background: var(--white); color: var(--primary); padding: 1.2rem 2.8rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.05rem; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+        .btn-cta-white:hover { transform: translateY(-3px); background: var(--soft-blue); box-shadow: 0 20px 45px rgba(58, 134, 255, 0.3); }
+        .btn-cta-outline { background: transparent; color: white; padding: 1.2rem 2.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.05rem; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem; border: 2px solid rgba(255,255,255,0.2); }
+        .btn-cta-outline:hover { background: rgba(255,255,255,0.05); border-color: white; transform: translateY(-3px); }
+        .cta-sphere-glow { position: absolute; width: 500px; height: 500px; background: var(--accent); filter: blur(130px); opacity: 0.2; bottom: -50%; right: -20%; pointer-events: none; }
+
+        /* Footer Section */
+        .footer { background: #070c19; color: white; padding: 5rem 5% 2rem; border-top: 1px solid rgba(255,255,255,0.03); }
+        .footer-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 5rem; margin-bottom: 4rem; }
+        .footer-brand p { color: rgba(255,255,255,0.5); font-size: 0.95rem; line-height: 1.8; margin-top: 1.5rem; margin-bottom: 2rem; max-width: 400px; }
+        .social-row { display: flex; gap: 1rem; }
+        .social-link { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.04); display: flex; align-items: center; justify-content: center; color: white; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.05); text-decoration: none; }
+        .social-link:hover { background: var(--accent); color: white; transform: translateY(-3px); box-shadow: var(--accent-glow); border-color: var(--accent); }
+        .footer-column h4 { font-size: 1.1rem; margin-bottom: 1.75rem; color: var(--accent); letter-spacing: 0.5px; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .footer-column ul { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+        .footer-column a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; display: flex; align-items: center; gap: 0.6rem; }
+        .footer-column a:hover { color: var(--accent); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.9rem; }
+
+        /* Responsive Breakpoints Overhaul */
+        @media (max-width: 1150px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+            .timeline { grid-template-columns: repeat(2, 1fr); gap: 4rem 2rem; }
+            .timeline-line { display: none; }
+        }
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; gap: 4rem; }
+            .footer-container { grid-template-columns: 1fr; gap: 3.5rem; }
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--white); padding: 2.5rem; box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+                gap: 1.75rem; border-bottom: 1px solid rgba(0,0,0,0.05); text-align: center;
+            }
+            .nav-links.active { display: flex; }
+            .btn-nav-cta { display: none; }
+            .mobile-menu-btn { display: block; }
+            .why-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .timeline { grid-template-columns: 1fr; }
+            .section-padding { padding: 6rem 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="Logo.png" class="logo">
+                <img src="Logo.png" alt="Casa di Lilly Logo" class="logo-icon">
+                <div class="logo.png"></div>
+                Casa di Lilly
+            </a>       
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose">Benefits</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+            </ul>
+            <a href="https://calendly.com/lillylengwati/30min" class="btn-nav-cta">Book Consultation</a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg-glows">
+            <div class="glow-orb orb-1"></div>
+            <div class="glow-orb orb-2"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" id="heroBadge">
+                <i data-lucide="sparkles"></i> High-End Enterprise AI Automation Agency
+            </div>
+            <h1 class="hero-title" id="heroTitle">
+                <span class="line-span"><span>AI Automation That Helps</span></span>
+                <span class="line-span"><span>Your Business Work Smarter</span></span>
+            </h1>
+            <p class="hero-subtitle" id="heroSubtitle">
+                We help businesses automate leads, bookings, customer support, follow-ups, and sales using powerful AI systems.
+            </p>
+            <div class="hero-cta-group" id="heroCta">
+                <a href="https://calendly.com/lillylengwati/30min" class="btn-primary">
+                    Book a Free Consultation <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#services" class="btn-secondary">
+                    View Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about section-padding" id="about">
+        <div class="container about-grid">
+            <div>
+                <span class="section-tag"><i data-lucide="info"></i> Intelligent Scaling</span>
+                <h2 class="about-tagline">Where Sophisticated Systems Engineering Meets Infinite Modern Growth.</h2>
+                <p class="about-text">
+                    Casa di Lilly helps modern businesses save time, increase sales, and improve customer experience through intelligent AI automation systems. We replace chaotic manual task management with elegant, silent, automated workflows that keep operations thriving continuously.
+                </p>
+                <a href="#contact" class="btn-primary">Optimize Your Workflow</a>
+            </div>
+            <div class="about-visual">
+                <div class="about-glass-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <span style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent);">Operational Efficiency</span>
+                        <i data-lucide="activity" style="color: var(--accent);"></i>
+                    </div>
+                    <div style="font-size: 2.5rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--primary);">98.4%</div>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">Manual Operations Displaced Seamlessly</p>
+                    <div class="ai-pulse-line"></div>
+                    <p style="font-size: 0.85rem; color: var(--text); line-height: 1.6;">Continuous systemic diagnostic active: system parameters scaling without human interaction dependencies.</p>
+                </div>
+                <div class="about-glow-core"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i data-lucide="layers"></i> Capabilities</span>
+                <h2>Next-Generation AI Services</h2>
+                <p>Architected completely to delete manual inefficiencies and drive scale into every operational corner of your enterprise workflow.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon-wrapper"><i data-lucide="message-square"></i></div>
+                    <h3>AI WhatsApp Automation</h3>
+                    <p>Automatically reply to customers, answer questions, capture leads, and book appointments 24/7 through WhatsApp AI systems.</p>
+                    <div class="feature-list-title">Core Architecture</div>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i> Instant replies</li>
+                        <li><i data-lucide="check"></i> Lead capture</li>
+                        <li><i data-lucide="check"></i> Appointment booking</li>
+                        <li><i data-lucide="check"></i> Support automation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper"><i data-lucide="git-pull-request"></i></div>
+                    <h3>AI Lead Follow-Up Systems</h3>
+                    <p>Never lose a lead again. Our AI systems automatically follow up with potential customers through WhatsApp, email, and SMS.</p>
+                    <div class="feature-list-title">Core Architecture</div>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i> Automated reminders</li>
+                        <li><i data-lucide="check"></i> Lead nurturing</li>
+                        <li><i data-lucide="check"></i> Follow-up sequences</li>
+                        <li><i data-lucide="check"></i> Higher conversion rates</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper"><i data-lucide="calendar"></i></div>
+                    <h3>AI Appointment Booking</h3>
+                    <p>Allow customers to schedule appointments automatically without manual back-and-forth communication.</p>
+                    <div class="feature-list-title">Core Architecture</div>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i> Calendar integration</li>
+                        <li><i data-lucide="check"></i> Auto confirmations</li>
+                        <li><i data-lucide="check"></i> Reminder messages</li>
+                        <li><i data-lucide="check"></i> Easy scheduling</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper"><i data-lucide="instagram"></i></div>
+                    <h3>Instagram & Facebook DM Automation</h3>
+                    <p>Automatically respond to Instagram and Facebook messages, collect leads, and guide customers through your services.</p>
+                    <div class="feature-list-title">Core Architecture</div>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i> Automated DMs</li>
+                        <li><i data-lucide="check"></i> Instant responses</li>
+                        <li><i data-lucide="check"></i> Lead generation</li>
+                        <li><i data-lucide="check"></i> Customer engagement</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper"><i data-lucide="bot"></i></div>
+                    <h3>AI Chatbots for Websites</h3>
+                    <p>Add intelligent AI chatbots to your website that answer customer questions and generate leads automatically.</p>
+                    <div class="feature-list-title">Core Architecture</div>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i> 24/7 customer support</li>
+                        <li><i data-lucide="check"></i> Smart AI responses</li>
+                        <li><i data-lucide="check"></i> Lead qualification</li>
+                        <li><i data-lucide="check"></i> Website integration</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper"><i data-lucide="help-circle"></i></div>
+                    <h3>AI Customer Support</h3>
+                    <p>Reduce customer support workload with AI systems that handle frequently asked questions instantly.</p>
+                    <div class="feature-list-title">Core Architecture</div>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i> Faster support</li>
+                        <li><i data-lucide="check"></i> Reduced response time</li>
+                        <li><i data-lucide="check"></i> Automated help desk</li>
+                        <li><i data-lucide="check"></i> Improved UX</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper"><i data-lucide="mail"></i></div>
+                    <h3>Automated Email & SMS Reminders</h3>
+                    <p>Send automated reminders, updates, promotions, and follow-ups to customers without manual work.</p>
+                    <div class="feature-list-title">Core Architecture</div>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i> SMS reminders</li>
+                        <li><i data-lucide="check"></i> Email automation</li>
+                        <li><i data-lucide="check"></i> Marketing campaigns</li>
+                        <li><i data-lucide="check"></i> Customer retention</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper"><i data-lucide="database"></i></div>
+                    <h3>CRM & Client Management Automation</h3>
+                    <p>Manage leads, customers, and sales pipelines efficiently with automated CRM systems.</p>
+                    <div class="feature-list-title">Core Architecture</div>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i> Lead tracking</li>
+                        <li><i data-lucide="check"></i> Client management</li>
+                        <li><i data-lucide="check"></i> Sales pipeline auto</li>
+                        <li><i data-lucide="check"></i> Centralized comms</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper"><i data-lucide="star"></i></div>
+                    <h3>AI Review Request Automation</h3>
+                    <p>Automatically request Google reviews and customer feedback after completed services.</p>
+                    <div class="feature-list-title">Core Architecture</div>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i> Automated requests</li>
+                        <li><i data-lucide="check"></i> Reputation management</li>
+                        <li><i data-lucide="check"></i> Increased online trust</li>
+                        <li><i data-lucide="check"></i> Feedback collection</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper"><i data-lucide="filter"></i></div>
+                    <h3>AI Sales Funnel Automation</h3>
+                    <p>Build automated systems that guide customers from interest to purchase without manual selling.</p>
+                    <div class="feature-list-title">Core Architecture</div>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i> Funnel automation</li>
+                        <li><i data-lucide="check"></i> Lead nurturing</li>
+                        <li><i data-lucide="check"></i> Automated sales processes</li>
+                        <li><i data-lucide="check"></i> Conversion optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose section-padding" id="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i data-lucide="shield-check"></i> Competitive Edge</span>
+                <h2>Architected for Pure Performance</h2>
+                <p>Why modern operations migrate away from human dependency frameworks to choose our bespoke AI blueprints.</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon"><i data-lucide="clock"></i></div>
+                    <h3>Save Time</h3>
+                    <p>Reclaim hours daily as AI gracefully takes complete control over your critical, repetitive tasks.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i data-lucide="trending-up"></i></div>
+                    <h3>Increase Sales</h3>
+                    <p>Capture every single inbound signal instantly and systematically push conversions higher.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i data-lucide="zap"></i></div>
+                    <h3>Automate Repetitive Tasks</h3>
+                    <p>Eradicate data-entry errors completely with beautiful digital straight-through processes.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i data-lucide="smile"></i></div>
+                    <h3>Improve Customer Experience</h3>
+                    <p>Exceed digital consumer patterns with ultra-fast, tailored contextual answers.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i data-lucide="infinity"></i></div>
+                    <h3>24/7 AI Assistance</h3>
+                    <p>Your business remains dynamic and revenue-ready while your physical team disconnects.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i data-lucide="expand"></i></div>
+                    <h3>Scale Faster</h3>
+                    <p>Grow transaction volume dramatically without adding complex overhead costs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process section-padding" id="process">
+        <div class="process-bg-glow"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="background:rgba(255,255,255,0.08); color:white;"><i data-lucide="milestone"></i> Deployment Plan</span>
+                <h2>The Blueprint to Full Autonomy</h2>
+                <p>Our precise, methodical four-step timeline to engineer and launch your company's intelligent core.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-progress" id="timelineProgress"></div>
+
+                <div class="timeline-step">
+                    <div class="step-node">01</div>
+                    <h3>Consultation</h3>
+                    <p>We break down your current workflow blockages and outline optimal automation targets.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-node">02</div>
+                    <h3>Strategy & Setup</h3>
+                    <p>Bespoke architecture maps are drawn up alongside logic matrix designs built for your stack.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-node">03</div>
+                    <h3>Automation Integration</h3>
+                    <p>Our engineers deploy custom logic models, APIs, and neural prompts smoothly into place.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-node">04</div>
+                    <h3>Launch & Support</h3>
+                    <p>Systems switch active under continuous observation to guarantee perfect data scaling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials section-padding" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i data-lucide="message-circle"></i> Proven Proof</span>
+                <h2>Validated by Industry Innovators</h2>
+                <p>Read how forward-thinking executives transformed operational workflows via Casa di Lilly integrations.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="testimonial-text">
+                        The WhatsApp AI integration completely reinvented our customer capture framework. We saved over 35 operational hours in our very first week while booking 40% more consultations.
+                    </p>
+                    <div class="client-profile">
+                        <div class="client-avatar">EM</div>
+                        <div class="client-info">
+                            <h4>Elena Meyer</h4>
+                            <span>Director, Apex Consult</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="testimonial-text">
+                        I was deeply critical of automation systems initially, but Casa di Lilly designed an absolute work of genius. Our lead nurturing pipelines trigger instantly across all systems flawlessly.
+                    </p>
+                    <div class="client-profile">
+                        <div class="client-avatar">MK</div>
+                        <div class="client-info">
+                            <h4>Marcus Khumalo</h4>
+                            <span>Founder, Vanguard Luxury Estates</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="testimonial-text">
+                        Their custom CRM workflows and review generation mechanics completely solved our internal bottlenecks. Scaling transactions is effortless now without requiring more staff.
+                    </p>
+                    <div class="client-profile">
+                        <div class="client-avatar">SR</div>
+                        <div class="client-info">
+                            <h4>Sienna Radcliff</h4>
+                            <span>COO, Lumina Medical Suites</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section section-padding" id="contact">
+        <div class="cta-sphere-glow"></div>
+        <div class="cta-container">
+            <h2>Ready to Automate Your Business?</h2>
+            <p>Let Casa di Lilly build smart AI systems that save you time and help your business grow faster.</p>
+            <div class="cta-btn-group">
+                <a href="https://calendly.com/lillylengwati/30min" class="btn-cta-white">
+                    Book Consultation <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="https://wa.me/27693168961" class="btn-cta-outline">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo" style="color:white;">
+                    <div class="logo-icon"><i data-lucide="cpu"></i></div>
+                    Casa di Lilly AI
+                </a>
+                <p>Sophisticated intelligence layers engineering continuous structural scalability for ambitious modern enterprises globally.</p>
+                <div class="social-row">
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Capabilities</h4>
+                <ul>
+                    <li><a href="#services">WhatsApp AI</a></li>
+                    <li><a href="#services">Lead Nurturing</a></li>
+                    <li><a href="#services">Booking Automations</a></li>
+                    <li><a href="#services">Website Assistants</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Contact</h4>
+    <ul>
+        <li><a href="mailto:info@casadililly.co.za"><i data-lucide="mail"></i> info@casadililly.co.za</a></li>
+        <li><a href="tel:+27693168961"><i data-lucide="phone"></i> +27 69 316 8961</a></li>
+        <li><a href="https://wa.me/27693168961"><i data-lucide="message-circle"></i> WhatsApp Us</a></li>
+        <li><a href="#"><i data-lucide="map-pin"></i> Johannesburg, South Africa</a></li>
+        <li><a href="https://calendly.com/lillylengwati/30min"><i data-lucide="calendar"></i> Book a Call</a></li>
+    </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Casa di Lilly AI. All rights reserved. Architected with technical precision and soul.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Premium SVG Icons
+        lucide.createIcons();
+
+        // GSAP ScrollTrigger Registration
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+        // Sticky Navbar Transition
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Sidebar Functionality
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth Scrolling Anchor Mapping
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    document.getElementById('navLinks').classList.remove('active');
+                    gsap.to(window, {
+                        duration: 1.2,
+                        scrollTo: { y: target, offsetY: 70 },
+                        ease: 'power4.inOut'
+                    });
+                }
+            });
+        });
+
+        // GSAP Hero Entry Sequencing
+        const heroTl = gsap.timeline({ delay: 0.2 });
+        heroTl.to('#heroBadge', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' })
+              .to('#heroTitle .line-span span', { y: 0, duration: 1.1, stagger: 0.15, ease: 'power4.out' }, '-=0.5')
+              .to('#heroSubtitle', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.7')
+              .to('#heroCta', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.6');
+
+        // Scroll Reveal: General Section Header Transitions
+        document.querySelectorAll('.section-header').forEach(header => {
+            gsap.from(header.children, {
+                y: 35,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.12,
+                ease: 'power3.out',
+                scrollTrigger: { trigger: header, start: 'top 85%' }
+            });
+        });
+
+        // Scroll Reveal: About Section Elements
+        gsap.from('.about-text, .about-tagline, .about .btn-primary', {
+            y: 40, opacity: 0, duration: 0.9, stagger: 0.15, ease: 'power3.out',
+            scrollTrigger: { trigger: '.about', start: 'top 75%' }
+        });
+        gsap.from('.about-glass-card', {
+            scale: 0.95, opacity: 0, duration: 1, ease: 'power2.out',
+            scrollTrigger: { trigger: '.about-visual', start: 'top 70%' }
+        });
+
+
+
+        // Dynamic Process Timeline Animation Loop
+        const steps = document.querySelectorAll('.timeline-step');
+        const progressTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.timeline',
+                start: 'top 70%',
+                end: 'bottom 40%',
+                scrub: 1
+            }
+        });
+
+        progressTimeline.to('#timelineProgress', { width: '100%', ease: 'none' });
+
+        steps.forEach((step, idx) => {
+            ScrollTrigger.create({
+                trigger: step,
+                start: 'top 75%',
+                onEnter: () => step.classList.add('active'),
+                onLeaveBack: () => step.classList.remove('active')
+            });
+        });
+
+
+
+        // Scroll Reveal: Conversions Block
+        gsap.from('.cta-container > *', {
+            y: 35, opacity: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out',
+            scrollTrigger: { trigger: '.cta-section', start: 'top 75%' }
+        });
+
+        // Interactive 3D Card Hover Mechanism (Tilt Effect)
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const box = card.getBoundingClientRect();
+                const x = e.clientX - box.left - (box.width / 2);
+                const y = e.clientY - box.top - (box.height / 2);
+                // Mild limits to protect usability parameters
+                card.style.transform = `perspective(1000px) rotateX(${-y / 25}deg) rotateY(${x / 25}deg) translateY(-8px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+            });
+        });
+
+        // Handle viewport adjustments gracefully
+        window.addEventListener('resize', () => { ScrollTrigger.refresh(); });
+    </script>
+
+         <!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/27693168961?text=Hello%20Casa%20di%20Lilly,%20I%20would%20like%20to%20enquire%20about%20your%20services"
+   style="
+   position:fixed;
+   bottom:20px;
+   right:20px;
+   background:#25D366;
+   color:white;
+   width:60px;
+   height:60px;
+   border-radius:50%;
+   display:flex;
+   align-items:center;
+   justify-content:center;
+   font-size:28px;
+   z-index:9999;
+   box-shadow:0 10px 25px rgba(0,0,0,0.3);
+   text-decoration:none;">
+   💬
+</a>
+
+</body>
+</html>
