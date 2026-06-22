@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrightSmile Dental Care - Premium Dental Care in Johannesburg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--primary:#3b82f6;--primary-dark:#2563eb;--accent:#34d399;--dark:#0f172a;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-300:#cbd5e1;--gray-400:#94a3b8;--gray-500:#64748b;--gray-600:#475569;--gray-700:#334155;--gray-800:#1e293b;--gray-900:#0f172a;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--gray-700);background:#fff;overflow-x:hidden}
+
+/* NAVBAR */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;transition:all .3s ease}
+.navbar.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.navbar.scrolled .nav-link,.navbar.scrolled .nav-phone{color:var(--gray-700)}
+.nav-left{display:flex;align-items:center;gap:48px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:36px;height:36px;background:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:14px}
+.logo-text{font-weight:800;font-size:18px;color:white;transition:color .3s}
+.navbar.scrolled .logo-text{color:var(--gray-900)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;position:relative}
+.nav-link:hover{color:white}
+.navbar.scrolled .nav-link:hover{color:var(--primary)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-phone{color:rgba(255,255,255,.85);text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:8px;transition:color .3s}
+.nav-phone i{font-size:13px}
+.btn-primary{background:var(--primary);color:white;border:none;padding:12px 24px;border-radius:10px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 10px 30px rgba(59,130,246,.3)}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80') center/cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,23,42,.85) 0%,rgba(15,23,42,.6) 50%,rgba(15,23,42,.7) 100%)}
+.hero-content{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:140px 40px 100px;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);padding:8px 16px;border-radius:100px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);text-transform:uppercase;letter-spacing:.5px;margin-bottom:24px;border:1px solid rgba(255,255,255,.15)}
+.hero-badge .dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.hero-title{font-size:64px;font-weight:800;color:white;line-height:1.1;max-width:600px;margin-bottom:20px}
+.hero-title .accent-line{display:inline-block;position:relative}
+.hero-title .accent-line::after{content:'';position:absolute;bottom:4px;left:0;right:0;height:4px;background:var(--accent);border-radius:2px}
+.hero-desc{font-size:18px;color:rgba(255,255,255,.75);max-width:480px;line-height:1.7;margin-bottom:36px}
+.hero-buttons{display:flex;gap:16px;margin-bottom:60px}
+.btn-hero{padding:16px 28px;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;transition:all .3s;display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:inherit}
+.btn-hero-primary{background:var(--primary);color:white;border:none}
+.btn-hero-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 15px 40px rgba(59,130,246,.35)}
+.btn-hero-outline{background:rgba(255,255,255,.1);color:white;border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(10px)}
+.btn-hero-outline:hover{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.4)}
+.hero-stats{display:flex;gap:48px}
+.stat-item{text-align:left}
+.stat-number{font-size:32px;font-weight:800;color:white}
+.stat-label{font-size:13px;color:rgba(255,255,255,.6);margin-top:4px}
+.hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;animation:bounce 2s infinite}
+.hero-scroll i{font-size:16px}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* SECTIONS COMMON */
+.section{padding:100px 40px;max-width:1280px;margin:0 auto}
+.section-label{display:inline-block;background:rgba(59,130,246,.1);color:var(--primary);padding:6px 14px;border-radius:100px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+.section-title{font-size:42px;font-weight:800;color:var(--gray-900);line-height:1.2;margin-bottom:16px}
+.section-title .highlight{color:var(--primary)}
+.section-desc{font-size:16px;color:var(--gray-500);line-height:1.7;max-width:600px}
+
+/* ABOUT */
+.about-section{background:white}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-image-wrap{position:relative}
+.about-image{width:100%;border-radius:20px;overflow:hidden;aspect-ratio:4/5}
+.about-image img{width:100%;height:100%;object-fit:cover}
+.about-badge{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);background:white;padding:16px 28px;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.1);display:flex;align-items:center;gap:14px}
+.about-badge-icon{width:44px;height:44px;background:rgba(52,211,153,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px}
+.about-badge-text h4{font-size:14px;font-weight:700;color:var(--gray-900)}
+.about-badge-text p{font-size:12px;color:var(--gray-500)}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+.about-feature{display:flex;gap:14px}
+.about-feature-icon{width:44px;height:44px;min-width:44px;background:rgba(59,130,246,.08);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:18px}
+.about-feature h4{font-size:14px;font-weight:700;color:var(--gray-900);margin-bottom:4px}
+.about-feature p{font-size:13px;color:var(--gray-500);line-height:1.6}
+
+/* SERVICES */
+.services-section{background:var(--gray-50)}
+.services-header{text-align:center;margin-bottom:48px}
+.services-header .section-title,.services-header .section-desc{margin-left:auto;margin-right:auto}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.service-card{background:white;border-radius:16px;padding:28px;border:1px solid var(--gray-100);transition:all .3s;cursor:pointer}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.08);border-color:var(--gray-200)}
+.service-card:hover .service-icon{background:var(--primary);color:white}
+.service-icon{width:48px;height:48px;background:rgba(59,130,246,.08);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:20px;margin-bottom:16px;transition:all .3s}
+.service-card h3{font-size:15px;font-weight:700;color:var(--gray-900);margin-bottom:8px}
+.service-card p{font-size:13px;color:var(--gray-500);line-height:1.6;margin-bottom:16px}
+.service-link{font-size:13px;font-weight:600;color:var(--primary);text-decoration:none;display:inline-flex;align-items:center;gap:6px;opacity:0;transform:translateY(4px);transition:all .3s}
+.service-card:hover .service-link{opacity:1;transform:translateY(0)}
+
+/* GALLERY */
+.gallery-section{background:white}
+.gallery-header{text-align:center;margin-bottom:40px}
+.gallery-header .section-title,.gallery-header .section-desc{margin-left:auto;margin-right:auto}
+.gallery-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:40px}
+.gallery-tab{padding:10px 20px;border-radius:100px;font-size:14px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--gray-500);font-family:inherit;transition:all .3s}
+.gallery-tab.active{background:var(--primary);color:white}
+.gallery-tab:hover:not(.active){background:var(--gray-100);color:var(--gray-700)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.gallery-card{border-radius:16px;overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer}
+.gallery-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery-card:hover img{transform:scale(1.05)}
+.gallery-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
+.gallery-card-badges{position:absolute;top:16px;left:16px;right:16px;display:flex;justify-content:space-between}
+.gallery-badge{padding:6px 12px;border-radius:100px;font-size:11px;font-weight:600}
+.gallery-badge.popular{background:rgba(168,85,247,.9);color:white}
+.gallery-badge.quick{background:rgba(245,158,11,.9);color:white}
+.gallery-badge.permanent{background:rgba(59,130,246,.9);color:white}
+.gallery-badge.discreet{background:rgba(52,211,153,.9);color:white}
+.gallery-badge.premium{background:rgba(239,68,68,.9);color:white}
+.gallery-badge.precision{background:rgba(16,185,129,.9);color:white}
+.gallery-badge.category{background:rgba(255,255,255,.2);backdrop-filter:blur(10px);color:white}
+.gallery-card-title{font-size:11px;font-weight:600;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.gallery-card-name{font-size:20px;font-weight:800;color:white}
+.gallery-card-info{display:flex;gap:16px;margin-top:16px}
+.gallery-info-item{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.8)}
+.gallery-info-item i{color:var(--accent);font-size:10px}
+.gallery-card-arrow{position:absolute;bottom:24px;right:24px;width:36px;height:36px;background:rgba(255,255,255,.2);backdrop-filter:blur(10px);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:12px;opacity:0;transform:translateX(-10px);transition:all .3s}
+.gallery-card:hover .gallery-card-arrow{opacity:1;transform:translateX(0)}
+.gallery-cta{text-align:center;margin-top:60px}
+.gallery-cta p{font-size:16px;color:var(--gray-600);margin-bottom:20px}
+
+/* MEDICAL AIDS */
+.medical-aids{background:var(--gray-50);padding:60px 0;overflow:hidden}
+.medical-aids-label{text-align:center;font-size:12px;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:2px;margin-bottom:30px}
+.marquee{display:flex;gap:60px;animation:marquee 30s linear infinite;width:max-content}
+.marquee-reverse{animation-direction:reverse;margin-top:20px}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-item{font-size:15px;font-weight:600;color:var(--gray-400);white-space:nowrap}
+
+/* WHY CHOOSE US */
+.why-section{background:white}
+.why-header{text-align:center;margin-bottom:60px}
+.why-header .section-title,.why-header .section-desc{margin-left:auto;margin-right:auto}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.why-features{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.why-feature{display:flex;align-items:center;gap:14px}
+.why-feature-icon{width:40px;height:40px;min-width:40px;background:rgba(59,130,246,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:16px}
+.why-feature span{font-size:14px;font-weight:600;color:var(--gray-800)}
+.why-image-wrap{position:relative}
+.why-image{width:100%;border-radius:20px;overflow:hidden;aspect-ratio:4/3}
+.why-image img{width:100%;height:100%;object-fit:cover}
+.why-stats{position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);background:white;padding:24px 40px;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.1);display:flex;gap:40px}
+.why-stat{text-align:center}
+.why-stat-number{font-size:28px;font-weight:800;color:var(--primary)}
+.why-stat-label{font-size:12px;color:var(--gray-500);margin-top:2px}
+
+/* BOOKING */
+.booking-section{background:var(--gray-50)}
+.booking-header{text-align:center;margin-bottom:48px}
+.booking-header .section-title,.booking-header .section-desc{margin-left:auto;margin-right:auto}
+.booking-form{max-width:700px;margin:0 auto;background:white;padding:40px;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,.05)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:8px}
+.form-input{width:100%;padding:14px 16px;border:1px solid var(--gray-200);border-radius:12px;font-family:inherit;font-size:14px;color:var(--gray-800);transition:all .3s;background:var(--gray-50)}
+.form-input:focus{outline:none;border-color:var(--primary);background:white;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+.form-input::placeholder{color:var(--gray-400)}
+.form-input-icon{position:relative}
+.form-input-icon i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-size:14px}
+.form-input-icon input,.form-input-icon select{padding-left:42px}
+.form-input-icon select{appearance:none;cursor:pointer}
+.form-input-icon .chevron{position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-size:12px;pointer-events:none}
+.btn-submit{width:100%;padding:16px;font-size:15px}
+
+/* TESTIMONIALS */
+.testimonials-section{background:white}
+.testimonials-header{text-align:center;margin-bottom:48px}
+.testimonials-header .section-title,.testimonials-header .section-desc{margin-left:auto;margin-right:auto}
+.testimonials-rating{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:40px}
+.stars{display:flex;gap:4px}
+.stars i{color:#fbbf24;font-size:18px}
+.rating-text{font-size:15px;font-weight:700;color:var(--gray-800)}
+.rating-count{font-size:14px;color:var(--gray-500)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial-card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.08)}
+.testimonial-image{position:relative;aspect-ratio:4/3;overflow:hidden}
+.testimonial-image img{width:100%;height:100%;object-fit:cover}
+.before-after-slider{position:relative;width:100%;height:100%;overflow:hidden}
+.before-after-slider .before-img,.before-after-slider .after-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+.before-after-slider .after-img{clip-path:inset(0 50% 0 0)}
+.slider-handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:white;cursor:ew-resize;z-index:10}
+.slider-handle::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;background:white;border-radius:50%;box-shadow:0 4px 15px rgba(0,0,0,.2)}
+.slider-handle i{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--gray-600);font-size:10px;z-index:11}
+.before-label,.after-label{position:absolute;top:12px;padding:4px 10px;border-radius:100px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;z-index:5}
+.before-label{left:12px;background:rgba(0,0,0,.5);color:white}
+.after-label{right:12px;background:var(--primary);color:white}
+.testimonial-content{padding:24px}
+.testimonial-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.testimonial-type{font-size:12px;font-weight:700;color:var(--primary)}
+.testimonial-stars{display:flex;gap:2px}
+.testimonial-stars i{color:#fbbf24;font-size:12px}
+.testimonial-quote{font-size:14px;color:var(--gray-600);line-height:1.7;margin-bottom:20px}
+.testimonial-quote::before{content:'"';font-size:32px;color:var(--primary);opacity:.3;line-height:1;margin-right:4px;float:left}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.author-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:700}
+.author-info h4{font-size:13px;font-weight:700;color:var(--gray-900)}
+.author-info p{font-size:12px;color:var(--gray-500)}
+.testimonials-cta{text-align:center;margin-top:40px}
+.testimonials-cta a{color:var(--primary);text-decoration:none;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px}
+
+/* CONTACT */
+.contact-section{background:white}
+.contact-header{text-align:center;margin-bottom:48px}
+.contact-header .section-title,.contact-header .section-desc{margin-left:auto;margin-right:auto}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-info-card{background:var(--gray-50);padding:28px;border-radius:16px;border:1px solid var(--gray-100)}
+.contact-info-card i{width:40px;height:40px;background:rgba(59,130,246,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:16px;margin-bottom:14px}
+.contact-info-card h4{font-size:14px;font-weight:700;color:var(--gray-900);margin-bottom:8px}
+.contact-info-card p{font-size:13px;color:var(--gray-500);line-height:1.7}
+.contact-map{border-radius:16px;overflow:hidden;height:100%;min-height:350px;position:relative}
+.contact-map iframe{width:100%;height:100%;border:none}
+.map-overlay{position:absolute;top:16px;left:16px;background:white;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;color:var(--gray-700);box-shadow:0 4px 15px rgba(0,0,0,.1);display:flex;align-items:center;gap:6px;text-decoration:none}
+
+/* FOOTER */
+.footer{background:var(--gray-900);color:white;padding:60px 40px 30px}
+.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1.5fr 1.5fr;gap:40px;margin-bottom:40px}
+.footer-brand .logo-text{color:white;margin-bottom:16px;display:block}
+.footer-brand p{font-size:14px;color:var(--gray-400);line-height:1.7;margin-bottom:20px;max-width:280px}
+.btn-whatsapp{background:#22c55e;color:white;padding:12px 24px;border-radius:10px;text-decoration:none;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:all .3s}
+.btn-whatsapp:hover{background:#16a34a;transform:translateY(-2px)}
+.footer-column h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray-400);margin-bottom:20px}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:12px}
+.footer-links a{color:var(--gray-400);text-decoration:none;font-size:14px;transition:color .3s}
+.footer-links a:hover{color:white}
+.footer-contact p{font-size:14px;color:var(--gray-400);line-height:1.8;margin-bottom:8px}
+.footer-socials{display:flex;gap:10px;margin-top:16px}
+.footer-social{width:36px;height:36px;background:rgba(255,255,255,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gray-400);text-decoration:none;transition:all .3s}
+.footer-social:hover{background:var(--primary);color:white}
+.footer-bottom{max-width:1280px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:13px;color:var(--gray-500)}
+.footer-bottom-links{display:flex;gap:24px}
+.footer-bottom-links a{font-size:13px;color:var(--gray-500);text-decoration:none;transition:color .3s}
+.footer-bottom-links a:hover{color:white}
+
+/* CHAT WIDGET */
+.chat-widget{position:fixed;bottom:24px;right:24px;z-index:999}
+.chat-btn{background:#22c55e;color:white;padding:14px 24px;border-radius:100px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(34,197,94,.3);cursor:pointer;border:none;font-family:inherit;transition:all .3s}
+.chat-btn:hover{transform:translateY(-2px);box-shadow:0 15px 40px rgba(34,197,94,.4)}
+.chat-btn i{font-size:16px}
+.chat-avatar{width:28px;height:28px;border-radius:50%;border:2px solid white;margin-left:-8px}
+
+/* TREATMENT MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;z-index:1000;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;padding:24px}
+.modal-overlay.active{opacity:1;visibility:visible}
+.modal-container{background:#fff;border-radius:24px;width:100%;max-width:900px;max-height:90vh;overflow:hidden;display:flex;position:relative;transform:scale(.95);transition:transform .3s}
+.modal-overlay.active .modal-container{transform:scale(1)}
+.modal-image-section{width:50%;position:relative;min-height:500px}
+.modal-image{width:100%;height:100%;object-fit:cover}
+.modal-badge{position:absolute;top:20px;left:20px;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:600}
+.modal-image-text{position:absolute;bottom:30px;left:30px;right:30px;color:#fff;text-align:center}
+.modal-image-text h3{font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:4px;text-shadow:0 2px 10px rgba(0,0,0,.3)}
+.modal-image-text p{font-size:13px;opacity:.9;text-transform:uppercase;letter-spacing:3px;text-shadow:0 2px 10px rgba(0,0,0,.3)}
+.modal-content-section{width:50%;padding:40px;display:flex;flex-direction:column;overflow-y:auto}
+.modal-close{position:absolute;top:20px;right:20px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.9);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .2s}
+.modal-close:hover{background:#fff}
+.modal-category{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);margin-bottom:12px}
+.modal-title{font-size:32px;font-weight:800;color:var(--gray-900);margin-bottom:8px;line-height:1.2}
+.modal-subtitle{font-size:16px;color:var(--gray-500);font-weight:500;margin-bottom:24px}
+.modal-description{font-size:15px;line-height:1.7;color:var(--gray-500);margin-bottom:28px}
+.modal-features{display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
+.modal-feature{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--gray-600)}
+.modal-feature svg{width:20px;height:20px;color:var(--accent);flex-shrink:0}
+.modal-actions{margin-top:auto;display:flex;align-items:center;gap:12px}
+.modal-btn-primary{flex:1;background:var(--primary);color:#fff;border:none;padding:16px 24px;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;font-family:inherit}
+.modal-btn-primary:hover{background:var(--primary-dark)}
+.modal-nav-btn{width:44px;height:44px;border-radius:10px;border:1px solid var(--gray-200);background:#fff;color:var(--gray-500);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.modal-nav-btn:hover{border-color:var(--primary);color:var(--primary)}
+
+/* Gallery card hover enhancements */
+.gallery-card{position:relative;cursor:pointer}
+.gallery-card-overlay .gallery-card-title{font-size:11px;font-weight:600;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.gallery-card-overlay .gallery-card-name{font-size:20px;font-weight:800;color:#fff}
+.gallery-card-info{display:flex;gap:16px;margin-top:16px}
+.gallery-info-item{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.8)}
+.gallery-info-item i{color:var(--accent);font-size:10px}
+.gallery-card-arrow{position:absolute;bottom:24px;right:24px;width:36px;height:36px;background:rgba(255,255,255,.2);backdrop-filter:blur(10px);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;opacity:0;transform:translateX(-10px);transition:all .3s}
+.gallery-card:hover .gallery-card-arrow{opacity:1;transform:translateX(0)}
+
+/* View Treatment hover button */
+.view-treatment-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,.95);color:var(--gray-900);padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;opacity:0;transition:opacity .3s;pointer-events:none;box-shadow:0 4px 20px rgba(0,0,0,.15);z-index:5}
+.gallery-card:hover .view-treatment-btn{opacity:1}
+
+@media(max-width:1024px){.modal-container{flex-direction:column;max-height:95vh}.modal-image-section{width:100%;min-height:250px}.modal-content-section{width:100%;padding:28px}}
+@media(max-width:768px){.modal-title{font-size:24px}.modal-content-section{padding:24px}}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:repeat(2,1fr)}.testimonials-grid{grid-template-columns:repeat(2,1fr)}.about-grid,.why-grid,.contact-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.navbar{padding:12px 20px}.nav-links{display:none}.hero-title{font-size:40px}.hero-content{padding:120px 20px 80px}.section{padding:60px 20px}.services-grid,.gallery-grid,.testimonials-grid{grid-template-columns:1fr}.about-features,.why-features{grid-template-columns:1fr}.form-row,.contact-info-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:16px;text-align:center}.hero-buttons{flex-direction:column}.hero-stats{gap:24px}}
+</style>
+<base target="_blank">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+<div class="nav-left">
+<a href="#" class="logo"><div class="logo-icon">BS</div><span class="logo-text">BrightSmile</span></a>
+<ul class="nav-links">
+<li><a href="#about" class="nav-link">About</a></li>
+<li><a href="#services" class="nav-link">Services</a></li>
+<li><a href="#gallery" class="nav-link">Gallery</a></li>
+<li><a href="#why" class="nav-link">Why Us</a></li>
+<li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+<li><a href="#contact" class="nav-link">Contact</a></li>
+</ul>
+</div>
+<div class="nav-right">
+<a href="tel:+27111234567" class="nav-phone"><i class="fas fa-phone-alt"></i>+27 11 123 4567</a>
+<a href="#booking" class="btn-primary">Book Appointment</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-badge"><span class="dot"></span>Premium Dental Care in Johannesburg</div>
+<h1 class="hero-title">Your Smile Starts <span class="accent-line">With Expert Care</span></h1>
+<p class="hero-desc">Professional dental care you can trust. Experience gentle, pain-free treatments with South Africa's leading dental professionals.</p>
+<div class="hero-buttons">
+<a href="#booking" class="btn-hero btn-hero-primary"><i class="far fa-calendar-check"></i>Book Appointment Online</a>
+<a href="https://wa.me/27111234567" class="btn-hero btn-hero-outline"><i class="fab fa-whatsapp"></i>WhatsApp Us</a>
+</div>
+<div class="hero-stats">
+<div class="stat-item"><div class="stat-number">10+</div><div class="stat-label">Years Experience</div></div>
+<div class="stat-item"><div class="stat-number">5000+</div><div class="stat-label">Happy Patients</div></div>
+<div class="stat-item"><div class="stat-number">98%</div><div class="stat-label">Satisfaction</div></div>
+</div>
+</div>
+<div class="hero-scroll"><span>Explore</span><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about-section" id="about">
+<div class="about-grid">
+<div class="about-image-wrap">
+<div class="about-image"><img src="BS-ABOUT.png" alt="Dental Professional"></div>
+<div class="about-badge">
+<div class="about-badge-icon"><i class="fas fa-shield-alt"></i></div>
+<div class="about-badge-text"><h4>HPCSA Registered</h4><p>Certified Practice</p></div>
+</div>
+</div>
+<div class="about-content">
+<span class="section-label">About Our Practice</span>
+<h2 class="section-title">Trusted Dental Professionals in <span class="highlight">South Africa</span></h2>
+<p class="section-desc">At BrightSmile Dental Care, we combine advanced dental technology with a gentle, patient-focused approach. Our experienced team is dedicated to providing comfortable, pain-free dental experiences in a modern, welcoming environment.</p>
+<div class="about-features">
+<div class="about-feature"><div class="about-feature-icon"><i class="fas fa-award"></i></div><div><h4>Certified Dentists</h4><p>Registered with the HPCSA and committed to ongoing professional development.</p></div></div>
+<div class="about-feature"><div class="about-feature-icon"><i class="fas fa-microscope"></i></div><div><h4>Modern Equipment</h4><p>State-of-the-art digital imaging, laser technology, and 3D scanning.</p></div></div>
+<div class="about-feature"><div class="about-feature-icon"><i class="fas fa-first-aid"></i></div><div><h4>Emergency Care</h4><p>Same-day emergency appointments available for urgent dental needs.</p></div></div>
+<div class="about-feature"><div class="about-feature-icon"><i class="fas fa-pump-soap"></i></div><div><h4>Safe & Hygienic</h4><p>Strict infection control protocols exceeding South African health standards.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+<div class="services-header">
+<span class="section-label">Our Services</span>
+<h2 class="section-title">Comprehensive Dental Treatments</h2>
+<p class="section-desc">From routine check-ups to advanced restorative procedures, we offer a full spectrum of dental services under one roof.</p>
+</div>
+<div class="services-grid">
+<div class="service-card"><div class="service-icon"><i class="fas fa-tooth"></i></div><h3>General Dentistry</h3><p>Comprehensive check-ups, cleanings, fillings, and preventive care for the whole family.</p><a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a></div>
+<div class="service-card"><div class="service-icon"><i class="fas fa-star"></i></div><h3>Teeth Whitening</h3><p>Professional whitening treatments to brighten your smile safely and effectively.</p><a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a></div>
+<div class="service-card"><div class="service-icon"><i class="fas fa-circle"></i></div><h3>Dental Implants</h3><p>Permanent tooth replacement solutions using the latest implant technology.</p><a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a></div>
+<div class="service-card"><div class="service-icon"><i class="fas fa-teeth"></i></div><h3>Braces & Orthodontics</h3><p>Traditional braces and clear aligner options for perfectly aligned teeth.</p><a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a></div>
+<div class="service-card"><div class="service-icon"><i class="fas fa-magic"></i></div><h3>Cosmetic Dentistry</h3><p>Veneers, bonding, and smile makeovers tailored to your aesthetic goals.</p><a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a></div>
+<div class="service-card"><div class="service-icon"><i class="fas fa-bullseye"></i></div><h3>Root Canal Treatment</h3><p>Pain-free root canal therapy to save damaged teeth and relieve discomfort.</p><a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a></div>
+<div class="service-card"><div class="service-icon"><i class="fas fa-child"></i></div><h3>Pediatric Dentistry</h3><p>Gentle dental care designed specifically for children in a friendly environment.</p><a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a></div>
+<div class="service-card"><div class="service-icon"><i class="fas fa-ambulance"></i></div><h3>Emergency Dental Care</h3><p>Immediate attention for dental emergencies including trauma and severe pain.</p><a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a></div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section class="section gallery-section" id="gallery">
+<div class="gallery-header">
+<span class="section-label">Treatment Gallery</span>
+<h2 class="section-title">Explore Our Signature Treatments</h2>
+<p class="section-desc">A curated showcase of transformative dental procedures — each one crafted to the highest standard of clinical artistry.</p>
+</div>
+<div class="gallery-tabs">
+<button class="gallery-tab active" data-filter="all">All</button>
+<button class="gallery-tab" data-filter="cosmetic">Cosmetic</button>
+<button class="gallery-tab" data-filter="whitening">Whitening</button>
+<button class="gallery-tab" data-filter="implants">Implants</button>
+<button class="gallery-tab" data-filter="orthodontics">Orthodontics</button>
+<button class="gallery-tab" data-filter="restorative">Restorative</button>
+</div>
+<div class="gallery-grid">
+<div class="gallery-card" data-category="cosmetic" onclick="openModal(0)">
+<img src="BS-1.png" alt="Smile Makeover">
+<div class="gallery-card-badges"><span class="gallery-badge popular">Most Popular</span><span class="gallery-badge category">Cosmetic</span></div>
+<div class="gallery-card-overlay"><div class="gallery-card-title">Complete Aesthetic Transformation</div><div class="gallery-card-name">Smile Makeover</div><div class="gallery-card-info"><span class="gallery-info-item"><i class="fas fa-check-circle"></i> Custom porcelain veneers</span><span class="gallery-info-item"><i class="fas fa-check-circle"></i> Gum contouring</span></div></div>
+<div class="view-treatment-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View Treatment</div>
+<div class="gallery-card-arrow"><i class="fas fa-arrow-right"></i></div>
+</div>
+<div class="gallery-card" data-category="whitening" onclick="openModal(1)">
+<img src="BS-2.png" alt="Teeth Whitening">
+<div class="gallery-card-badges"><span class="gallery-badge quick">Quick Results</span><span class="gallery-badge category">Whitening</span></div>
+<div class="gallery-card-overlay"><div class="gallery-card-title">Professional LED Whitening</div><div class="gallery-card-name">Teeth Whitening</div><div class="gallery-card-info"><span class="gallery-info-item"><i class="fas fa-check-circle"></i> Up to 8 shades lighter</span><span class="gallery-info-item"><i class="fas fa-check-circle"></i> 60-minute treatment</span></div></div>
+<div class="view-treatment-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View Treatment</div>
+<div class="gallery-card-arrow"><i class="fas fa-arrow-right"></i></div>
+</div>
+<div class="gallery-card" data-category="implants" onclick="openModal(2)">
+<img src="BS-3.png" alt="Dental Implants">
+<div class="gallery-card-badges"><span class="gallery-badge permanent">Permanent Fix</span><span class="gallery-badge category">Implants</span></div>
+<div class="gallery-card-overlay"><div class="gallery-card-title">Permanent Tooth Replacement</div><div class="gallery-card-name">Dental Implants</div><div class="gallery-card-info"><span class="gallery-info-item"><i class="fas fa-check-circle"></i> Titanium-grade precision</span><span class="gallery-info-item"><i class="fas fa-check-circle"></i> Natural look & feel</span></div></div>
+<div class="view-treatment-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View Treatment</div>
+<div class="gallery-card-arrow"><i class="fas fa-arrow-right"></i></div>
+</div>
+<div class="gallery-card" data-category="orthodontics" onclick="openModal(3)">
+<img src="BS-4.png" alt="Clear Aligners">
+<div class="gallery-card-badges"><span class="gallery-badge discreet">Discreet</span><span class="gallery-badge category">Orthodontics</span></div>
+<div class="gallery-card-overlay"><div class="gallery-card-title">Invisible Teeth Straightening</div><div class="gallery-card-name">Clear Aligners</div><div class="gallery-card-info"><span class="gallery-info-item"><i class="fas fa-check-circle"></i> Virtually invisible</span><span class="gallery-info-item"><i class="fas fa-check-circle"></i> Removable & comfortable</span></div></div>
+<div class="view-treatment-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View Treatment</div>
+<div class="gallery-card-arrow"><i class="fas fa-arrow-right"></i></div>
+</div>
+<div class="gallery-card" data-category="cosmetic" onclick="openModal(4)">
+<img src="BS-5.png" alt="Porcelain Veneers">
+<div class="gallery-card-badges"><span class="gallery-badge premium">Premium</span><span class="gallery-badge category">Cosmetic</span></div>
+<div class="gallery-card-overlay"><div class="gallery-card-title">Ultra-Thin Smile Perfection</div><div class="gallery-card-name">Porcelain Veneers</div><div class="gallery-card-info"><span class="gallery-info-item"><i class="fas fa-check-circle"></i> Ultra-thin shells</span><span class="gallery-info-item"><i class="fas fa-check-circle"></i> Stain resistant</span></div></div>
+<div class="view-treatment-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View Treatment</div>
+<div class="gallery-card-arrow"><i class="fas fa-arrow-right"></i></div>
+</div>
+<div class="gallery-card" data-category="restorative" onclick="openModal(5)">
+<img src="BS-6.png" alt="Crowns & Bridges">
+<div class="gallery-card-badges"><span class="gallery-badge precision">Precision</span><span class="gallery-badge category">Restorative</span></div>
+<div class="gallery-card-overlay"><div class="gallery-card-title">Precision Ceramic Restorations</div><div class="gallery-card-name">Crowns & Bridges</div><div class="gallery-card-info"><span class="gallery-info-item"><i class="fas fa-check-circle"></i> Same-day milling available</span><span class="gallery-info-item"><i class="fas fa-check-circle"></i> Ceramic construction</span></div></div>
+<div class="view-treatment-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View Treatment</div>
+<div class="gallery-card-arrow"><i class="fas fa-arrow-right"></i></div>
+</div>
+</div>
+<div class="gallery-cta">
+<p>Ready to start your transformation?</p>
+<a href="#booking" class="btn-primary"><i class="far fa-calendar-check"></i>Book a Consultation<i class="fas fa-arrow-right"></i></a>
+</div>
+</section>
+
+<!-- TREATMENT MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+<div class="modal-container">
+<button class="modal-close" id="modalClose">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+<div class="modal-image-section">
+<img class="modal-image" id="modalImage" src="" alt="">
+<span class="modal-badge" id="modalBadge"></span>
+<div class="modal-image-text" id="modalImageText"></div>
+</div>
+<div class="modal-content-section">
+<div class="modal-category" id="modalCategory"></div>
+<h2 class="modal-title" id="modalTitle"></h2>
+<p class="modal-subtitle" id="modalSubtitle"></p>
+<p class="modal-description" id="modalDescription"></p>
+<div class="modal-features" id="modalFeatures"></div>
+<div class="modal-actions">
+<button class="modal-btn-primary" onclick="document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow='';document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
+Book This Treatment
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+</button>
+<button class="modal-nav-btn" id="modalPrev">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+</button>
+<button class="modal-nav-btn" id="modalNext">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- MEDICAL AIDS -->
+<div class="medical-aids">
+<div class="medical-aids-label">We Accept All Major South African Medical Aids</div>
+<div class="marquee">
+<span class="marquee-item">Discovery Health</span><span class="marquee-item">Bonitas</span><span class="marquee-item">Momentum Health</span><span class="marquee-item">Fedhealth</span><span class="marquee-item">Medihelp</span><span class="marquee-item">GEMS</span><span class="marquee-item">KeyHealth</span><span class="marquee-item">Hosmed</span><span class="marquee-item">Sizwe Hosmed</span><span class="marquee-item">Resolution Health</span>
+<span class="marquee-item">Discovery Health</span><span class="marquee-item">Bonitas</span><span class="marquee-item">Momentum Health</span><span class="marquee-item">Fedhealth</span><span class="marquee-item">Medihelp</span><span class="marquee-item">GEMS</span><span class="marquee-item">KeyHealth</span><span class="marquee-item">Hosmed</span><span class="marquee-item">Sizwe Hosmed</span><span class="marquee-item">Resolution Health</span>
+</div>
+<div class="marquee marquee-reverse">
+<span class="marquee-item">Resolution Health</span><span class="marquee-item">Sizwe Hosmed</span><span class="marquee-item">Hosmed</span><span class="marquee-item">KeyHealth</span><span class="marquee-item">GEMS</span><span class="marquee-item">Medihelp</span><span class="marquee-item">Fedhealth</span><span class="marquee-item">Momentum Health</span><span class="marquee-item">Bonitas</span><span class="marquee-item">Discovery Health</span>
+<span class="marquee-item">Resolution Health</span><span class="marquee-item">Sizwe Hosmed</span><span class="marquee-item">Hosmed</span><span class="marquee-item">KeyHealth</span><span class="marquee-item">GEMS</span><span class="marquee-item">Medihelp</span><span class="marquee-item">Fedhealth</span><span class="marquee-item">Momentum Health</span><span class="marquee-item">Bonitas</span><span class="marquee-item">Discovery Health</span>
+</div>
+</div>
+
+<!-- WHY CHOOSE US -->
+<section class="section why-section" id="why">
+<div class="why-header">
+<span class="section-label">Why Choose Us</span>
+<h2 class="section-title">Your Smile Deserves the Best</h2>
+<p class="section-desc">We go above and beyond to deliver exceptional dental care in a comfortable, modern environment.</p>
+</div>
+<div class="why-grid">
+<div class="why-features">
+<div class="why-feature"><div class="why-feature-icon"><i class="fas fa-user-md"></i></div><span>Experienced SA Dentists</span></div>
+<div class="why-feature"><div class="why-feature-icon"><i class="fas fa-microscope"></i></div><span>Advanced Technology</span></div>
+<div class="why-feature"><div class="why-feature-icon"><i class="fas fa-credit-card"></i></div><span>Flexible Payment Options</span></div>
+<div class="why-feature"><div class="why-feature-icon"><i class="fas fa-clock"></i></div><span>Emergency Appointments</span></div>
+<div class="why-feature"><div class="why-feature-icon"><i class="fas fa-heart"></i></div><span>Gentle & Patient-Focused</span></div>
+<div class="why-feature"><div class="why-feature-icon"><i class="fas fa-shield-virus"></i></div><span>High Hygiene Standards</span></div>
+</div>
+<div class="why-image-wrap">
+<div class="why-image"><img src="BS-WHY.png" alt="Modern Dental Clinic"></div>
+<div class="why-stats">
+<div class="why-stat"><div class="why-stat-number">10+</div><div class="why-stat-label">Years Experience</div></div>
+<div class="why-stat"><div class="why-stat-number">5000+</div><div class="why-stat-label">Patients Treated</div></div>
+<div class="why-stat"><div class="why-stat-number">98%</div><div class="why-stat-label">Satisfaction Rate</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- BOOKING -->
+<section class="section booking-section" id="booking">
+<div class="booking-header">
+<span class="section-label">Book Appointment</span>
+<h2 class="section-title">Schedule Your Visit Today</h2>
+<p class="section-desc">Book your appointment online and our team will confirm your preferred time within 24 hours.</p>
+</div>
+<form class="booking-form" onsubmit="event.preventDefault(); alert('Appointment request submitted! We will contact you shortly.');">
+<div class="form-row">
+<div class="form-group"><label>Full Name</label><div class="form-input-icon"><i class="far fa-user"></i><input type="text" class="form-input" placeholder="John Doe" required></div></div>
+<div class="form-group"><label>Phone Number</label><div class="form-input-icon"><i class="fas fa-phone-alt"></i><input type="tel" class="form-input" placeholder="+27 82 123 4567" required></div></div>
+</div>
+<div class="form-row">
+<div class="form-group"><label>Email Address</label><div class="form-input-icon"><i class="far fa-envelope"></i><input type="email" class="form-input" placeholder="john@example.com" required></div></div>
+<div class="form-group"><label>Service Required</label><div class="form-input-icon"><i class="fas fa-tooth"></i><select class="form-input" required><option value="">Select a service</option><option>General Dentistry</option><option>Teeth Whitening</option><option>Dental Implants</option><option>Braces & Orthodontics</option><option>Cosmetic Dentistry</option><option>Root Canal Treatment</option><option>Pediatric Dentistry</option><option>Emergency Dental Care</option></select><i class="fas fa-chevron-down chevron"></i></div></div>
+</div>
+<div class="form-group"><label>Preferred Date</label><div class="form-input-icon"><i class="far fa-calendar-alt"></i><input type="date" class="form-input" required></div></div>
+<div class="form-group"><label>Additional Notes</label><textarea class="form-input" rows="3" placeholder="Any specific concerns or requirements..."></textarea></div>
+<button type="submit" class="btn-primary btn-submit"><i class="far fa-calendar-check"></i>Book Appointment</button>
+</form>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-section" id="testimonials">
+<div class="testimonials-header">
+<span class="section-label">Patient Transformations</span>
+<h2 class="section-title">Real Results. Real Smiles.</h2>
+<p class="section-desc">Drag the slider on each photo to reveal the before & after transformation. These are real BrightSmile patients.</p>
+</div>
+<div class="testimonials-rating">
+<div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+<span class="rating-text">5.0</span>
+<span class="rating-count">- 500+ verified Google reviews</span>
+</div>
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<div class="testimonial-image">
+<div class="before-after-slider" data-slider="1">
+<img src="BS-AFTER-1.jpg" class="before-img" alt="Before">
+<img src="BS-BEFORE-1.jpg" class="after-img" alt="After" style="filter:brightness(1.1) contrast(1.05)">
+<div class="slider-handle" style="left:50%"><i class="fas fa-arrows-alt-h"></i></div>
+<span class="before-label">Before</span><span class="after-label">After</span>
+</div>
+</div>
+<div class="testimonial-content">
+<div class="testimonial-header"><span class="testimonial-type">Smile Makeover</span><div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+<p class="testimonial-quote">BrightSmile completely transformed my confidence. The attention to detail was extraordinary — every appointment felt like a luxury experience.</p>
+<div class="testimonial-author"><div class="author-avatar" style="background:#3b82f6">TM</div><div class="author-info"><h4>Thando Mbeki</h4><p>Sandton, Johannesburg</p></div></div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-image">
+<div class="before-after-slider" data-slider="2">
+<img src="BS-AFTER-2.jpg" class="before-img" alt="Before">
+<img src="BS-BEFORE-2.jpg" class="after-img" alt="After" style="filter:brightness(1.15) saturate(1.1)">
+<div class="slider-handle" style="left:50%"><i class="fas fa-arrows-alt-h"></i></div>
+<span class="before-label">Before</span><span class="after-label">After</span>
+</div>
+</div>
+<div class="testimonial-content">
+<div class="testimonial-header"><span class="testimonial-type">Teeth Whitening</span><div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+<p class="testimonial-quote">The whitening results were beyond what I expected. In just one session my smile was transformed. Dr. Patel explained every step clearly.</p>
+<div class="testimonial-author"><div class="author-avatar" style="background:#f59e0b">DM</div><div class="author-info"><h4>David van der Merwe</h4><p>Fourways, Johannesburg</p></div></div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-image">
+<div class="before-after-slider" data-slider="3">
+<img src="BS-AFTER-3.jpg" class="before-img" alt="Before">
+<img src="BS-BEFORE-3.jpg" class="after-img" alt="After" style="filter:brightness(1.08) contrast(1.03)">
+<div class="slider-handle" style="left:50%"><i class="fas fa-arrows-alt-h"></i></div>
+<span class="before-label">Before</span><span class="after-label">After</span>
+</div>
+</div>
+<div class="testimonial-content">
+<div class="testimonial-header"><span class="testimonial-type">Clear Aligners</span><div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+<p class="testimonial-quote">My clear aligner journey was smooth from start to finish. The digital planning showed me exactly what to expect — and the result exceeded every expectation.</p>
+<div class="testimonial-author"><div class="author-avatar" style="background:#10b981">AZ</div><div class="author-info"><h4>Amahle Zulu</h4><p>Midrand, Gauteng</p></div></div>
+</div>
+</div>
+</div>
+<div class="testimonials-cta"><a href="#booking">Start your own transformation <i class="fas fa-arrow-right"></i></a></div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+<div class="contact-header">
+<span class="section-label">Contact Us</span>
+<h2 class="section-title">Get In Touch</h2>
+<p class="section-desc">We're here to help. Reach out to our friendly team for appointments, enquiries, or emergencies.</p>
+</div>
+<div class="contact-grid">
+<div class="contact-info-grid">
+<div class="contact-info-card"><i class="fas fa-map-marker-alt"></i><h4>Visit Us</h4><p>123 Rivonia Boulevard<br>Sandton, Johannesburg 2196</p></div>
+<div class="contact-info-card"><i class="fas fa-phone-alt"></i><h4>Call Us</h4><p>+27 11 123 4567<br>+27 82 987 6543</p></div>
+<div class="contact-info-card"><i class="far fa-envelope"></i><h4>Email Us</h4><p>info@brightsmile.co.za<br>appointments@brightsmile.co.za</p></div>
+<div class="contact-info-card"><i class="far fa-clock"></i><h4>Working Hours</h4><p>Mon – Fri: 08:00 – 17:00<br>Sat: 08:00 – 13:00</p></div>
+</div>
+<div class="contact-map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.263!2d28.056!3d-26.107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e957331f0e1e!2sSandton!5e0!3m2!1sen!2sza!4v1" allowfullscreen loading="lazy"></iframe>
+<a href="https://maps.google.com" class="map-overlay" target="_blank">Open in Maps <i class="fas fa-external-link-alt"></i></a>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-grid">
+<div class="footer-brand">
+<a href="#" class="logo"><div class="logo-icon">BS</div><span class="logo-text">BrightSmile</span></a>
+<p>Premium dental care in Johannesburg. Trusted by over 5,000 patients for gentle, professional dental treatments.</p>
+<a href="https://wa.me/27111234567" class="btn-whatsapp"><i class="fab fa-whatsapp"></i>WhatsApp Us</a>
+</div>
+<div class="footer-column">
+<h4>Quick Links</h4>
+<ul class="footer-links">
+<li><a href="#about">About Us</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#why">Why Choose Us</a></li>
+<li><a href="#testimonials">Testimonials</a></li>
+<li><a href="#booking">Book Appointment</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>Services</h4>
+<ul class="footer-links">
+<li><a href="#">General Dentistry</a></li>
+<li><a href="#">Teeth Whitening</a></li>
+<li><a href="#">Dental Implants</a></li>
+<li><a href="#">Cosmetic Dentistry</a></li>
+<li><a href="#">Braces & Orthodontics</a></li>
+<li><a href="#">Emergency Care</a></li>
+</ul>
+</div>
+<div class="footer-column footer-contact">
+<h4>Contact</h4>
+<p>123 Rivonia Boulevard<br>Sandton, Johannesburg 2196</p>
+<p>+27 11 123 4567</p>
+<p>info@brightsmile.co.za</p>
+<div class="footer-socials">
+<a href="#" class="footer-social"><i class="fab fa-facebook-f"></i></a>
+<a href="#" class="footer-social"><i class="fab fa-instagram"></i></a>
+<a href="#" class="footer-social"><i class="fab fa-twitter"></i></a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 BrightSmile Dental Care. All rights reserved.</p>    <p style="font-size:14px;"> Website by <a href="https://www.casadililly.co.za/" 
+        style="color:#d4af37;text-decoration:none;">Case di lilly</a>
+     </p>
+<div class="footer-bottom-links">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+
+<!-- CHAT WIDGET -->
+<div class="chat-widget">
+<button class="chat-btn" onclick="alert('Chat feature coming soon!')">
+<i class="far fa-comment-dots"></i>
+Chat with us
+<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&q=80" class="chat-avatar" alt="Support">
+</button>
+</div>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) { navbar.classList.add('scrolled'); }
+    else { navbar.classList.remove('scrolled'); }
+});
+
+// Gallery filter tabs
+document.querySelectorAll('.gallery-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.dataset.filter;
+        document.querySelectorAll('.gallery-card').forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Before/After slider interaction
+document.querySelectorAll('.before-after-slider').forEach(slider => {
+    const handle = slider.querySelector('.slider-handle');
+    const afterImg = slider.querySelector('.after-img');
+    let isDragging = false;
+
+    function updateSlider(clientX) {
+        const rect = slider.getBoundingClientRect();
+        let x = clientX - rect.left;
+        x = Math.max(0, Math.min(x, rect.width));
+        const percent = (x / rect.width) * 100;
+        handle.style.left = percent + '%';
+        afterImg.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+    }
+
+    handle.addEventListener('mousedown', () => isDragging = true);
+    document.addEventListener('mouseup', () => isDragging = false);
+    document.addEventListener('mousemove', (e) => { if (isDragging) updateSlider(e.clientX); });
+
+    handle.addEventListener('touchstart', () => isDragging = true);
+    document.addEventListener('touchend', () => isDragging = false);
+    document.addEventListener('touchmove', (e) => { if (isDragging) updateSlider(e.touches[0].clientX); });
+
+    slider.addEventListener('click', (e) => updateSlider(e.clientX));
+});
+
+
+// ===== TREATMENT MODAL =====
+const treatments = [
+{id:0,badge:"Most Popular",badgeClass:"popular",categoryTag:"Cosmetic",category:"COSMETIC",title:"Smile Makeover",subtitle:"Complete Aesthetic Transformation",description:"Our signature smile makeover combines veneers, whitening, and contouring to deliver a radiant, life-changing transformation crafted entirely around your facial aesthetics.",features:["Custom porcelain veneers","Gum contouring","Shade matching","Lifetime whitening"],image:"https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80",imageOverlayTitle:"Luxury Smile Makeover",imageOverlaySubtitle:"Premium Dental Care"},
+{id:1,badge:"Quick Results",badgeClass:"quick",categoryTag:"Whitening",category:"WHITENING",title:"Teeth Whitening",subtitle:"Professional LED Whitening",description:"Experience up to 8 shades brighter in a single 60-minute session. Our professional-grade LED whitening system delivers stunning results that outlast any over-the-counter product.",features:["Up to 8 shades lighter","60-minute treatment","Sensitivity-free formula","Long-lasting results"],image:"https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80",imageOverlayTitle:"",imageOverlaySubtitle:""},
+{id:2,badge:"Permanent Fix",badgeClass:"permanent",categoryTag:"Implants",category:"IMPLANTS",title:"Dental Implants",subtitle:"Permanent Tooth Replacement",description:"Titanium implants that fuse seamlessly with your jawbone, topped with a precision-crafted porcelain crown. The gold standard in missing tooth replacement — built to last a lifetime.",features:["Titanium-grade precision","Natural look & feel","Bone preservation","15+ year lifespan"],image:"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80",imageOverlayTitle:"Dental Implant Solutions",imageOverlaySubtitle:""},
+{id:3,badge:"Discreet",badgeClass:"discreet",categoryTag:"Orthodontics",category:"ORTHODONTICS",title:"Clear Aligners",subtitle:"Invisible Teeth Straightening",description:"Achieve perfectly aligned teeth without metal brackets. Our custom clear aligner therapy is virtually invisible, removable, and precisely engineered for your unique smile.",features:["Virtually invisible","Removable & comfortable","Digital treatment planning","Faster than braces"],image:"https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&q=80",imageOverlayTitle:"",imageOverlaySubtitle:""},
+{id:4,badge:"Premium",badgeClass:"premium",categoryTag:"Cosmetic",category:"COSMETIC",title:"Porcelain Veneers",subtitle:"Ultra-Thin Smile Perfection",description:"Hand-crafted ultra-thin porcelain shells bonded to the front of your teeth. Correct chips, gaps, discolouration, and shape in just two appointments.",features:["Ultra-thin shells","Stain resistant","Custom crafted","Two-visit process"],image:"https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80",imageOverlayTitle:"",imageOverlaySubtitle:""},
+{id:5,badge:"Precision",badgeClass:"precision",categoryTag:"Restorative",category:"RESTORATIVE",title:"Crowns & Bridges",subtitle:"Precision Ceramic Restorations",description:"Custom-milled ceramic crowns and bridges that match your natural teeth with remarkable accuracy. Restore strength, function, and aesthetics in a single continuous workflow.",features:["Same-day milling available","Ceramic construction","Exact colour match","Full strength restoration"],image:"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80",imageOverlayTitle:"",imageOverlaySubtitle:""}
+];
+
+let currentModalIndex = 0;
+
+function openModal(index) {
+currentModalIndex = index;
+updateModalContent();
+document.getElementById('modalOverlay').classList.add('active');
+document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+document.getElementById('modalOverlay').classList.remove('active');
+document.body.style.overflow = '';
+}
+
+function updateModalContent() {
+const t = treatments[currentModalIndex];
+document.getElementById('modalImage').src = t.image;
+document.getElementById('modalBadge').textContent = t.badge;
+document.getElementById('modalBadge').className = 'modal-badge gallery-badge ' + t.badgeClass;
+document.getElementById('modalCategory').textContent = t.category;
+document.getElementById('modalTitle').textContent = t.title;
+document.getElementById('modalSubtitle').textContent = t.subtitle;
+document.getElementById('modalDescription').textContent = t.description;
+const imageText = document.getElementById('modalImageText');
+if (t.imageOverlayTitle) {
+imageText.innerHTML = '<h3>' + t.imageOverlayTitle + '</h3><p>' + t.imageOverlaySubtitle + '</p>';
+imageText.style.display = 'block';
+} else { imageText.style.display = 'none'; }
+document.getElementById('modalFeatures').innerHTML = t.features.map(f => '<div class="modal-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>' + f + '</div>').join('');
+}
+
+function nextModal() {
+currentModalIndex = (currentModalIndex + 1) % treatments.length;
+updateModalContent();
+}
+
+function prevModal() {
+currentModalIndex = (currentModalIndex - 1 + treatments.length) % treatments.length;
+updateModalContent();
+}
+
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('modalOverlay').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+document.getElementById('modalNext').addEventListener('click', function(e) { e.stopPropagation(); nextModal(); });
+document.getElementById('modalPrev').addEventListener('click', function(e) { e.stopPropagation(); prevModal(); });
+document.addEventListener('keydown', function(e) {
+if (!document.getElementById('modalOverlay').classList.contains('active')) return;
+if (e.key === 'Escape') closeModal();
+if (e.key === 'ArrowRight') nextModal();
+if (e.key === 'ArrowLeft') prevModal();
+});
+
+</script>
+
+</body>
+</html>
