@@ -1,0 +1,2577 @@
+
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- PRIMARY SEO -->
+    <title>What Happens When AI Gets Something Wrong? | Casa di Lilly</title>
+
+    <meta name="description" content="What happens when AI gets something wrong? Discover AI hallucinations, business risks, inaccurate information and how to build safer AI automation systems with human oversight.">
+
+    <meta name="keywords" content="what happens when AI gets something wrong, AI hallucinations, AI accuracy, AI mistakes in business, AI reliability, responsible AI automation, AI risk management, human oversight in AI, AI business security, AI automation South Africa">
+
+    <meta name="author" content="Casa di Lilly">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <link rel="canonical" href="https://www.casadililly.co.za/what-happens-when-ai-gets-something-wrong.html">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="What Happens When AI Gets Something Wrong?">
+    <meta property="og:description" content="AI can produce convincing but incorrect information. Learn why AI makes mistakes, how businesses can reduce risks and why human oversight matters.">
+    <meta property="og:url" content="https://www.casadililly.co.za/what-happens-when-ai-gets-something-wrong.html">
+    <meta property="og:site_name" content="Casa di Lilly">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=85">
+    <meta property="og:image:alt" content="Business team working with technology and reviewing digital information">
+    <meta property="og:locale" content="en_ZA">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Happens When AI Gets Something Wrong?">
+    <meta name="twitter:description" content="Understand AI errors, hallucinations, business risks and practical safeguards for responsible AI automation.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=85">
+
+    <!-- PERFORMANCE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CASA DI LILLY TYPOGRAPHY -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- BLOGPOSTING STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "@id": "https://www.casadililly.co.za/what-happens-when-ai-gets-something-wrong.html#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.casadililly.co.za/what-happens-when-ai-gets-something-wrong.html"
+      },
+      "headline": "What Happens When AI Gets Something Wrong?",
+      "description": "An in-depth guide to AI hallucinations, inaccurate information, artificial intelligence risks, business automation errors, human oversight and responsible AI implementation.",
+      "image": [
+        "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=85"
+      ],
+      "datePublished": "2026-11-09",
+      "dateModified": "2026-11-09",
+      "author": {
+        "@type": "Organization",
+        "name": "Casa di Lilly",
+        "url": "https://www.casadililly.co.za/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Casa di Lilly",
+        "url": "https://www.casadililly.co.za/"
+      },
+      "articleSection": "Responsible AI & Business Automation",
+      "inLanguage": "en-ZA",
+      "keywords": [
+        "AI hallucinations",
+        "AI accuracy",
+        "AI errors",
+        "AI risk management",
+        "Responsible AI",
+        "Human oversight",
+        "AI automation",
+        "Business technology"
+      ]
+    }
+    </script>
+
+    <!-- BREADCRUMB STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.casadililly.co.za/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://www.casadililly.co.za/insights.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Happens When AI Gets Something Wrong?",
+          "item": "https://www.casadililly.co.za/what-happens-when-ai-gets-something-wrong.html"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+
+        :root {
+            --bg: #061D4A;
+            --surface: #4e80eb;
+            --surface-light: #2563EB;
+            --text: #ffffff;
+            --muted: #ffffff;
+            --accent: #4febd1;
+
+            --border: rgba(255,255,255,0.20);
+            --serif: 'Playfair Display', Georgia, serif;
+            --mono: 'Space Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: min(1120px, 88%);
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6,29,74,0.96);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            font-family: var(--serif);
+            font-size: 23px;
+            letter-spacing: -0.7px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--muted);
+            transition: color .3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            border: 1px solid var(--accent);
+            padding: 11px 16px;
+            color: var(--accent) !important;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 105px 0 65px;
+        }
+
+        .eyebrow {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 26px;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--serif);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(43px, 6.5vw, 76px);
+            max-width: 950px;
+            letter-spacing: -2px;
+            margin-bottom: 27px;
+        }
+
+        .hero-description {
+            color: var(--muted);
+            font-size: 17px;
+            max-width: 740px;
+            line-height: 1.9;
+            opacity: .9;
+        }
+
+        .article-meta {
+            margin-top: 35px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 25px;
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .article-meta span:first-child {
+            color: var(--accent);
+        }
+
+        /* FEATURE IMAGE */
+
+        .hero-image {
+            margin: 30px auto 85px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 490px;
+            object-fit: cover;
+            opacity: .88;
+        }
+
+        /* ARTICLE LAYOUT */
+
+        .article-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 260px;
+            gap: 85px;
+            align-items: start;
+        }
+
+        .article-content {
+            min-width: 0;
+        }
+
+        .article-content section {
+            margin-bottom: 65px;
+            scroll-margin-top: 100px;
+        }
+
+        .section-label {
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 17px;
+        }
+
+        h2 {
+            font-size: clamp(30px, 4vw, 43px);
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        h3 {
+            font-size: 25px;
+            margin: 30px 0 13px;
+        }
+
+        .article-content p {
+            font-size: 15px;
+            color: var(--muted);
+            opacity: .92;
+            margin-bottom: 19px;
+        }
+
+        .article-content ul {
+            padding-left: 22px;
+            margin: 18px 0 25px;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .article-content li {
+            margin-bottom: 9px;
+        }
+
+        .article-content strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .article-content a.inline-link {
+            color: var(--accent);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        /* HIGHLIGHT */
+
+        .highlight {
+            border-left: 2px solid var(--accent);
+            background: var(--surface-light);
+            padding: 27px 30px;
+            margin: 35px 0;
+        }
+
+        .highlight p {
+            font-family: var(--serif);
+            font-size: 21px;
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+            opacity: 1;
+        }
+
+        /* NUMBERED ITEMS */
+
+        .numbered-item {
+            display: grid;
+            grid-template-columns: 55px 1fr;
+            gap: 20px;
+            padding: 27px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .number {
+            font-family: var(--mono);
+            font-size: 20px;
+            color: var(--accent);
+        }
+
+        .numbered-item h3 {
+            margin: 0 0 12px;
+            font-size: 25px;
+        }
+
+        .numbered-item p {
+            margin: 0;
+        }
+
+        /* COMPARISON CARDS */
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .comparison-card {
+            padding: 25px;
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+        }
+
+        .comparison-card h3 {
+            font-size: 22px;
+            margin: 0 0 12px;
+        }
+
+        .comparison-card p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* PROCESS */
+
+        .process-box {
+            background: var(--surface-light);
+            padding: 30px;
+            border: 1px solid var(--border);
+            margin: 30px 0;
+        }
+
+        .process-box ol {
+            padding-left: 22px;
+            color: var(--muted);
+        }
+
+        .process-box li {
+            margin: 12px 0;
+            padding-left: 8px;
+        }
+
+        /* SIDEBAR */
+
+        .sidebar {
+            position: sticky;
+            top: 110px;
+        }
+
+        .sidebar-box {
+            padding: 25px;
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+            background: var(--surface-light);
+        }
+
+        .sidebar-title {
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .toc {
+            list-style: none;
+        }
+
+        .toc li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .toc a {
+            font-size: 12px;
+            color: var(--muted);
+            transition: color .3s;
+        }
+
+        .toc a:hover {
+            color: var(--accent);
+        }
+
+        .sidebar-box p {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 17px;
+        }
+
+        .sidebar-link {
+            color: var(--accent);
+            font-family: var(--mono);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* FAQ */
+
+        .faq-item {
+            padding: 23px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-item h3 {
+            font-size: 21px;
+            margin: 0 0 12px;
+        }
+
+        .faq-item p {
+            margin: 0;
+        }
+
+        /* RELATED CONTENT */
+
+        .related {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .related-card {
+            padding: 25px;
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+            transition: border-color .3s, transform .3s;
+        }
+
+        .related-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .related-card span {
+            font-family: var(--mono);
+            color: var(--accent);
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .related-card h3 {
+            font-size: 22px;
+            margin: 13px 0;
+        }
+
+        .related-card p {
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* REFERENCES */
+
+        .sources {
+            padding: 25px;
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+        }
+
+        .sources ul {
+            margin-bottom: 0;
+        }
+
+        .sources a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* CTA */
+
+        .final-cta {
+            margin: 80px 0;
+            padding: 70px 45px;
+            text-align: center;
+            background: var(--surface);
+            border: 1px solid var(--border);
+        }
+
+        .final-cta h2 {
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+
+        .final-cta p {
+            max-width: 620px;
+            margin: 0 auto 30px;
+            color: var(--muted);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 27px;
+            background: var(--accent);
+            color: #061D4A;
+            font-family: var(--mono);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: opacity .3s;
+        }
+
+        .cta-button:hover {
+            opacity: .8;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 45px 0;
+            background: var(--bg);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-inner p {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width: 900px) {
+
+            .nav-links {
+                gap: 13px;
+            }
+
+            .article-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .sidebar {
+                position: static;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+
+        @media(max-width: 650px) {
+
+            .container {
+                width: 90%;
+            }
+
+            .nav-inner {
+                min-height: 65px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 75px 0 40px;
+            }
+
+            h1 {
+                font-size: 44px;
+            }
+
+            .hero-image {
+                margin: 20px auto 55px;
+            }
+
+            .hero-image img {
+                height: 280px;
+            }
+
+            .article-content section {
+                margin-bottom: 48px;
+            }
+
+            .comparison-grid,
+            .related {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                grid-template-columns: 1fr;
+            }
+
+            .final-cta {
+                padding: 50px 22px;
+                margin: 55px 0;
+            }
+
+            .numbered-item {
+                grid-template-columns: 40px 1fr;
+                gap: 12px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header class="navbar">
+    <div class="container nav-inner">
+
+        <a href="/" class="logo">
+            Casa di <span>Lilly.</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul class="nav-links">
+                <li> <a href="../index.html"> Home</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#partnership">Partnership</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#insights" class="active">Insights</a></li>
+                <li><a href="../index.html#contact" class="nav-cta">Start a Project</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- ARTICLE HERO -->
+<main>
+
+<section class="hero">
+    <div class="container">
+
+        <div class="eyebrow">
+            RESPONSIBLE AI • AI RELIABILITY • BUSINESS AUTOMATION
+        </div>
+
+        <h1>
+            What Happens When AI Gets Something Wrong?
+        </h1>
+
+        <p class="hero-description">
+            Artificial intelligence can generate answers, organise
+            information and support business operations. But it
+            can also make mistakes. Discover why AI produces
+            inaccurate information, what businesses should watch
+            for and how to build more reliable automation systems.
+        </p>
+
+        <div class="article-meta">
+            <span>Casa di Lilly</span>
+            <span>Responsible AI & Business Automation</span>
+            <span>12 November 2026</span>
+            <span>10–12 Min Read</span>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FEATURE IMAGE -->
+<div class="container hero-image">
+    <img
+        src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=85"
+        alt="Business professionals reviewing technology and digital information in a collaborative workspace"
+        fetchpriority="high"
+    >
+</div>
+
+
+<!-- ARTICLE BODY -->
+<div class="container article-layout">
+
+<article class="article-content">
+
+
+    <!-- INTRODUCTION -->
+    <section id="introduction">
+
+        <div class="section-label">THE REALITY OF ARTIFICIAL INTELLIGENCE</div>
+
+        <h2>Can you trust everything an AI system tells you?</h2>
+
+        <p>
+            Artificial intelligence can help businesses respond
+            to customers, summarise information, prepare reports
+            and organise everyday operations.
+        </p>
+
+        <p>
+            Some systems can even interact with connected
+            applications and perform actions within a business
+            workflow.
+        </p>
+
+        <p>
+            However, there is something every business owner
+            should understand before introducing AI into
+            their operations:
+        </p>
+
+        <p>
+            <strong>AI can get things wrong, sometimes in ways
+            that are difficult to recognise immediately.</strong>
+        </p>
+
+        <p>
+            An AI assistant might provide an incorrect service
+            price, misunderstand a customer request, summarise
+            a document inaccurately or refer to information
+            that does not actually exist.
+        </p>
+
+        <p>
+            What makes this particularly important is that
+            an incorrect AI response can sometimes sound
+            polished, detailed and convincing.
+        </p>
+
+        <div class="highlight">
+            <p>
+                The goal of responsible AI automation is not
+                to assume that technology will never make
+                mistakes. It is to design systems that
+                detect, limit and respond to mistakes
+                before they become bigger business problems.
+            </p>
+        </div>
+
+        <p>
+            Understanding how AI errors happen is therefore
+            an important part of building reliable business
+            technology.
+        </p>
+
+    </section>
+
+
+    <!-- AI HALLUCINATIONS -->
+    <section id="hallucinations">
+
+        <div class="section-label">UNDERSTANDING AI ERRORS</div>
+
+        <h2>What is an AI hallucination?</h2>
+
+        <p>
+            An <strong>AI hallucination</strong> occurs when
+            an artificial intelligence system generates
+            information that is incorrect, fabricated
+            or unsupported but presents it as a plausible
+            answer.
+        </p>
+
+        <p>
+            For example, a business owner might ask an AI
+            assistant to identify a regulation or provide
+            a reference for a business report.
+        </p>
+
+        <p>
+            The AI might produce a detailed explanation
+            and mention a source that sounds credible.
+            However, when the information is checked,
+            the source may not exist or may not support
+            the statement.
+        </p>
+
+        <p>
+            The response can look professional while
+            still being factually wrong.
+        </p>
+
+        <h3>What can AI hallucinations look like?</h3>
+
+        <div class="numbered-item">
+            <div class="number">01</div>
+            <div>
+                <h3>Invented facts</h3>
+                <p>
+                    AI provides a date, statistic, business
+                    detail or other factual statement
+                    that is incorrect or unsupported.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">02</div>
+            <div>
+                <h3>Fabricated references</h3>
+                <p>
+                    An AI system generates a citation,
+                    research paper, quotation or website
+                    reference that cannot be verified.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">03</div>
+            <div>
+                <h3>Incorrect explanations</h3>
+                <p>
+                    The system explains a process or
+                    subject using information that
+                    sounds logical but is inaccurate.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">04</div>
+            <div>
+                <h3>Misunderstood instructions</h3>
+                <p>
+                    The system responds to a different
+                    question or interprets the user's
+                    request incorrectly.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">05</div>
+            <div>
+                <h3>Unsupported assumptions</h3>
+                <p>
+                    The system fills gaps in missing
+                    information instead of explaining
+                    that it does not have enough
+                    information to answer confidently.
+                </p>
+            </div>
+        </div>
+
+        <p>
+            Researchers and AI developers use the term
+            hallucination to describe this category
+            of errors. NIST also discusses the related
+            concept of AI confabulation in its
+            generative AI risk management guidance.
+        </p>
+
+    </section>
+
+
+    <!-- WHY AI MAKES MISTAKES -->
+    <section id="why-errors-happen">
+
+        <div class="section-label">WHY AI GETS THINGS WRONG</div>
+
+        <h2>Why does artificial intelligence make mistakes?</h2>
+
+        <p>
+            AI systems do not automatically know whether
+            every statement they generate is factually
+            correct.
+        </p>
+
+        <p>
+            Generative AI models learn patterns from
+            large amounts of information and use those
+            patterns to produce responses to instructions.
+        </p>
+
+        <p>
+            They can generate useful answers, but this
+            process does not guarantee that every detail
+            is accurate.
+        </p>
+
+        <h3>There are several reasons AI systems can produce errors.</h3>
+
+        <div class="numbered-item">
+            <div class="number">01</div>
+            <div>
+                <h3>Incomplete information</h3>
+                <p>
+                    The AI may not have enough context
+                    to understand the question or complete
+                    the task accurately. Instead of
+                    identifying the missing information,
+                    it may produce an answer based on
+                    assumptions.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">02</div>
+            <div>
+                <h3>Outdated information</h3>
+                <p>
+                    Information about business services,
+                    software, prices, regulations and
+                    operating procedures can change.
+                    An AI assistant using older information
+                    may produce an answer that is no longer
+                    correct.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">03</div>
+            <div>
+                <h3>Ambiguous instructions</h3>
+                <p>
+                    If a prompt or instruction is unclear,
+                    the AI may interpret it differently
+                    from what the user intended.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">04</div>
+            <div>
+                <h3>Inaccurate source information</h3>
+                <p>
+                    If the documents or records supplied
+                    to an AI system contain mistakes,
+                    those mistakes may influence its
+                    output.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">05</div>
+            <div>
+                <h3>Misinterpretation of context</h3>
+                <p>
+                    The AI may misunderstand the meaning
+                    of a message, confuse two different
+                    customers or overlook an important
+                    detail in a conversation.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">06</div>
+            <div>
+                <h3>Complex or unusual requests</h3>
+                <p>
+                    Some tasks require specialised
+                    knowledge or information that
+                    is not available to the system.
+                    The AI may struggle when the
+                    request falls outside its intended
+                    capabilities.
+                </p>
+            </div>
+        </div>
+
+        <div class="highlight">
+            <p>
+                An AI system can be very capable without
+                being correct every time. Fluency and
+                confidence should never be treated as
+                proof of accuracy.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- BUSINESS RISKS -->
+    <section id="business-risks">
+
+        <div class="section-label">THE BUSINESS CONSEQUENCES</div>
+
+        <h2>What happens when AI makes a mistake in a business?</h2>
+
+        <p>
+            An incorrect answer in an informal conversation
+            may have limited consequences. However, when
+            an AI system is connected to business operations,
+            inaccurate information can affect customers,
+            employees and business processes.
+        </p>
+
+        <p>
+            The potential consequences depend on what
+            the system does, which applications it can
+            access and whether anyone reviews its output.
+        </p>
+
+        <h3>1. Incorrect customer information</h3>
+
+        <p>
+            Imagine a customer asks an AI assistant about
+            the price of a service.
+        </p>
+
+        <p>
+            If the assistant uses outdated pricing information,
+            it may quote an amount that the business no longer
+            charges.
+        </p>
+
+        <p>
+            The customer may form expectations based on
+            incorrect information, creating additional
+            work for the business to resolve.
+        </p>
+
+        <h3>2. Mismanaged enquiries</h3>
+
+        <p>
+            An AI system may misunderstand an enquiry
+            and categorise it incorrectly.
+        </p>
+
+        <p>
+            A customer requesting technical assistance
+            could be directed to a sales process instead
+            of the appropriate support team.
+        </p>
+
+        <h3>3. Incorrect business documents</h3>
+
+        <p>
+            AI can help prepare draft quotations, reports,
+            summaries and other documents.
+        </p>
+
+        <p>
+            However, if the supplied information is wrong
+            or the system misunderstands the instructions,
+            an inaccurate document could be produced.
+        </p>
+
+        <h3>4. Poor business decisions</h3>
+
+        <p>
+            Managers may use AI-generated summaries
+            and recommendations when reviewing business
+            information.
+        </p>
+
+        <p>
+            If the underlying figures or explanations
+            are inaccurate, decisions based on them
+            may also be affected.
+        </p>
+
+        <h3>5. Inconsistent customer experiences</h3>
+
+        <p>
+            If an AI assistant gives different answers
+            to similar customer questions, the business
+            may struggle to maintain consistent
+            communication.
+        </p>
+
+        <h3>6. Errors that spread through connected systems</h3>
+
+        <p>
+            This is particularly important in automated
+            workflows.
+        </p>
+
+        <p>
+            If an incorrect AI-generated value is
+            transferred into another application,
+            the mistake may affect more than one
+            business record or process.
+        </p>
+
+        <p>
+            Connected systems should therefore include
+            checks before important information is
+            saved, shared or used to trigger further
+            actions.
+        </p>
+
+    </section>
+
+
+    <!-- PRACTICAL EXAMPLE -->
+    <section id="real-example">
+
+        <div class="section-label">A PRACTICAL BUSINESS EXAMPLE</div>
+
+        <h2>What happens when an AI assistant quotes the wrong price?</h2>
+
+        <p>
+            Consider a service business that uses an
+            AI-powered website assistant to answer
+            customer questions.
+        </p>
+
+        <p>
+            The assistant has access to business
+            information, including service descriptions
+            and pricing documents.
+        </p>
+
+        <p>
+            A customer asks for the price of a particular
+            service.
+        </p>
+
+        <p>
+            Unfortunately, the connected information
+            contains an old pricing document that
+            has not been updated.
+        </p>
+
+        <p>
+            The AI retrieves the old information
+            and provides the customer with an
+            outdated quotation.
+        </p>
+
+        <h3>How could the business prevent this?</h3>
+
+        <div class="process-box">
+
+            <ol>
+                <li><strong>Approved source:</strong> Maintain one current, authoritative pricing source.</li>
+
+                <li><strong>Information control:</strong> Remove or clearly archive outdated pricing documents.</li>
+
+                <li><strong>Retrieval checks:</strong> Ensure the assistant uses the correct and current information.</li>
+
+                <li><strong>Response boundaries:</strong> Instruct the assistant not to invent prices when information is unavailable.</li>
+
+                <li><strong>Approval:</strong> Require human confirmation for customised quotations or exceptions.</li>
+
+                <li><strong>Monitoring:</strong> Review customer interactions and correct recurring problems.</li>
+            </ol>
+
+        </div>
+
+        <p>
+            Notice that the solution is not necessarily
+            to remove AI from customer service.
+        </p>
+
+        <p>
+            It is to improve the information, instructions
+            and safeguards surrounding the AI assistant.
+        </p>
+
+    </section>
+
+
+    <!-- OTHER ERRORS -->
+    <section id="other-errors">
+
+        <div class="section-label">BEYOND HALLUCINATIONS</div>
+
+        <h2>Not all AI mistakes are hallucinations.</h2>
+
+        <p>
+            Businesses should understand that an AI system
+            can cause problems even when it generates
+            factually correct information.
+        </p>
+
+        <p>
+            Some failures happen because of how the
+            system interprets instructions, accesses
+            information or interacts with other
+            applications.
+        </p>
+
+        <div class="comparison-grid">
+
+            <div class="comparison-card">
+                <h3>Incorrect output</h3>
+                <p>
+                    The AI generates information that is
+                    factually wrong, incomplete or unsupported.
+                </p>
+            </div>
+
+            <div class="comparison-card">
+                <h3>Wrong action</h3>
+                <p>
+                    The system performs an action that
+                    does not match the intended business
+                    outcome.
+                </p>
+            </div>
+
+            <div class="comparison-card">
+                <h3>Integration failure</h3>
+                <p>
+                    A connected application fails,
+                    returns incomplete data or does
+                    not complete a requested operation.
+                </p>
+            </div>
+
+            <div class="comparison-card">
+                <h3>Permission problem</h3>
+                <p>
+                    An AI system has more access than
+                    it needs or an action is not
+                    properly restricted.
+                </p>
+            </div>
+
+            <div class="comparison-card">
+                <h3>Context confusion</h3>
+                <p>
+                    The AI mixes information from
+                    different requests, customers
+                    or stages of a conversation.
+                </p>
+            </div>
+
+            <div class="comparison-card">
+                <h3>Instruction manipulation</h3>
+                <p>
+                    Malicious or misleading input
+                    attempts to influence the AI
+                    to ignore its intended instructions.
+                </p>
+            </div>
+
+        </div>
+
+        <p>
+            This is why AI reliability must be considered
+            at the level of the entire business system,
+            not only the language model itself.
+        </p>
+
+    </section>
+
+
+    <!-- HOW TO PREVENT -->
+    <section id="prevention">
+
+        <div class="section-label">BUILDING RELIABLE AI SYSTEMS</div>
+
+        <h2>How can businesses prevent AI mistakes?</h2>
+
+        <p>
+            No AI implementation can guarantee that
+            every possible error will be eliminated.
+            However, businesses can introduce controls
+            that reduce the likelihood of errors and
+            limit their potential impact.
+        </p>
+
+        <h3>1. Give AI clear instructions</h3>
+
+        <p>
+            Every AI assistant should have a defined
+            purpose, responsibilities and operating
+            boundaries.
+        </p>
+
+        <p>
+            Instead of simply instructing an assistant
+            to answer every customer question, explain
+            which information it can use, which topics
+            it can handle and when it should refer
+            a question to an employee.
+        </p>
+
+        <h3>2. Use approved and reliable information</h3>
+
+        <p>
+            A business should maintain accurate
+            information about its services, prices,
+            policies and procedures.
+        </p>
+
+        <p>
+            AI assistants should use appropriate
+            sources for the tasks they perform.
+        </p>
+
+        <p>
+            For example, an assistant providing
+            service information should use current
+            approved service documents rather than
+            relying on outdated files or assumptions.
+        </p>
+
+        <h3>3. Make uncertainty an acceptable response</h3>
+
+        <p>
+            An AI assistant should not be forced
+            to invent an answer whenever information
+            is missing.
+        </p>
+
+        <p>
+            Its instructions should allow it to
+            acknowledge uncertainty and ask for
+            clarification or human assistance.
+        </p>
+
+        <p>
+            This is particularly important for
+            pricing, business policies, technical
+            instructions and other information
+            customers may rely upon.
+        </p>
+
+        <h3>4. Verify important information</h3>
+
+        <p>
+            AI-generated information should be
+            checked against authoritative records
+            before being used for important
+            business purposes.
+        </p>
+
+        <p>
+            This is especially relevant for financial
+            information, legal references, contractual
+            terms and other consequential decisions.
+        </p>
+
+        <h3>5. Set appropriate permissions</h3>
+
+        <p>
+            An AI assistant should only access
+            the information and applications
+            required for its assigned tasks.
+        </p>
+
+        <p>
+            Where possible, use limited permissions
+            rather than allowing an AI system
+            unrestricted access to business
+            applications.
+        </p>
+
+        <h3>6. Introduce approval stages</h3>
+
+        <p>
+            Important actions can require confirmation
+            before they are completed.
+        </p>
+
+        <p>
+            For example, an AI system could prepare
+            a quotation, but an authorised employee
+            should approve it before it is sent.
+        </p>
+
+        <h3>7. Test the system before launch</h3>
+
+        <p>
+            Testing should include normal requests,
+            incomplete information, unusual questions
+            and examples where the correct response
+            is to ask for assistance.
+        </p>
+
+        <h3>8. Monitor performance</h3>
+
+        <p>
+            Businesses should periodically review
+            outputs, failed workflows, customer
+            feedback and unexpected behaviour.
+        </p>
+
+        <p>
+            Instructions and information should
+            be updated as the business changes.
+        </p>
+
+        <div class="highlight">
+            <p>
+                Reliable AI is not just about choosing
+                a capable model. It is about combining
+                good information, thoughtful instructions,
+                technical controls and human responsibility.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- HUMAN APPROVAL -->
+    <section id="human-oversight">
+
+        <div class="section-label">HUMAN OVERSIGHT</div>
+
+        <h2>When should a human check an AI-generated response?</h2>
+
+        <p>
+            Human involvement is especially important
+            when incorrect information could create
+            financial, legal, operational or customer
+            consequences.
+        </p>
+
+        <p>
+            The appropriate level of review depends
+            on the task and the potential impact of
+            an incorrect result.
+        </p>
+
+        <h3>Examples of tasks requiring human review</h3>
+
+        <div class="numbered-item">
+            <div class="number">01</div>
+            <div>
+                <h3>Financial documents</h3>
+                <p>
+                    Draft invoices, quotations, payment
+                    instructions and financial summaries
+                    should be checked against authorised
+                    records before important use.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">02</div>
+            <div>
+                <h3>Customer complaints</h3>
+                <p>
+                    Routine questions may be supported
+                    by AI, but sensitive complaints and
+                    unusual circumstances should be
+                    assessed by a person.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">03</div>
+            <div>
+                <h3>Legal and contractual information</h3>
+                <p>
+                    AI can assist with organising documents,
+                    but important legal interpretations
+                    require appropriately qualified
+                    professional review.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">04</div>
+            <div>
+                <h3>Important business decisions</h3>
+                <p>
+                    AI recommendations should be
+                    evaluated against actual business
+                    information and the wider context
+                    before decisions are made.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">05</div>
+            <div>
+                <h3>External business communications</h3>
+                <p>
+                    Messages that contain commitments,
+                    sensitive details or customised
+                    promises should be approved
+                    according to business policy.
+                </p>
+            </div>
+        </div>
+
+        <p>
+            Human review should be meaningful.
+            The reviewer must have enough information,
+            time and authority to question or
+            correct an AI-generated recommendation.
+        </p>
+
+        <p>
+            Simply approving every AI response
+            without checking it does not provide
+            effective oversight.
+        </p>
+
+    </section>
+
+
+    <!-- TESTING -->
+    <section id="testing">
+
+        <div class="section-label">QUALITY CONTROL</div>
+
+        <h2>How do you test whether an AI system is reliable?</h2>
+
+        <p>
+            Before an AI assistant or agent is used
+            in everyday business operations, it
+            should be tested against realistic
+            tasks.
+        </p>
+
+        <p>
+            A successful test should not only
+            demonstrate that the system can
+            produce a good answer. It should
+            also establish how it behaves
+            when information is missing,
+            instructions are unclear or
+            something goes wrong.
+        </p>
+
+        <h3>Practical AI testing checklist</h3>
+
+        <div class="process-box">
+
+            <ol>
+                <li>Does the system provide accurate information from approved sources?</li>
+
+                <li>Does it acknowledge when it does not know an answer?</li>
+
+                <li>Does it avoid inventing prices, policies or business details?</li>
+
+                <li>Does it understand the purpose of incoming requests?</li>
+
+                <li>Does it handle incomplete information appropriately?</li>
+
+                <li>Does it respect its assigned permissions?</li>
+
+                <li>Does it ask for approval before restricted actions?</li>
+
+                <li>Does it escalate complicated requests to a human?</li>
+
+                <li>Does it handle failed integrations without falsely claiming success?</li>
+
+                <li>Can the business review what happened when an error occurs?</li>
+
+            </ol>
+
+        </div>
+
+        <p>
+            Testing should continue after launch.
+            A system that performed correctly during
+            initial testing may need adjustments
+            when new information, applications
+            or business requirements are introduced.
+        </p>
+
+    </section>
+
+
+    <!-- DATA PRIVACY -->
+    <section id="privacy">
+
+        <div class="section-label">DATA PROTECTION & SECURITY</div>
+
+        <h2>Why data privacy matters when using AI</h2>
+
+        <p>
+            Many AI systems work with information
+            supplied by businesses or retrieved
+            from connected applications.
+        </p>
+
+        <p>
+            This may include customer details,
+            email conversations, internal documents,
+            business records and other information
+            that requires protection.
+        </p>
+
+        <p>
+            Incorrect access controls or careless
+            handling of information can create
+            risks beyond inaccurate AI responses.
+        </p>
+
+        <h3>What should businesses consider?</h3>
+
+        <ul>
+            <li>Which information does the AI actually need?</li>
+            <li>Who is authorised to access that information?</li>
+            <li>How do connected AI service providers handle data?</li>
+            <li>What information is retained and for how long?</li>
+            <li>How are sensitive records protected?</li>
+            <li>Who is responsible for monitoring access and system activity?</li>
+            <li>What happens when information must be corrected or removed?</li>
+        </ul>
+
+        <p>
+            South African businesses should consider
+            their responsibilities under the Protection
+            of Personal Information Act (POPIA) when
+            using AI with personal information.
+        </p>
+
+        <p>
+            The business should assess its legal,
+            contractual and privacy obligations
+            before connecting sensitive data
+            to third-party AI services.
+        </p>
+
+    </section>
+
+
+    <!-- IF AI MAKES A MISTAKE -->
+    <section id="incident-response">
+
+        <div class="section-label">WHEN SOMETHING GOES WRONG</div>
+
+        <h2>What should a business do when an AI error is discovered?</h2>
+
+        <p>
+            Even carefully designed systems need
+            a procedure for dealing with errors.
+        </p>
+
+        <p>
+            Businesses should know how to identify
+            a problem, prevent it from continuing
+            and correct its effects where necessary.
+        </p>
+
+        <h3>A practical AI error response process</h3>
+
+        <div class="numbered-item">
+            <div class="number">01</div>
+            <div>
+                <h3>Identify the incorrect output or action</h3>
+                <p>
+                    Establish what happened and which
+                    information, response or workflow
+                    was affected.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">02</div>
+            <div>
+                <h3>Pause affected actions where necessary</h3>
+                <p>
+                    Prevent the same incorrect action
+                    from continuing through connected
+                    workflows while the issue is assessed.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">03</div>
+            <div>
+                <h3>Verify the correct information</h3>
+                <p>
+                    Check the affected information
+                    against reliable and authorised
+                    business records.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">04</div>
+            <div>
+                <h3>Correct the affected records or communication</h3>
+                <p>
+                    Follow the appropriate business
+                    procedure to correct inaccurate
+                    information and address any
+                    customer impact.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">05</div>
+            <div>
+                <h3>Identify the underlying cause</h3>
+                <p>
+                    Determine whether the error resulted
+                    from inaccurate information, unclear
+                    instructions, a failed integration
+                    or another system issue.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">06</div>
+            <div>
+                <h3>Improve the system</h3>
+                <p>
+                    Update the relevant instructions,
+                    information, permissions, testing
+                    procedures or approval controls.
+                </p>
+            </div>
+        </div>
+
+        <p>
+            Businesses should also maintain appropriate
+            records of incidents and follow any
+            applicable reporting or notification
+            requirements.
+        </p>
+
+    </section>
+
+
+    <!-- COST -->
+    <section id="cost">
+
+        <div class="section-label">COST & BUSINESS VALUE</div>
+
+        <h2>Does making AI more reliable increase the cost?</h2>
+
+        <p>
+            Building reliable AI systems can require
+            additional planning, testing, validation,
+            monitoring and maintenance.
+        </p>
+
+        <p>
+            These activities may increase the initial
+            implementation cost, but they are part
+            of designing technology that businesses
+            can use responsibly.
+        </p>
+
+        <h3>Factors that can influence the cost include:</h3>
+
+        <ul>
+            <li>Quality and preparation of business information.</li>
+            <li>Model and software requirements.</li>
+            <li>Data retrieval and verification processes.</li>
+            <li>System permissions and access controls.</li>
+            <li>Testing and quality assurance.</li>
+            <li>Human approval and monitoring processes.</li>
+            <li>Ongoing technical support and maintenance.</li>
+        </ul>
+
+        <p>
+            Not every workflow requires the same level
+            of complexity or investment.
+        </p>
+
+        <p>
+            A simple FAQ assistant and a business-critical
+            multi-application agent should not necessarily
+            be designed with identical controls.
+        </p>
+
+        <p>
+            The appropriate level of investment depends
+            on the task, the information involved and
+            the potential consequences of an error.
+        </p>
+
+    </section>
+
+
+    <!-- RESPONSIBLE AI -->
+    <section id="responsible-ai">
+
+        <div class="section-label">RESPONSIBLE AI IMPLEMENTATION</div>
+
+        <h2>What does responsible AI look like in a business?</h2>
+
+        <p>
+            Responsible AI is about more than choosing
+            a model with impressive capabilities.
+        </p>
+
+        <p>
+            It means understanding what the system
+            is designed to do, assessing potential
+            risks and making sure the people
+            responsible for it can monitor its
+            behaviour and intervene when necessary.
+        </p>
+
+        <p>
+            A business using AI responsibly should
+            consider:
+        </p>
+
+        <div class="comparison-grid">
+
+            <div class="comparison-card">
+                <h3>Transparency</h3>
+                <p>
+                    People should understand when
+                    they are interacting with an
+                    AI system where that distinction
+                    matters.
+                </p>
+            </div>
+
+            <div class="comparison-card">
+                <h3>Accuracy</h3>
+                <p>
+                    Important outputs should be
+                    supported by appropriate
+                    information and checks.
+                </p>
+            </div>
+
+            <div class="comparison-card">
+                <h3>Accountability</h3>
+                <p>
+                    Someone must be responsible
+                    for the system and its
+                    business use.
+                </p>
+            </div>
+
+            <div class="comparison-card">
+                <h3>Privacy</h3>
+                <p>
+                    Information must be handled
+                    according to appropriate
+                    access and protection rules.
+                </p>
+            </div>
+
+            <div class="comparison-card">
+                <h3>Human oversight</h3>
+                <p>
+                    Important decisions and actions
+                    should have appropriate
+                    human involvement.
+                </p>
+            </div>
+
+            <div class="comparison-card">
+                <h3>Continuous improvement</h3>
+                <p>
+                    Performance should be monitored
+                    and the system updated when
+                    requirements change.
+                </p>
+            </div>
+
+        </div>
+
+        <p>
+            This approach helps businesses think
+            beyond what AI can do and consider
+            how it should be used.
+        </p>
+
+    </section>
+
+
+    <!-- CASA DI LILLY -->
+    <section id="casa">
+
+        <div class="section-label">HOW CASA DI LILLY CAN HELP</div>
+
+        <h2>Smarter automation starts with better system design.</h2>
+
+        <p>
+            At Casa di Lilly, we believe businesses
+            should be able to benefit from artificial
+            intelligence without introducing
+            unnecessary operational complexity.
+        </p>
+
+        <p>
+            AI automation should be planned around
+            the business process, its information,
+            the people involved and the outcome
+            the organisation wants to achieve.
+        </p>
+
+        <p>
+            We focus on digital solutions that
+            combine AI capabilities, workflow
+            automation, application integrations
+            and professional website development.
+        </p>
+
+        <h3>Our AI and digital solutions include:</h3>
+
+        <div class="numbered-item">
+            <div class="number">01</div>
+            <div>
+                <h3>AI Customer Support Systems</h3>
+                <p>
+                    Website assistants and customer
+                    communication workflows using
+                    approved business information
+                    and escalation procedures.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">02</div>
+            <div>
+                <h3>AI Agents & Intelligent Workflows</h3>
+                <p>
+                    AI-powered systems designed to
+                    support defined tasks through
+                    connected applications and
+                    controlled actions.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">03</div>
+            <div>
+                <h3>CRM & Lead Management Automation</h3>
+                <p>
+                    Structured enquiry collection,
+                    customer record management,
+                    follow-ups and internal
+                    notifications.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">04</div>
+            <div>
+                <h3>Document & Reporting Automation</h3>
+                <p>
+                    Workflow solutions supporting
+                    information organisation,
+                    document preparation and
+                    reporting with appropriate review.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">05</div>
+            <div>
+                <h3>Business Process Automation</h3>
+                <p>
+                    Connected workflows for bookings,
+                    administration, communication
+                    and everyday business operations.
+                </p>
+            </div>
+        </div>
+
+        <div class="numbered-item">
+            <div class="number">06</div>
+            <div>
+                <h3>Website Design & Development</h3>
+                <p>
+                    Professional websites and connected
+                    digital experiences designed to
+                    support business visibility and
+                    customer interaction.
+                </p>
+            </div>
+        </div>
+
+        <p>
+            Our focus is on identifying the right
+            approach for each business rather than
+            introducing AI simply because it is available.
+        </p>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section id="faq">
+
+        <div class="section-label">FREQUENTLY ASKED QUESTIONS</div>
+
+        <h2>Questions about AI accuracy, mistakes and reliability.</h2>
+
+        <div class="faq-item">
+            <h3>What happens when AI gets something wrong?</h3>
+            <p>
+                When AI produces incorrect information,
+                the consequences depend on how the
+                output is used. An error could create
+                confusion, provide inaccurate customer
+                information or affect a connected
+                business process. Important outputs
+                should be checked and corrected using
+                reliable information.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is an AI hallucination?</h3>
+            <p>
+                An AI hallucination is when a generative
+                AI system produces plausible but false
+                or unsupported information. Examples
+                include invented facts, incorrect
+                references and inaccurate explanations.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why does artificial intelligence hallucinate?</h3>
+            <p>
+                AI models generate responses based
+                on learned patterns and available
+                context. They can produce inaccurate
+                information when facts are uncertain,
+                information is incomplete or instructions
+                are ambiguous. AI-generated fluency
+                does not guarantee factual accuracy.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can AI mistakes be completely prevented?</h3>
+            <p>
+                No system can guarantee that every
+                possible error will be eliminated.
+                Businesses can reduce risks through
+                reliable data, clear instructions,
+                verification, testing, restricted
+                permissions and human oversight.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How can a business check whether AI information is correct?</h3>
+            <p>
+                Important information should be checked
+                against authoritative and current
+                sources. Businesses can also use
+                approved documents, structured
+                validation rules and human review
+                before relying on AI-generated outputs.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can AI customer support give customers incorrect answers?</h3>
+            <p>
+                Yes. An AI assistant may misunderstand
+                a question or use outdated business
+                information. Businesses should maintain
+                approved knowledge sources, test
+                realistic questions and provide a
+                clear route to human support.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Should businesses allow AI to send emails automatically?</h3>
+            <p>
+                It depends on the type of email and
+                the consequences of an incorrect
+                message. Routine communications may
+                be automated with appropriate controls,
+                while sensitive or important messages
+                should require human approval.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is human oversight in artificial intelligence?</h3>
+            <p>
+                Human oversight means people remain
+                involved in monitoring, reviewing
+                and controlling AI systems. Depending
+                on the task, this can include checking
+                responses, approving actions,
+                investigating errors and deciding
+                when the system should not proceed.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How can AI errors affect business automation?</h3>
+            <p>
+                Incorrect information can move
+                through connected workflows and
+                affect customer records, notifications
+                or documents. Systems should include
+                validation, error handling and
+                approval stages before important
+                actions are completed.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is responsible AI automation?</h3>
+            <p>
+                Responsible AI automation involves
+                designing and operating AI systems
+                with appropriate accuracy checks,
+                privacy controls, permissions,
+                transparency, accountability and
+                human oversight.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do small businesses need AI risk management?</h3>
+            <p>
+                Yes. The level of controls should
+                reflect the business process and
+                potential consequences of errors.
+                Even a small business should know
+                what its AI systems can access,
+                which actions they can perform
+                and who is responsible for reviewing
+                their outputs.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How does POPIA relate to AI automation in South Africa?</h3>
+            <p>
+                When an AI system processes personal
+                information, South African businesses
+                should consider their applicable
+                obligations under POPIA, including
+                responsible information handling,
+                appropriate safeguards and relevant
+                data processing requirements.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- REFERENCES -->
+    <section id="references">
+
+        <div class="section-label">RESEARCH & FURTHER READING</div>
+
+        <h2>Trusted resources on AI accuracy and responsible AI.</h2>
+
+        <p>
+            Understanding AI reliability requires
+            looking beyond marketing claims.
+            The following research and guidance
+            provide additional information about
+            AI errors, risk management and
+            human oversight.
+        </p>
+
+        <div class="sources">
+
+            <ul>
+
+                <li>
+                    <a
+                        href="https://openai.com/index/why-language-models-hallucinate/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        OpenAI – Why Language Models Hallucinate
+                    </a>
+
+                    <p>
+                        Research explaining why language models
+                        can produce confident but inaccurate
+                        information and why hallucinations
+                        remain an important reliability challenge.
+                    </p>
+                </li>
+
+                <li>
+                    <a
+                        href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        NIST – Artificial Intelligence Risk Management Framework:
+                        Generative AI Profile
+                    </a>
+
+                    <p>
+                        Guidance on identifying, assessing
+                        and managing risks associated with
+                        generative artificial intelligence.
+                    </p>
+                </li>
+
+                <li>
+                    <a
+                        href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-individual-rights-in-our-ai-systems/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        UK Information Commissioner's Office – Human Input
+                        and Individual Rights in AI Systems
+                    </a>
+
+                    <p>
+                        Guidance on meaningful human involvement
+                        and oversight in AI-supported decision-making.
+                    </p>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- TAKEAWAY -->
+    <section id="takeaway">
+
+        <div class="section-label">THE BIGGER PICTURE</div>
+
+        <h2>Trust in AI comes from how you design and manage it.</h2>
+
+        <p>
+            Artificial intelligence can help businesses
+            organise information, improve communication
+            and automate repetitive activities.
+        </p>
+
+        <p>
+            But no matter how advanced a system becomes,
+            businesses should understand that incorrect
+            outputs and unexpected behaviour are possible.
+        </p>
+
+        <p>
+            The answer is not necessarily to avoid AI.
+            It is to implement it with reliable information,
+            appropriate access controls, thorough testing
+            and meaningful human oversight.
+        </p>
+
+        <p>
+            When the technology is designed around
+            real business needs and clear responsibilities,
+            it can provide useful support without
+            requiring people to surrender control.
+        </p>
+
+        <div class="highlight">
+            <p>
+                Don't just ask what AI can automate.
+                Ask what happens when it makes a mistake,
+                who is responsible and how your business
+                will respond.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- RELATED ARTICLES -->
+    <section id="related">
+
+        <div class="section-label">CONTINUE EXPLORING</div>
+
+        <h2>More insights for smarter businesses.</h2>
+
+        <p>
+            Explore more practical information about
+            artificial intelligence, business automation,
+            intelligent assistants and connected systems.
+        </p>
+
+        <div class="related">
+
+            <a href="/are-ai-agents-useful.html"
+               class="related-card">
+
+                <span>AI AGENTS</span>
+
+                <h3>Are AI Agents Actually Useful, or Is It Just Hype?</h3>
+
+                <p>
+                    Discover how AI agents work,
+                    where businesses can use them
+                    and why implementation matters.
+                </p>
+
+            </a>
+
+            <a href="/ai-business-assistant.html"
+               class="related-card">
+
+                <span>AI & PRODUCTIVITY</span>
+
+                <h3>Can AI Be Your Business Assistant?</h3>
+
+                <p>
+                    Understand how intelligent assistants
+                    can support employees and everyday
+                    business operations.
+                </p>
+
+            </a>
+
+            <a href="/what-should-a-small-business-automate-first.html"
+               class="related-card">
+
+                <span>BUSINESS AUTOMATION</span>
+
+                <h3>What Should a Small Business Automate First?</h3>
+
+                <p>
+                    Identify the repetitive business
+                    processes that are worth
+                    automating first.
+                </p>
+
+            </a>
+
+            <a href="/insights.html"
+               class="related-card">
+
+                <span>CASA DI LILLY INSIGHTS</span>
+
+                <h3>Explore More Business Technology Insights</h3>
+
+                <p>
+                    Discover articles covering AI,
+                    website development, SEO and
+                    digital business growth.
+                </p>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+
+        <div class="eyebrow">
+            BUILD SMARTER. AUTOMATE RESPONSIBLY.
+        </div>
+
+        <h2>Technology should make your business stronger, not more complicated.</h2>
+
+        <p>
+            Explore AI automation, intelligent business
+            assistants, connected workflows and digital
+            systems designed around your business goals.
+        </p>
+
+        <a href="../index.html#contact" class="cta-button">
+            Start a Project →
+        </a>
+
+    </section>
+
+
+</article>
+
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+    <div class="sidebar-box">
+
+        <div class="sidebar-title">IN THIS ARTICLE</div>
+
+        <ul class="toc">
+            <li><a href="#introduction">The reality of AI</a></li>
+            <li><a href="#hallucinations">AI hallucinations</a></li>
+            <li><a href="#why-errors-happen">Why AI makes mistakes</a></li>
+            <li><a href="#business-risks">Business consequences</a></li>
+            <li><a href="#real-example">Practical example</a></li>
+            <li><a href="#other-errors">Other AI errors</a></li>
+            <li><a href="#prevention">Preventing mistakes</a></li>
+            <li><a href="#human-oversight">Human oversight</a></li>
+            <li><a href="#testing">AI testing</a></li>
+            <li><a href="#privacy">Data protection</a></li>
+            <li><a href="#incident-response">When something goes wrong</a></li>
+            <li><a href="#cost">Cost & business value</a></li>
+            <li><a href="#responsible-ai">Responsible AI</a></li>
+            <li><a href="#casa">How Casa di Lilly helps</a></li>
+            <li><a href="#faq">Frequently asked questions</a></li>
+            <li><a href="#references">Research & references</a></li>
+        </ul>
+
+    </div>
+
+
+    <div class="sidebar-box">
+
+        <div class="sidebar-title">BUILD AI RESPONSIBLY</div>
+
+        <p>
+            Explore how intelligent automation
+            and connected business systems
+            can support your operations.
+        </p>
+
+        <a href="../index.html#contact" class="sidebar-link">
+            Start a Project →
+        </a>
+
+    </div>
+
+</aside>
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="container footer-inner">
+
+        <div>
+
+           <a href="../index.html">
+            Casa di Lilly
+            </a>
+
+            <p style="margin-top:10px;">
+                Where Soul Meets Silicon.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+<a href="../index.html">
+                Home
+            </a>
+
+            <a href="../index.html#services">
+                Services
+            </a>
+
+            <a href="../index.html#partnership">
+                Partnership
+            </a>
+
+            <a href="../index.html#projects">
+                Projects
+            </a>
+
+            <a href="../index.html#insights">
+                Insights
+            </a>
+
+            <a href="../index.html#contact">
+                Contact
+            </a>
+        </div>
+
+        <p>
+            © 2026 Casa di Lilly. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
