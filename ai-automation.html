@@ -40,6 +40,147 @@
     @media(max-width:760px){.nav-toggle{display:flex}.nav-cta{display:none}.nav-links{position:fixed;top:78px;left:0;width:100%;height:calc(100vh - 78px);background:rgba(255,255,255,.98);display:flex;flex-direction:column;align-items:stretch;gap:0;padding:25px 5%;transform:translateX(100%);transition:transform .3s ease}.nav-links.open{transform:translateX(0)}.nav-links a{padding:14px 3px;border-bottom:1px solid var(--border);font-size:1rem}.hero{padding:78px 0 65px}.hero-grid{gap:35px}.hero h1{font-size:clamp(2.4rem,11vw,3.5rem)}.hero-lead{font-size:1rem}.dashboard-shell{padding:12px;transform:none}.dash-content{grid-template-columns:100px 1fr;gap:8px}.dash-side{padding:8px 5px}.dash-side span{font-size:.6rem;padding:8px 5px}.dash-side small{font-size:.54rem;padding:4px}.dash-stat{padding:8px}.dash-stat strong{font-size:1rem}.dash-stats{gap:5px}.dash-lower{grid-template-columns:1fr}.float-tag{right:0;bottom:-15px}.section{padding:70px 0}section{padding:72px 0}.intro-grid,.usecase-grid{grid-template-columns:1fr}.demo-workspace{padding:9px;border-radius:17px}.demo-body{grid-template-columns:1fr;min-height:0}.demo-nav{display:flex;overflow-x:auto;gap:5px;padding:7px}.demo-nav .nav-caption{display:none}.demo-tab{width:auto;flex:none;white-space:nowrap;padding:9px 11px;font-size:.72rem}.demo-tab .tab-icon{display:none}.demo-panel{padding:14px}.panel-header h3{font-size:1rem}.metric-grid{grid-template-columns:repeat(3,1fr);gap:6px}.metric{padding:9px}.metric strong{font-size:1.05rem}.metric span{font-size:.64rem}.overview-grid{grid-template-columns:1fr}.solutions-grid{grid-template-columns:1fr}.terms-grid{grid-template-columns:1fr}.steps-grid{grid-template-columns:1fr 1fr}.cta-band{grid-template-columns:1fr;padding:30px 25px}.cta-band .btn{justify-self:start}.footer-grid{grid-template-columns:1fr 1fr;gap:25px}.footer-bottom{flex-wrap:wrap}.data-table{font-size:.7rem}.data-table th,.data-table td{padding:9px 7px}}
     @media(max-width:420px){.steps-grid,.footer-grid{grid-template-columns:1fr}.dash-content{grid-template-columns:1fr}.dash-side{display:none}.dash-stats{grid-template-columns:repeat(3,1fr)}.dash-stat strong{font-size:.9rem}.dash-stat span{font-size:.58rem}.dash-stat small{font-size:.57rem}.demo-sample{font-size:.61rem;padding:6px 7px}.demo-topbar{padding:9px}.pipeline{grid-template-columns:repeat(4,130px)}.booking-item,.task-item,.review-item{align-items:flex-start}.panel-header{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+  
+    /* =====================================================
+       CASA DI LILLY BUSINESS HUB — DASHBOARD APP
+       Dashboard-inspired styling based on the supplied references.
+    ====================================================== */
+    .demo-section{background:linear-gradient(180deg,#F6F8FD 0%,#FFFFFF 100%);color:var(--text);overflow:hidden}
+    .demo-section h2,.demo-section h3,.demo-section h4{color:var(--dark)}
+    .demo-section .section-heading p{color:var(--muted)}
+    .demo-section .section-label{color:var(--secondary)}
+    .demo-badge{background:rgba(0,174,239,.08);border:1px solid rgba(0,174,239,.16);color:var(--primary)}
+    .demo-workspace{padding:0;background:#F7F8FC;border:1px solid rgba(8,27,51,.10);border-radius:23px;overflow:hidden;box-shadow:0 28px 75px rgba(8,27,51,.13)}
+    .business-app{display:grid;grid-template-columns:236px minmax(0,1fr);min-height:760px;background:#F7F8FC;color:var(--text);font-family:Inter,Arial,sans-serif}
+    .app-sidebar{background:#061D4A;color:#EAF2FF;padding:22px 15px 14px;display:flex;flex-direction:column;min-width:0}
+    .app-brand{display:flex;align-items:center;gap:11px;padding:0 7px 28px;color:#fff}
+    .app-brand-mark{width:42px;height:42px;border-radius:13px;background:#4FEBd1;color:#061D4A;display:grid;place-items:center;font-weight:900;font-size:.87rem;box-shadow:0 7px 20px rgba(79,235,209,.17)}
+    .app-brand strong{display:block;font-family:Poppins;font-size:.94rem;line-height:1.15}
+    .app-brand small{display:block;margin-top:4px;font-size:.57rem;letter-spacing:.13em;color:#9FB8DD;font-weight:800}
+    .app-side-label{padding:0 11px 9px;color:#8DA8D0;font-size:.62rem;text-transform:uppercase;font-weight:800;letter-spacing:.13em}
+    .app-nav{display:grid;gap:5px}
+    .app-nav-btn,.workflow-sub-btn{width:100%;border:0;background:transparent;color:#C3D2E8;display:flex;align-items:center;gap:12px;text-align:left;border-radius:11px;padding:11px 10px;font-size:.78rem;font-weight:650;transition:background .2s,color .2s}
+    .app-nav-btn:hover,.workflow-sub-btn:hover{background:rgba(255,255,255,.09);color:#fff}
+    .app-nav-btn.is-active{background:rgba(255,255,255,.13);color:#fff;box-shadow:inset 3px 0 #4FEBd1}
+    .app-nav-icon{width:18px;flex:none;text-align:center;font-size:1rem;color:#9FC3F3}
+    .nav-count{margin-left:auto;min-width:19px;height:19px;border-radius:99px;background:#4FEBd1;color:#06224D;display:grid;place-items:center;font-size:.64rem;font-weight:900}
+    .workflow-nav-group{margin-top:5px}
+    .workflow-parent{color:#F1F6FF}
+    .workflow-parent[aria-expanded="true"]{background:rgba(255,255,255,.07)}
+    .workflow-chevron{margin-left:auto;color:#A7BFDF;transition:transform .2s}
+    .workflow-parent[aria-expanded="true"] .workflow-chevron{transform:rotate(180deg)}
+    .workflow-subnav{display:grid;gap:3px;padding:5px 0 5px 13px}
+    .workflow-subnav[hidden]{display:none}
+    .workflow-sub-btn{font-size:.72rem;padding:9px 10px;color:#AFC3DF;gap:10px}
+    .workflow-sub-btn>span{width:16px;text-align:center;color:#79E7DF;font-size:.88rem}
+    .workflow-sub-btn.is-active{background:rgba(79,235,209,.13);color:#fff;box-shadow:inset 2px 0 #4FEBd1}
+    .app-sidebar-spacer{flex:1;min-height:24px}
+    .app-ai-card{border:1px solid rgba(151,190,244,.17);border-radius:15px;padding:14px;background:rgba(255,255,255,.065);margin:17px 0 15px}
+    .app-ai-icon{height:25px;width:25px;display:grid;place-items:center;background:rgba(79,235,209,.14);color:#4FEBd1;border-radius:8px;margin-bottom:9px}
+    .app-ai-card strong{display:block;color:#4FEBd1;font-size:.73rem}
+    .app-ai-card p{color:#AFC3DF;font-size:.65rem;line-height:1.55;margin:6px 0 10px}
+    .app-ai-card button{border:0;background:rgba(255,255,255,.10);color:#E7F2FF;border-radius:8px;padding:7px 9px;font-size:.64rem;font-weight:700}
+    .app-profile{display:flex;align-items:center;gap:9px;padding:13px 3px 0;border-top:1px solid rgba(255,255,255,.13)}
+    .profile-avatar{width:31px;height:31px;display:grid;place-items:center;border-radius:50%;background:#DCEAFF;color:#123E79;font-size:.65rem;font-weight:900;flex:none}
+    .app-profile strong{display:block;color:#fff;font-size:.66rem}.app-profile small{display:block;color:#91A9CC;font-size:.58rem;margin-top:3px}.profile-dots{margin-left:auto;color:#9BB1D1;font-size:.7rem;letter-spacing:2px}
+    .app-main{min-width:0;display:flex;flex-direction:column}
+    .app-topbar{min-height:80px;background:rgba(255,255,255,.96);border-bottom:1px solid #E8EDF5;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 27px;position:relative;z-index:2}
+    .app-greeting small{display:block;color:#7184A0;font-size:.61rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:4px}
+    .app-greeting h3{font-family:Poppins;font-size:1.12rem;color:#10213D;margin:0}
+    .app-greeting h3 span{color:#F0B84B;font-size:.9rem}
+    .app-top-actions{display:flex;align-items:center;gap:10px}
+    .app-search{height:36px;display:flex;align-items:center;gap:7px;padding:0 11px;border:1px solid #E7ECF4;background:#fff;border-radius:10px;color:#7F90A8}
+    .app-search input{border:0;outline:0;width:125px;font-size:.68rem;color:#1C2F4D;background:transparent}
+    .icon-action{position:relative;width:34px;height:34px;border:1px solid #E7ECF4;background:#fff;border-radius:10px;color:#60738F;font-size:1rem}
+    .icon-action i{position:absolute;width:6px;height:6px;right:7px;top:7px;border-radius:50%;background:#4FEBd1}
+    .app-add-btn{border:0;border-radius:10px;padding:10px 15px;color:#fff;background:linear-gradient(135deg,#2563EB,#4e80eb);font-size:.72rem;font-weight:800;box-shadow:0 7px 18px rgba(37,99,235,.20)}
+    .app-content{padding:26px 27px 30px;min-width:0;flex:1}
+    .page-intro{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:19px}
+    .page-intro p{font-size:.72rem;color:#8391A6;margin-bottom:5px}
+    .page-intro h3{font-family:Poppins;color:#14233D;font-size:1.35rem;margin:0}
+    .page-intro .intro-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .app-outline-btn,.app-primary-btn,.app-select{border:1px solid #E1E7F0;background:#fff;color:#30435E;border-radius:9px;padding:9px 12px;font-size:.67rem;font-weight:750}
+    .app-primary-btn{background:#2563EB;border-color:#2563EB;color:#fff;box-shadow:0 6px 15px rgba(37,99,235,.15)}
+    .app-select{outline:none}
+    .dashboard-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:17px}
+    .dashboard-metric{background:#fff;border:1px solid #E9EDF5;border-radius:15px;padding:17px 17px 15px;box-shadow:0 4px 14px rgba(19,42,79,.025);min-width:0}
+    .metric-topline{display:flex;justify-content:space-between;align-items:center;gap:7px;color:#7B8798;font-size:.67rem}
+    .metric-symbol{height:29px;width:29px;border-radius:9px;display:grid;place-items:center;background:#EEF4FF;color:#3974D8;font-size:.9rem}
+    .metric-symbol.green{background:#EAFBF4;color:#13A579}.metric-symbol.purple{background:#F5EEFF;color:#8A55D4}.metric-symbol.gold{background:#FFF6E7;color:#C28A24}
+    .dashboard-metric strong{display:block;margin:12px 0 3px;color:#13233E;font-family:Poppins;font-size:1.55rem;letter-spacing:-.04em}
+    .dashboard-metric small{font-size:.62rem;color:#7E8DA3}.metric-up{color:#119B73!important;font-weight:800}
+    .dashboard-lower{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(260px,1fr);gap:15px}
+    .app-card{background:#fff;border:1px solid #E9EDF5;border-radius:16px;padding:17px;box-shadow:0 4px 14px rgba(19,42,79,.025);min-width:0}
+    .app-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:15px}
+    .app-card-head h4{font-family:Poppins;font-size:.86rem;color:#192943;margin:0 0 4px}
+    .app-card-head p{font-size:.64rem;color:#8A97AA;margin:0}
+    .pipeline-legend{display:flex;flex-wrap:wrap;gap:11px;margin-bottom:12px;color:#697A91;font-size:.59rem}
+    .legend-item{display:inline-flex;align-items:center;gap:5px}.legend-dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+    .overview-pipeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+    .overview-deal{border:1px solid #EDF1F6;border-radius:11px;padding:11px 9px;min-width:0;background:#fff}
+    .deal-avatar{height:25px;width:25px;border-radius:50%;background:#EEF4FF;color:#346CC1;display:grid;place-items:center;font-size:.59rem;font-weight:900;margin-bottom:8px}
+    .overview-deal strong{display:block;font-size:.64rem;color:#253751;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .overview-deal small{display:block;font-size:.58rem;color:#8A97AA;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:3px 0 7px}
+    .overview-deal b{font-size:.66rem;color:#243B53}
+    .focus-list{display:grid;gap:8px}.focus-item{display:flex;align-items:flex-start;gap:9px;padding:10px;border-radius:10px;background:#FAFBFD;border:1px solid #F0F2F6}
+    .focus-check{width:15px;height:15px;border:1px solid #CAD5E3;border-radius:4px;flex:none;margin-top:1px;accent-color:#12B88A}
+    .focus-item strong{display:block;font-size:.65rem;color:#33445E}.focus-item small{display:block;color:#8C99AA;font-size:.57rem;margin-top:3px}
+    .insight-callout{margin-top:11px;padding:11px 12px;border-radius:10px;background:#EEF6FF;color:#3D5F8F;font-size:.63rem;line-height:1.5}
+    .table-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:13px}
+    .table-toolbar input{border:1px solid #E2E8F1;background:#fff;border-radius:9px;padding:9px 11px;font-size:.68rem;min-width:180px;outline:none}
+    .table-toolbar select{border:1px solid #E2E8F1;background:#fff;border-radius:9px;padding:9px 11px;font-size:.68rem;color:#52647E}
+    .app-data-table{width:100%;border-collapse:collapse;font-size:.68rem}
+    .app-data-table th{text-align:left;padding:11px 10px;color:#8B98AA;background:#F8FAFD;font-size:.58rem;text-transform:uppercase;letter-spacing:.06em;font-weight:800;white-space:nowrap}
+    .app-data-table td{padding:12px 10px;border-bottom:1px solid #F0F2F6;color:#56677F;white-space:nowrap}
+    .app-data-table td:first-child{font-weight:800;color:#21334F}
+    .table-overflow{overflow-x:auto;border:1px solid #EDF1F6;border-radius:11px}
+    .status-pill{display:inline-flex;align-items:center;padding:5px 8px;border-radius:99px;font-size:.57rem;font-weight:800;background:#EEF4FF;color:#3D69B4;white-space:nowrap}
+    .status-pill.green{background:#EAFBF4;color:#13835F}.status-pill.gold{background:#FFF5E5;color:#A87018}.status-pill.red{background:#FFF0F0;color:#BE5555}.status-pill.grey{background:#F1F3F6;color:#718096}
+    .row-action{border:0;background:transparent;color:#2563EB;font-size:.63rem;font-weight:800;padding:4px}
+    .empty-state{padding:30px;text-align:center;color:#8290A5;font-size:.75rem}
+    .kanban-board{display:grid;grid-template-columns:repeat(5,minmax(155px,1fr));gap:10px;overflow-x:auto;padding-bottom:8px}
+    .kanban-column{background:#F7F9FC;border:1px solid #E9EEF5;border-radius:12px;padding:10px;min-height:260px}
+    .kanban-head{display:flex;justify-content:space-between;align-items:center;gap:6px;color:#61718A;font-size:.65rem;font-weight:850;text-transform:uppercase;letter-spacing:.04em;padding:3px 2px 10px}
+    .kanban-head b{width:19px;height:19px;display:grid;place-items:center;border-radius:50%;background:#E9EFF8;color:#476184;font-size:.57rem}
+    .kanban-card{background:#fff;border:1px solid #E7ECF3;border-radius:10px;padding:11px;margin-bottom:8px;box-shadow:0 3px 9px rgba(14,35,67,.03)}
+    .kanban-card strong{display:block;font-size:.68rem;color:#243751}.kanban-card small{display:block;color:#8794A7;font-size:.59rem;margin:4px 0 9px}.kanban-card b{font-size:.67rem;color:#213A62}
+    .kanban-card .row-action{display:block;margin-top:7px;padding:5px 0}
+    .quote-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-bottom:15px}
+    .quote-summary .dashboard-metric{padding:14px}.quote-summary .dashboard-metric strong{font-size:1.25rem;margin-top:8px}
+    .workflow-header-card{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:17px 18px;border:1px solid #E9EDF5;border-radius:14px;background:#fff;margin-bottom:14px}
+    .workflow-header-card h4{font-family:Poppins;color:#1C2F4C;font-size:.88rem;margin-bottom:4px}.workflow-header-card p{font-size:.64rem;color:#8391A6}
+    .switch-control{position:relative;width:39px;height:22px;display:inline-flex;flex:none}.switch-control input{opacity:0;width:0;height:0}.switch-track{position:absolute;inset:0;border-radius:99px;background:#CBD5E1;transition:.2s;cursor:pointer}.switch-track:before{content:"";position:absolute;height:16px;width:16px;left:3px;top:3px;background:white;border-radius:50%;transition:.2s;box-shadow:0 1px 4px rgba(0,0,0,.18)}.switch-control input:checked+.switch-track{background:#16B98B}.switch-control input:checked+.switch-track:before{transform:translateX(17px)}
+    .workflow-builder{background:#fff;border:1px solid #E4EAF2;border-radius:15px;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) 225px;min-height:390px}
+    .workflow-canvas{position:relative;padding:24px;min-width:0;background-color:#FCFDFF;background-image:radial-gradient(#DCE5F1 1px,transparent 1px);background-size:19px 19px}
+    .workflow-canvas-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:10px}.workflow-canvas-top strong{font-size:.71rem;color:#30435D}.workflow-canvas-top small{display:block;font-size:.58rem;color:#95A1B1;margin-top:3px}
+    .flow-node{position:relative;max-width:285px;margin:0 auto 13px;background:#fff;border:1px solid #E3EAF3;border-radius:11px;padding:11px 13px;box-shadow:0 5px 13px rgba(30,59,98,.05);z-index:1}
+    .flow-node:after{content:"↓";position:absolute;bottom:-17px;left:50%;color:#8FA6C4;font-size:.83rem;font-weight:900}.flow-node:last-child:after{display:none}
+    .flow-node-head{display:flex;align-items:center;gap:9px}.flow-node-icon{width:27px;height:27px;border-radius:8px;background:#ECF5FF;color:#3574CC;display:grid;place-items:center;flex:none}.flow-node strong{display:block;color:#293B56;font-size:.65rem}.flow-node small{display:block;color:#8B98AA;font-size:.56rem;margin-top:2px}.flow-node-status{margin-left:auto;color:#12A77C;font-size:.55rem;font-weight:800}
+    .workflow-inspector{border-left:1px solid #E8EDF4;background:#fff;padding:17px}.workflow-inspector h4{font-family:Poppins;color:#253852;font-size:.77rem;margin-bottom:5px}.workflow-inspector p{color:#8A97AA;font-size:.6rem;line-height:1.55;margin-bottom:14px}.inspector-line{padding:10px 0;border-top:1px solid #EDF1F6}.inspector-line strong{display:block;color:#445873;font-size:.62rem;margin-bottom:4px}.inspector-line span{font-size:.59rem;color:#8492A5}
+    .calendar-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:15px}
+    .calendar-date-controls{display:flex;align-items:center;gap:7px}.calendar-date-controls button{border:1px solid #E4EAF2;background:#fff;color:#344761;border-radius:8px;padding:8px 11px;font-size:.68rem;font-weight:800}.calendar-date-controls strong{font-family:Poppins;color:#253851;font-size:.8rem;margin:0 8px;min-width:145px}
+    .calendar-view-switch{display:flex;background:#EDF1F7;border-radius:9px;padding:3px;gap:2px}.calendar-view-switch button{border:0;background:transparent;color:#718199;border-radius:7px;padding:7px 12px;font-size:.63rem;font-weight:800}.calendar-view-switch button.is-active{background:#fff;color:#2457A7;box-shadow:0 2px 6px rgba(20,42,75,.08)}
+    .calendar-staff{display:flex;align-items:center;gap:14px;overflow-x:auto;padding:2px 0 15px}.staff-person{display:flex;align-items:center;gap:7px;white-space:nowrap;font-size:.62rem;color:#596B84}.staff-avatar{height:29px;width:29px;border-radius:50%;background:#E7F0FF;color:#2C66B8;display:grid;place-items:center;font-weight:900;font-size:.58rem;border:2px solid #fff;box-shadow:0 0 0 1px #DCE5F2}
+    .calendar-scroll{overflow-x:auto;border:1px solid #E6EBF2;border-radius:12px;background:#fff}
+    .week-calendar{display:grid;grid-template-columns:59px repeat(7,minmax(106px,1fr));grid-template-rows:43px repeat(11,58px);min-width:850px}
+    .calendar-corner,.calendar-day-head{background:#FAFBFD;border-bottom:1px solid #E8EDF4;border-right:1px solid #EFF2F6;display:flex;align-items:center;justify-content:center;color:#74849B;font-size:.61rem;font-weight:800}
+    .calendar-day-head.is-today{color:#1E5FC4;background:#F1F6FF}.calendar-day-head strong{display:block;font-size:.75rem;color:#273B59}.calendar-day-head small{display:block;color:#8997AA;font-size:.55rem;margin-top:2px}
+    .calendar-time{border-right:1px solid #E8EDF4;border-bottom:1px solid #F0F3F7;display:flex;justify-content:center;padding-top:6px;color:#8C99AA;font-size:.58rem;background:#fff}
+    .calendar-cell{position:relative;border-right:1px solid #EEF2F6;border-bottom:1px solid #EEF2F6;min-width:0;padding:3px}
+    .calendar-event{width:100%;height:100%;border:0;border-left:3px solid #1AB78C;border-radius:5px;background:#DDF8EF;color:#176B59;text-align:left;padding:5px 6px;display:block;overflow:hidden;line-height:1.3}
+    .calendar-event.pending{border-left-color:#D79A32;background:#FFF1D5;color:#8D641E}.calendar-event.completed{border-left-color:#357DC1;background:#E1F0FF;color:#265F92}.calendar-event.cancelled{border-left-color:#D56C6C;background:#FDE8E8;color:#9E4E4E}
+    .calendar-event strong{display:block;font-size:.57rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.calendar-event small{display:block;font-size:.51rem;opacity:.85;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .month-calendar{display:grid;grid-template-columns:repeat(7,minmax(85px,1fr));min-width:650px;border-top:1px solid #E8EDF4;border-left:1px solid #E8EDF4}.month-day-label{padding:10px;background:#FAFBFD;color:#8190A5;font-size:.58rem;font-weight:850;text-align:center;border-right:1px solid #E8EDF4;border-bottom:1px solid #E8EDF4}.month-day{min-height:91px;background:#fff;padding:7px;border-right:1px solid #E8EDF4;border-bottom:1px solid #E8EDF4}.month-day.outside{background:#FAFBFD;color:#B7C0CD}.month-day.today .month-date{background:#2563EB;color:#fff}.month-date{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:#718198;font-size:.59rem;font-weight:800;margin-bottom:5px}.month-event{display:block;padding:4px 5px;border-radius:5px;margin-top:3px;background:#DDF8EF;color:#176B59;font-size:.53rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.month-event.pending{background:#FFF1D5;color:#8D641E}.month-event.completed{background:#E1F0FF;color:#265F92}.month-event.cancelled{background:#FDE8E8;color:#9E4E4E}
+    .day-calendar{display:grid;grid-template-columns:65px minmax(0,1fr);min-width:480px;border-top:1px solid #E8EDF4}.day-calendar .calendar-time{min-height:58px}.day-calendar .day-slot{min-height:58px;border-bottom:1px solid #EEF2F6;padding:4px}.day-calendar .calendar-event{max-width:360px;height:48px}
+    .calendar-legend{display:flex;gap:13px;flex-wrap:wrap;padding:12px 2px 0;color:#7D8CA1;font-size:.58rem}.calendar-legend .legend-dot{margin-right:5px}
+    .review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-bottom:14px}.review-stat{padding:14px;border:1px solid #E9EDF5;border-radius:13px;background:#fff}.review-stat span{display:block;font-size:.62rem;color:#8491A4}.review-stat strong{display:block;font-family:Poppins;font-size:1.35rem;color:#203651;margin-top:6px}.review-card{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;padding:14px;border:1px solid #E9EDF5;border-radius:12px;background:#fff;margin-bottom:9px}.review-card h5{font-size:.7rem;color:#243751;margin:0 0 5px}.review-card p{font-size:.63rem;color:#8190A4;line-height:1.5}.review-rating{color:#E6A53B;letter-spacing:2px;font-size:.7rem;margin-bottom:5px}.review-card-actions{display:flex;gap:6px;flex-wrap:wrap}.review-card-actions button{border:1px solid #E3EAF3;background:#fff;border-radius:8px;color:#315D9D;padding:7px 9px;font-size:.59rem;font-weight:800}
+    .support-chat-shell{border:1px solid #E5EBF3;border-radius:14px;overflow:hidden;background:#fff;max-width:680px}.support-chat-head{display:flex;align-items:center;gap:10px;padding:13px;background:#F9FBFE;border-bottom:1px solid #E9EEF5}.support-chat-head .support-avatar{width:33px;height:33px;border-radius:50%;display:grid;place-items:center;background:#061D4A;color:#4FEBd1;font-weight:900}.support-chat-head strong{display:block;font-size:.69rem;color:#243954}.support-chat-head small{display:block;font-size:.58rem;color:#8B98AA}.support-chat-messages{padding:16px;background:#FBFCFE;display:grid;gap:10px;min-height:190px}.support-chat-message{max-width:85%;padding:10px 12px;border-radius:12px;background:#fff;border:1px solid #E9EEF5;color:#465B75;font-size:.66rem;line-height:1.5}.support-chat-message.user{justify-self:end;background:#EAF2FF;border-color:#D9E7FF;color:#244D8C}.support-chat-form{display:flex;gap:8px;padding:10px;border-top:1px solid #E9EEF5}.support-chat-form input{flex:1;min-width:0;border:1px solid #E1E8F1;border-radius:9px;padding:10px;font-size:.65rem;outline:none}.support-chat-form button{border:0;border-radius:9px;background:#2563EB;color:#fff;padding:0 13px;font-size:.65rem;font-weight:800}
+    .app-modal{width:min(470px,calc(100% - 28px));margin:auto;border:0;border-radius:18px;padding:0;box-shadow:0 25px 80px rgba(8,27,51,.28);color:var(--text)}.app-modal::backdrop{background:rgba(5,20,48,.55);backdrop-filter:blur(3px)}.modal-form{padding:22px}.modal-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:17px}.modal-head small{font-size:.58rem;letter-spacing:.11em;font-weight:900;color:#2C75C8}.modal-head h3{font-family:Poppins;font-size:1.13rem;color:#152844;margin-top:5px}.modal-close{border:0;background:#F1F4F8;border-radius:8px;height:30px;width:30px;font-size:1.2rem;color:#687B95}.modal-fields{display:grid;grid-template-columns:1fr 1fr;gap:11px}.modal-field{display:grid;gap:5px}.modal-field.full{grid-column:1/-1}.modal-field label{font-size:.62rem;color:#536781;font-weight:800}.modal-field input,.modal-field select,.modal-field textarea{width:100%;border:1px solid #DDE5EF;border-radius:9px;padding:10px;font-size:.68rem;color:#263A56;outline:none;background:#fff}.modal-field textarea{min-height:75px;resize:vertical}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}.modal-cancel,.modal-submit{border:1px solid #DFE6EF;border-radius:9px;padding:9px 14px;font-size:.67rem;font-weight:800;background:#fff;color:#53657E}.modal-submit{border-color:#2563EB;background:#2563EB;color:#fff}.modal-disclaimer{font-size:.57rem;color:#8B98AA;margin-top:12px;line-height:1.45}
+    .demo-footnote{color:#6E7E94;font-size:.68rem}
+    @media(max-width:1050px){.business-app{grid-template-columns:205px minmax(0,1fr)}.app-sidebar{padding-left:11px;padding-right:11px}.app-content{padding:21px 18px}.app-topbar{padding:13px 18px}.dashboard-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-lower{grid-template-columns:1fr}.overview-pipeline{grid-template-columns:repeat(4,minmax(0,1fr))}}
+    @media(max-width:760px){.business-app{display:block;min-height:0}.app-sidebar{padding:12px;background:#061D4A}.app-brand{padding:0 4px 11px}.app-brand-mark{width:35px;height:35px}.app-side-label,.app-ai-card,.app-profile,.app-sidebar-spacer{display:none}.app-nav{display:flex;overflow-x:auto;gap:5px;padding-bottom:2px;scrollbar-width:thin}.app-nav-btn{width:auto;flex:none;white-space:nowrap;padding:9px 10px;font-size:.67rem}.app-nav-icon{width:auto}.workflow-nav-group{display:flex;align-items:center;flex:none;margin:0}.workflow-parent{width:auto}.workflow-subnav{display:none;position:absolute;top:103px;left:9px;right:9px;z-index:8;background:#0A2B61;border:1px solid rgba(255,255,255,.15);border-radius:11px;padding:7px;box-shadow:0 12px 30px rgba(0,0,0,.2)}.workflow-subnav.mobile-open{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.app-topbar{min-height:68px;padding:11px 13px}.app-greeting h3{font-size:.9rem}.app-greeting small{font-size:.52rem}.app-search{display:none}.app-top-actions{gap:6px}.icon-action{width:30px;height:30px}.app-add-btn{padding:9px 10px;font-size:.64rem}.app-content{padding:16px 12px 22px}.page-intro h3{font-size:1.12rem}.page-intro p{font-size:.63rem}.dashboard-metric{padding:13px}.dashboard-metric strong{font-size:1.25rem}.overview-pipeline{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-summary{grid-template-columns:1fr 1fr}.workflow-builder{grid-template-columns:1fr}.workflow-inspector{border-left:0;border-top:1px solid #E8EDF4}.workflow-canvas{padding:15px}.calendar-date-controls strong{min-width:100px;font-size:.7rem}.calendar-toolbar{align-items:flex-start}.review-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.review-stat{padding:10px}.review-stat strong{font-size:1.05rem}.review-card{flex-direction:column}.app-modal{max-height:90vh;overflow:auto}}
+    @media(max-width:430px){.dashboard-metrics{gap:8px}.dashboard-metric{padding:10px}.dashboard-metric strong{font-size:1.08rem}.metric-topline{font-size:.59rem}.metric-symbol{height:24px;width:24px}.quote-summary{grid-template-columns:1fr}.page-intro{align-items:flex-start;flex-direction:column}.page-intro .intro-actions{width:100%}.modal-fields{grid-template-columns:1fr}.modal-field.full{grid-column:auto}.review-grid{grid-template-columns:1fr 1fr}.workflow-subnav.mobile-open{grid-template-columns:1fr 1fr}.app-topbar{gap:6px}.app-greeting h3{font-size:.82rem}}
+
   </style>
   <script type="application/ld+json">
   {
@@ -158,28 +299,53 @@
 
     <section class="demo-section" id="interactive-demo" aria-labelledby="demo-title">
       <div class="container">
-        <div class="section-heading reveal"><span class="demo-badge">✦ Explore the CasaOS demo workspace</span><h2 id="demo-title">See how a connected business system could work.</h2><p>Click through the sample CRM, sales pipeline, bookings, follow-ups, review workflow, AI assistant and business automations. This is a front-end demonstration using fictional data, not a live connected account.</p></div>
+        <div class="section-heading reveal"><span class="demo-badge">✦ Explore the Casa di Lilly Business Hub</span><h2 id="demo-title">One organised workspace for your business.</h2><p>Explore the dashboard, manage sample leads, move opportunities through a sales pipeline, prepare quotes and invoices, and open the follow-up, booking and review workflows. This interactive demonstration uses fictional sample data.</p></div>
         <div class="demo-workspace reveal">
-          <div class="demo-topbar"><div class="demo-title"><span class="dash-mark">C</span><div>CasaOS <small>Sample business workspace</small></div></div><span class="demo-sample">DEMO · FICTIONAL DATA</span></div>
-          <div class="demo-body">
-            <nav class="demo-nav" role="tablist" aria-label="Demo dashboard sections">
-              <div class="nav-caption">Workspace</div>
-              <button class="demo-tab" role="tab" type="button" aria-selected="true" data-view="overview"><span class="tab-icon">▦</span>Overview</button>
-              <button class="demo-tab" role="tab" type="button" aria-selected="false" data-view="leads"><span class="tab-icon">◎</span>Leads &amp; CRM</button>
-              <button class="demo-tab" role="tab" type="button" aria-selected="false" data-view="pipeline"><span class="tab-icon">↗</span>Sales pipeline</button>
-              <button class="demo-tab" role="tab" type="button" aria-selected="false" data-view="bookings"><span class="tab-icon">▣</span>Bookings</button>
-              <button class="demo-tab" role="tab" type="button" aria-selected="false" data-view="followups"><span class="tab-icon">◷</span>Follow-ups</button>
-              <button class="demo-tab" role="tab" type="button" aria-selected="false" data-view="reviews"><span class="tab-icon">☆</span>Review workflow</button>
-              <button class="demo-tab" role="tab" type="button" aria-selected="false" data-view="assistant"><span class="tab-icon">✧</span>AI assistant</button>
-              <button class="demo-tab" role="tab" type="button" aria-selected="false" data-view="workflows"><span class="tab-icon">⟳</span>Workflows</button>
-            </nav>
-            <div class="demo-panel" id="demo-panel" role="tabpanel" aria-live="polite">
-              <div class="panel-header"><div><h3>Business overview</h3><p>A sample snapshot of enquiries and customer activity.</p></div><span class="panel-chip">Sample workspace</span></div>
-              <div class="metric-grid"><div class="metric"><span>New leads</span><strong>24</strong><small>Sample count</small></div><div class="metric"><span>Appointments</span><strong>18</strong><small>Sample count</small></div><div class="metric"><span>Follow-ups due</span><strong>7</strong><small>Sample count</small></div></div>
-              <div class="overview-grid"><div class="panel-card"><h4>Sample lead journey</h4><div class="funnel-row"><span>New</span><div class="funnel-track"><i style="width:100%"></i></div><b>24</b></div><div class="funnel-row"><span>Qualified</span><div class="funnel-track"><i style="width:70%"></i></div><b>17</b></div><div class="funnel-row"><span>Consultation</span><div class="funnel-track"><i style="width:46%"></i></div><b>11</b></div><div class="funnel-row"><span>Proposal</span><div class="funnel-track"><i style="width:25%"></i></div><b>6</b></div></div><div class="panel-card"><h4>Recent activity</h4><div class="small-activity">● <span><b>New enquiry captured</b><br>Website form · sample</span></div><div class="small-activity">● <span><b>Booking confirmed</b><br>Calendar · sample</span></div><div class="small-activity">● <span><b>Follow-up queued</b><br>CRM task · sample</span></div></div></div>
+          <div class="business-app" aria-label="Casa di Lilly Business Hub interactive demonstration">
+            <aside class="app-sidebar">
+              <a class="app-brand" href="#interactive-demo" aria-label="Casa di Lilly Business Hub demo home">
+                <span class="app-brand-mark">CL</span>
+                <span><strong>Casa di Lilly</strong><small>BUSINESS HUB</small></span>
+              </a>
+              <div class="app-side-label">Main menu</div>
+              <nav class="app-nav" aria-label="Business Hub sections">
+                <button class="app-nav-btn is-active" type="button" data-view="overview" aria-current="page"><span class="app-nav-icon">▦</span><span>Dashboard</span></button>
+                <button class="app-nav-btn" type="button" data-view="leads"><span class="app-nav-icon">◎</span><span>CRM &amp; Leads</span><b class="nav-count" id="lead-count">5</b></button>
+                <button class="app-nav-btn" type="button" data-view="pipeline"><span class="app-nav-icon">⇢</span><span>Sales Pipeline</span></button>
+                <button class="app-nav-btn" type="button" data-view="quotes"><span class="app-nav-icon">▤</span><span>Quotes &amp; Invoices</span></button>
+                <div class="workflow-nav-group">
+                  <button class="app-nav-btn workflow-parent" id="workflow-parent" type="button" aria-expanded="true" aria-controls="workflow-subnav"><span class="app-nav-icon">⌘</span><span>Business Workflows</span><span class="workflow-chevron">⌄</span></button>
+                  <div class="workflow-subnav" id="workflow-subnav">
+                    <button class="workflow-sub-btn" type="button" data-view="followups"><span>◷</span>Follow-up system</button>
+                    <button class="workflow-sub-btn" type="button" data-view="bookings"><span>▦</span>Booking system</button>
+                    <button class="workflow-sub-btn" type="button" data-view="reviews"><span>☆</span>Review system</button>
+                    <button class="workflow-sub-btn" type="button" data-view="support"><span>✧</span>AI customer support</button>
+                  </div>
+                </div>
+              </nav>
+              <div class="app-sidebar-spacer"></div>
+              <div class="app-ai-card"><span class="app-ai-icon">✧</span><strong>Business insights</strong><p>Your sample dashboard is ready to explore. Open a section to see how connected workflows can work.</p><button type="button" data-view="overview">View overview ↗</button></div>
+              <div class="app-profile"><span class="profile-avatar">LL</span><span><strong>Lilly Lengwati</strong><small>Workspace admin · Demo</small></span><span class="profile-dots">•••</span></div>
+            </aside>
+
+            <div class="app-main">
+              <header class="app-topbar">
+                <div class="app-greeting"><small id="app-date-label">BUSINESS WORKSPACE</small><h3 id="app-greeting-title">Good morning, Lilly <span aria-hidden="true">✦</span></h3></div>
+                <div class="app-top-actions"><label class="app-search"><span>⌕</span><input id="global-search" type="search" placeholder="Search this demo" aria-label="Search sample records"></label><button class="icon-action" type="button" aria-label="Demo notifications" title="Demo notifications">♧<i></i></button><button class="app-add-btn" type="button" data-action="add-lead">＋ Add lead</button></div>
+              </header>
+              <div class="app-content" id="demo-panel" role="tabpanel" aria-live="polite" tabindex="-1"></div>
             </div>
           </div>
+          <dialog class="app-modal" id="business-modal" aria-labelledby="modal-title">
+            <form id="business-modal-form" class="modal-form">
+              <div class="modal-head"><div><small>CASA DI LILLY BUSINESS HUB</small><h3 id="modal-title">Add a record</h3></div><button type="button" class="modal-close" data-action="close-modal" aria-label="Close dialog">×</button></div>
+              <div id="modal-fields" class="modal-fields"></div>
+              <div class="modal-actions"><button class="modal-cancel" type="button" data-action="close-modal">Cancel</button><button class="modal-submit" type="submit">Save to demo</button></div>
+              <p class="modal-disclaimer">Demo only: entries remain in this browser session and are not sent to a live CRM.</p>
+            </form>
+          </dialog>
         </div>
+        <p class="demo-footnote">Interactive front-end demo with fictional records. No messages are sent, no real appointments are booked, and no information is connected to a live CRM.</p>
         <p class="demo-footnote">Demo interactions are simulated in your browser. No messages are sent, no appointments are created and no customer data is stored.</p>
       </div>
     </section>
@@ -253,72 +419,207 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const navbar = document.querySelector('.navbar');
-      const toggle = document.querySelector('.nav-toggle');
-      const nav = document.querySelector('.nav-links');
-      const updateNav = () => navbar.classList.toggle('scrolled', window.scrollY > 20);
-      updateNav(); window.addEventListener('scroll', updateNav, {passive:true});
-      toggle?.addEventListener('click', () => {
-        const opened = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!opened));
-        toggle.setAttribute('aria-label', opened ? 'Open navigation' : 'Close navigation');
-        nav.classList.toggle('open', !opened);
-      });
-      nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-        nav.classList.remove('open'); toggle?.setAttribute('aria-expanded','false'); toggle?.setAttribute('aria-label','Open navigation');
-      }));
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-      const revealObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } });
-      }, {threshold:0.12});
-      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
       const panel = document.getElementById('demo-panel');
-      const tabs = [...document.querySelectorAll('.demo-tab')];
-      const views = {
-        overview: `<div class="panel-header"><div><h3>Business overview</h3><p>A sample snapshot of enquiries and customer activity.</p></div><span class="panel-chip">Sample workspace</span></div><div class="metric-grid"><div class="metric"><span>New leads</span><strong>24</strong><small>Sample count</small></div><div class="metric"><span>Appointments</span><strong>18</strong><small>Sample count</small></div><div class="metric"><span>Follow-ups due</span><strong>7</strong><small>Sample count</small></div></div><div class="overview-grid"><div class="panel-card"><h4>Sample lead journey</h4><div class="funnel-row"><span>New</span><div class="funnel-track"><i style="width:100%"></i></div><b>24</b></div><div class="funnel-row"><span>Qualified</span><div class="funnel-track"><i style="width:70%"></i></div><b>17</b></div><div class="funnel-row"><span>Consultation</span><div class="funnel-track"><i style="width:46%"></i></div><b>11</b></div><div class="funnel-row"><span>Proposal</span><div class="funnel-track"><i style="width:25%"></i></div><b>6</b></div></div><div class="panel-card"><h4>Recent activity</h4><div class="small-activity">● <span><b>New enquiry captured</b><br>Website form · sample</span></div><div class="small-activity">● <span><b>Booking confirmed</b><br>Calendar · sample</span></div><div class="small-activity">● <span><b>Follow-up queued</b><br>CRM task · sample</span></div></div></div>`,
-        leads: `<div class="panel-header"><div><h3>Leads &amp; CRM</h3><p>Sample lead records with a clear owner and next step.</p></div><span class="panel-chip">4 sample records</span></div><div class="table-scroll"><table class="data-table"><thead><tr><th>Contact</th><th>Source</th><th>Requirement</th><th>Status</th><th>Next step</th></tr></thead><tbody><tr><td>Alex Morgan</td><td>Website</td><td>Website enquiry</td><td><span class="status green">Qualified</span></td><td>Book call</td></tr><tr><td>Jordan Lee</td><td>Instagram</td><td>Consultation</td><td><span class="status">New</span></td><td>Reply</td></tr><tr><td>Sam Taylor</td><td>WhatsApp</td><td>Service quote</td><td><span class="status amber">Needs review</span></td><td>Assign owner</td></tr><tr><td>Casey Smith</td><td>Referral</td><td>Automation</td><td><span class="status green">Contacted</span></td><td>Follow up</td></tr></tbody></table></div><div class="pricing-note" style="margin-top:15px"><strong>What this demonstrates</strong><p>Enquiry details can be gathered into a CRM record, categorised and assigned a next action. Actual fields and integrations are agreed during project scoping.</p></div>`,
-        pipeline: `<div class="panel-header"><div><h3>Sales pipeline</h3><p>Example stages showing how opportunities can move through a sales process.</p></div><span class="panel-chip">Illustrative values</span></div><div class="pipeline"><div class="pipeline-col"><h4>New <span>3</span></h4><div class="deal"><strong>Northside Studio</strong><span>Website enquiry</span><br><b>$450</b></div><div class="deal"><strong>Bright Path Co.</strong><span>Referral</span><br><b>$800</b></div></div><div class="pipeline-col"><h4>Qualified <span>2</span></h4><div class="deal"><strong>Willow Clinic</strong><span>WhatsApp lead</span><br><b>$595</b></div><div class="deal"><strong>Urban Trade</strong><span>Missed call</span><br><b>$350</b></div></div><div class="pipeline-col"><h4>Proposal <span>1</span></h4><div class="deal"><strong>Studio Eleven</strong><span>Proposal sent</span><br><b>$1,200</b></div></div><div class="pipeline-col"><h4>Won <span>1</span></h4><div class="deal"><strong>Evergreen Group</strong><span>Project confirmed</span><br><b>$950</b></div></div></div><p class="muted" style="font-size:.73rem;margin-top:12px">All contact names and amounts above are fictional examples, not client results or actual sales.</p>`,
-        bookings: `<div class="panel-header"><div><h3>Booking calendar</h3><p>Example appointments captured through a connected booking flow.</p></div><span class="panel-chip">Sample week</span></div><div class="booking-list"><div class="booking-item"><div class="booking-left"><div class="date-tile">TUE<br>10:00</div><div><strong>Discovery consultation</strong><small>Alex Morgan · Online</small></div></div><span class="status green">Confirmed</span></div><div class="booking-item"><div class="booking-left"><div class="date-tile">TUE<br>13:30</div><div><strong>Service planning call</strong><small>Jordan Lee · Online</small></div></div><span class="status green">Confirmed</span></div><div class="booking-item"><div class="booking-left"><div class="date-tile">WED<br>09:00</div><div><strong>Initial assessment</strong><small>Sam Taylor · Pending review</small></div></div><span class="status amber">Needs review</span></div></div><div class="pricing-note" style="margin-top:14px"><strong>Booking logic</strong><p>An agreed calendar integration can check availability, create a booking and send supported confirmations or reminders. Live availability is not connected in this demonstration.</p></div>`,
-        followups: `<div class="panel-header"><div><h3>Follow-up tasks</h3><p>Click a task to mark it complete in this local demo.</p></div><span class="panel-chip">Interactive sample</span></div><div class="task-list" id="task-list"><div class="task-item"><div class="task-left"><div class="date-tile">TODAY</div><div><strong>Reply to new website enquiry</strong><small>Alex Morgan · Lead response</small></div></div><button type="button" data-complete>Mark done</button></div><div class="task-item"><div class="task-left"><div class="date-tile">TODAY</div><div><strong>Send consultation reminder</strong><small>Jordan Lee · Booking reminder</small></div></div><button type="button" data-complete>Mark done</button></div><div class="task-item"><div class="task-left"><div class="date-tile">TOMORROW</div><div><strong>Check proposal feedback</strong><small>Studio Eleven · Sales follow-up</small></div></div><button type="button" data-complete>Mark done</button></div></div><p class="muted" style="font-size:.73rem;margin-top:12px">This only changes the sample screen in your browser; it does not create a reminder on a real phone or calendar.</p>`,
-        reviews: `<div class="panel-header"><div><h3>Review management workflow</h3><p>Example review request and response process.</p></div><span class="panel-chip">Sample scenarios</span></div><div class="review-list"><div class="review-item"><div><div class="review-stars">★★★★★</div><strong>Sample positive feedback</strong><small>“The team made the booking process easy.” · Fictional example</small></div><button type="button" data-review="positive">Draft reply</button></div><div class="review-item"><div><div class="review-stars">★★★☆☆</div><strong>Sample mixed feedback</strong><small>“Helpful service, but I needed an update.” · Fictional example</small></div><button type="button" data-review="mixed">Draft reply</button></div></div><div id="review-draft" class="pricing-note" style="margin-top:14px;display:none" aria-live="polite"><strong>Suggested response draft</strong><p></p><small class="muted">Preview only. A team member should review and approve public replies.</small></div>`,
-        assistant: `<div class="panel-header"><div><h3>AI customer support preview</h3><p>Try a sample question about services, pricing or booking.</p></div><span class="panel-chip">Simulated assistant</span></div><div class="chat-demo"><div class="chat-messages" id="chat-messages"><div class="chat-message bot">Hello! I’m the Casa di Lilly demo assistant. Ask me about automation services, pricing or booking a consultation.</div></div><form class="chat-compose" id="chat-form"><input id="chat-input" type="text" placeholder="Ask a sample question…" aria-label="Ask the demo assistant" maxlength="240" required><button type="submit">Send</button></form></div><p class="muted" style="font-size:.73rem;margin-top:10px">This is a scripted interface demonstration, not a live AI agent. Messages stay in this page and are not sent to Casa di Lilly.</p>`,
-        workflows: `<div class="panel-header"><div><h3>Connected business workflows</h3><p>Example of how a new enquiry can trigger several steps.</p></div><span class="panel-chip">Illustrative flow</span></div><div class="workflow-list"><div class="workflow-step"><span class="workflow-number">1</span><div><strong>Enquiry received</strong><small>Website form, social message or email</small></div></div><div class="workflow-arrow">↓</div><div class="workflow-step"><span class="workflow-number">2</span><div><strong>AI categorises and collects details</strong><small>Uses agreed business information and qualification questions</small></div></div><div class="workflow-arrow">↓</div><div class="workflow-step"><span class="workflow-number">3</span><div><strong>CRM record and follow-up task created</strong><small>Lead source, summary, owner and next action</small></div></div><div class="workflow-arrow">↓</div><div class="workflow-step"><span class="workflow-number">4</span><div><strong>Booking or human handover</strong><small>Customer receives the next step; team is notified when needed</small></div></div></div>`
-      };
-      function activateView(name){
-        if(!views[name]) return;
-        panel.innerHTML = views[name];
-        tabs.forEach(tab => tab.setAttribute('aria-selected', String(tab.dataset.view === name)));
-        panel.focus({preventScroll:true});
-        const taskList = panel.querySelector('#task-list');
-        taskList?.addEventListener('click', event => {
-          const button = event.target.closest('[data-complete]');
-          if(!button) return;
-          button.classList.toggle('done');
-          const finished = button.classList.contains('done');
-          button.textContent = finished ? 'Completed ✓' : 'Mark done';
-          button.closest('.task-item').style.opacity = finished ? '.58' : '1';
-        });
-        panel.querySelectorAll('[data-review]').forEach(button => button.addEventListener('click', () => {
-          const copy = button.dataset.review === 'positive' ? 'Thank you for taking the time to share your feedback. We’re glad the booking process felt easy and appreciate you choosing our team.' : 'Thank you for your feedback. We’re sorry the update was not as clear as it should have been. A team member would be happy to review your experience and follow up.';
-          const draft = panel.querySelector('#review-draft'); draft.style.display = 'block'; draft.querySelector('p').textContent = copy;
-        }));
-        panel.querySelector('#chat-form')?.addEventListener('submit', event => {
-          event.preventDefault();
-          const input = panel.querySelector('#chat-input'); const value = input.value.trim(); if(!value) return;
-          const messages = panel.querySelector('#chat-messages');
-          const user = document.createElement('div'); user.className='chat-message user'; user.textContent=value; messages.appendChild(user);
-          const lower=value.toLowerCase(); let reply;
-          if(lower.includes('price')||lower.includes('cost')) reply='The service sheet lists defined USD setup prices. For example, a Website Enquiry Agent starts at $295 standalone, and WhatsApp or Instagram enquiry-to-booking setups are $495 each. Third-party usage costs are separate. A team member can confirm the right scope.';
-          else if(lower.includes('book')||lower.includes('appointment')||lower.includes('call')) reply='You can book a consultation with Casa di Lilly using the Book a Consultation link on this page. A configured booking workflow can also check availability and send supported confirmations.';
-          else if(lower.includes('service')||lower.includes('automation')||lower.includes('help')) reply='Casa di Lilly works on AI customer support, CRM and lead management, booking automation, AI email and voice assistants, missed-call recovery and connected business workflows.';
-          else reply='Thanks for your question. In a real implementation, the assistant would use approved business information and route questions outside its scope to a person. This demo uses sample replies only.';
-          const bot = document.createElement('div'); bot.className='chat-message bot'; bot.textContent=reply; messages.appendChild(bot); messages.scrollTop=messages.scrollHeight; input.value=''; input.focus();
-        });
+      const sidebarButtons = [...document.querySelectorAll('.app-nav-btn[data-view], .workflow-sub-btn[data-view]')];
+      const workflowParent = document.getElementById('workflow-parent');
+      const workflowSubnav = document.getElementById('workflow-subnav');
+      const modal = document.getElementById('business-modal');
+      const modalFields = document.getElementById('modal-fields');
+      const modalForm = document.getElementById('business-modal-form');
+      let activeView = 'overview';
+      let calendarMode = 'week';
+      let calendarCursor = new Date();
+      let modalType = '';
+      let leads = [
+        {id:1,name:'Sophie Martin',company:'Maison Studio',email:'sophie@example.test',source:'Website',service:'Website enquiry',value:2400,status:'Qualified'},
+        {id:2,name:'James Wilson',company:'Northstar Events',email:'james@example.test',source:'LinkedIn',service:'Business automation',value:5800,status:'Proposal'},
+        {id:3,name:'Amelia Rossi',company:'Rossi & Co.',email:'amelia@example.test',source:'Referral',service:'CRM system',value:9200,status:'Proposal'},
+        {id:4,name:'Oliver Chen',company:'Lumen Interiors',email:'oliver@example.test',source:'Instagram',service:'Booking automation',value:4200,status:'Won'},
+        {id:5,name:'Isabella Grant',company:'The Green Edit',email:'isabella@example.test',source:'WhatsApp',service:'AI customer support',value:3100,status:'New'}
+      ];
+      let tasks = [
+        {id:1,title:'Follow up with Sophie Martin',detail:'Due today · High priority',done:false},
+        {id:2,title:'Send review request to Oliver Chen',detail:'Due tomorrow · Review workflow',done:false},
+        {id:3,title:'Prepare Rossi & Co. proposal',detail:'Due Friday · In progress',done:true}
+      ];
+      let quotes = [
+        {id:'Q-1042',client:'Rossi & Co.',type:'Quote',date:'18 Nov 2026',amount:9200,status:'Sent'},
+        {id:'INV-1038',client:'Lumen Interiors',type:'Invoice',date:'14 Nov 2026',amount:4200,status:'Paid'},
+        {id:'Q-1035',client:'Northstar Events',type:'Quote',date:'12 Nov 2026',amount:5800,status:'Draft'},
+        {id:'INV-1029',client:'Maison Studio',type:'Invoice',date:'08 Nov 2026',amount:2400,status:'Overdue'}
+      ];
+      const baseWeek = startOfWeek(new Date());
+      let appointments = [
+        {id:1,title:'Discovery consultation',contact:'Sophie Martin',service:'Consultation',date:addDays(baseWeek,0),time:'09:00',status:'confirmed'},
+        {id:2,title:'Automation planning',contact:'James Wilson',service:'Planning call',date:addDays(baseWeek,1),time:'11:00',status:'pending'},
+        {id:3,title:'Website review',contact:'Amelia Rossi',service:'Review call',date:addDays(baseWeek,2),time:'10:00',status:'confirmed'},
+        {id:4,title:'Client onboarding',contact:'Oliver Chen',service:'Onboarding',date:addDays(baseWeek,3),time:'13:00',status:'completed'},
+        {id:5,title:'Strategy consultation',contact:'Isabella Grant',service:'Consultation',date:addDays(baseWeek,4),time:'15:00',status:'confirmed'},
+        {id:6,title:'Follow-up call',contact:'Sophie Martin',service:'Follow-up',date:addDays(baseWeek,5),time:'08:00',status:'cancelled'}
+      ];
+      const workflowState = {followups:true,bookings:true,reviews:false,support:true};
+      const currency = value => 'US$' + Number(value||0).toLocaleString('en-US',{maximumFractionDigits:0});
+      const safe = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+      const titleCase = value => value.charAt(0).toUpperCase()+value.slice(1);
+      function startOfWeek(date){const d=new Date(date);d.setHours(0,0,0,0);d.setDate(d.getDate()-((d.getDay()+6)%7));return d;}
+      function addDays(date,days){const d=new Date(date);d.setDate(d.getDate()+days);return d;}
+      function sameDay(a,b){return a.getFullYear()===b.getFullYear()&&a.getMonth()===b.getMonth()&&a.getDate()===b.getDate();}
+      function dateKey(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
+      function formatLong(d){return d.toLocaleDateString('en-ZA',{day:'numeric',month:'long',year:'numeric'});}
+      function dateHeading(){if(calendarMode==='month')return calendarCursor.toLocaleDateString('en-ZA',{month:'long',year:'numeric'});if(calendarMode==='day')return calendarCursor.toLocaleDateString('en-ZA',{weekday:'long',day:'numeric',month:'long',year:'numeric'});const s=startOfWeek(calendarCursor),e=addDays(s,6);return `${s.toLocaleDateString('en-ZA',{day:'numeric',month:'short'})} – ${e.toLocaleDateString('en-ZA',{day:'numeric',month:'short',year:'numeric'})}`;}
+      function pageIntro(kicker,title,actions=''){return `<div class="page-intro"><div><p>${kicker}</p><h3>${title}</h3></div><div class="intro-actions">${actions}</div></div>`;}
+      function metricCard(label,value,note,symbol,colour=''){return `<article class="dashboard-metric"><div class="metric-topline"><span>${label}</span><span class="metric-symbol ${colour}">${symbol}</span></div><strong>${value}</strong><small class="metric-up">${note}</small></article>`;}
+      function statusPill(status){const map={New:'',Qualified:'',Proposal:'gold',Won:'green',Lost:'red',Paid:'green',Sent:'',Draft:'grey',Overdue:'red',confirmed:'green',pending:'gold',completed:'',cancelled:'red'};return `<span class="status-pill ${map[status]||''}">${safe(titleCase(status))}</span>`;}
+      function setView(view){
+        activeView=view;
+        sidebarButtons.forEach(btn=>{const active=btn.dataset.view===view;btn.classList.toggle('is-active',active);if(btn.classList.contains('app-nav-btn')){if(active)btn.setAttribute('aria-current','page');else btn.removeAttribute('aria-current');}});
+        renderView();
+        if(window.innerWidth<761 && view!=='overview') workflowSubnav.classList.remove('mobile-open');
       }
-      tabs.forEach(tab => tab.addEventListener('click', () => activateView(tab.dataset.view)));
-      // Keep the dashboard demo local and self-contained: no external data is sent or stored.
+      function renderView(){
+        const views={overview:renderOverview,leads:renderLeads,pipeline:renderPipeline,quotes:renderQuotes,followups:renderFollowups,bookings:renderBookings,reviews:renderReviews,support:renderSupport};
+        (views[activeView]||renderOverview)();
+      }
+      function renderOverview(){
+        document.getElementById('app-greeting-title').innerHTML='Good morning, Lilly <span aria-hidden="true">✦</span>';
+        panel.innerHTML=pageIntro('Here’s what’s happening across your business.','Dashboard',`<button class="app-outline-btn" type="button" data-action="export-report">▤ Export report</button>`)+
+          `<div class="dashboard-metrics">${metricCard('Pipeline value',currency(leads.filter(x=>!['Lost','Won'].includes(x.status)).reduce((a,b)=>a+b.value,0)),'↑ 12.4% sample change','◎')}${metricCard('Won this month',currency(leads.filter(x=>x.status==='Won').reduce((a,b)=>a+b.value,0)),'↑ 8.2% sample change','✓','green')}${metricCard('New enquiries',leads.filter(x=>x.status==='New').length+3,'+3 this week · sample','♙','purple')}${metricCard('Conversion rate','68%','↑ 4.8% sample change','↗','gold')}</div>`+
+          `<div class="dashboard-lower"><section class="app-card"><div class="app-card-head"><div><h4>Lead pipeline</h4><p>Move sample opportunities forward at a glance.</p></div><button class="row-action" type="button" data-view="pipeline">View pipeline ↗</button></div><div class="pipeline-legend"><span class="legend-item"><i class="legend-dot" style="background:#4E80EB"></i>New</span><span class="legend-item"><i class="legend-dot" style="background:#8A63D2"></i>Qualified</span><span class="legend-item"><i class="legend-dot" style="background:#E4AC43"></i>Proposal</span><span class="legend-item"><i class="legend-dot" style="background:#17B887"></i>Won</span><span class="legend-item"><i class="legend-dot" style="background:#9BA7B6"></i>Lost</span></div><div class="overview-pipeline">${leads.slice(0,8).map(l=>`<div class="overview-deal"><span class="deal-avatar">${safe(l.name.split(' ').map(x=>x[0]).slice(0,2).join(''))}</span><strong>${safe(l.name)}</strong><small>${safe(l.company)}</small><b>${currency(l.value)}</b></div>`).join('')}</div></section><section class="app-card"><div class="app-card-head"><div><h4>Today’s focus</h4><p>Your next best actions · sample tasks</p></div><span class="metric-symbol purple">✧</span></div><div class="focus-list">${tasks.slice(0,3).map(t=>`<label class="focus-item"><input class="focus-check" type="checkbox" data-task-check="${t.id}" ${t.done?'checked':''}><span><strong>${safe(t.title)}</strong><small>${safe(t.detail)}</small></span></label>`).join('')}</div><div class="insight-callout">CasaOS demo insight: review the highest-value open proposal next, then follow up with any qualified lead awaiting a response.</div><button class="app-outline-btn" style="margin-top:10px" type="button" data-view="followups">Open follow-up system ↗</button></section></div>`;
+      }
+      function renderLeads(){
+        document.getElementById('app-greeting-title').textContent='CRM & Leads';
+        panel.innerHTML=pageIntro('Keep every enquiry visible and organised.','CRM & Leads',`<button class="app-primary-btn" type="button" data-action="add-lead">＋ Add lead</button>`)+
+          `<div class="quote-summary">${metricCard('Total leads',leads.length,'Sample contacts','◎')}${metricCard('Qualified',leads.filter(x=>x.status==='Qualified').length,'Ready for next step','✓','green')}${metricCard('Open opportunities',currency(leads.filter(x=>!['Won','Lost'].includes(x.status)).reduce((a,b)=>a+b.value,0)),'Illustrative value','↗','purple')}</div>`+
+          `<section class="app-card"><div class="table-toolbar"><input id="lead-search" type="search" placeholder="Search name, company or service…" aria-label="Search leads"><select id="lead-status-filter" aria-label="Filter leads"><option value="all">All statuses</option><option>New</option><option>Qualified</option><option>Proposal</option><option>Won</option><option>Lost</option></select></div><div class="table-overflow"><table class="app-data-table"><thead><tr><th>Contact</th><th>Company</th><th>Source</th><th>Requirement</th><th>Value</th><th>Status</th><th>Next step</th></tr></thead><tbody id="lead-table-body">${leadRows(leads)}</tbody></table></div></section>`;
+        const search=document.getElementById('lead-search'),filter=document.getElementById('lead-status-filter');
+        const update=()=>{const q=search.value.toLowerCase(),s=filter.value;const rows=leads.filter(l=>(s==='all'||l.status===s)&&[l.name,l.company,l.source,l.service].join(' ').toLowerCase().includes(q));document.getElementById('lead-table-body').innerHTML=leadRows(rows);};
+        search.addEventListener('input',update);filter.addEventListener('change',update);
+      }
+      function leadRows(rows){if(!rows.length)return '<tr><td colspan="7"><div class="empty-state">No sample leads match your search.</div></td></tr>';return rows.map(l=>`<tr><td>${safe(l.name)}</td><td>${safe(l.company)}</td><td>${safe(l.source)}</td><td>${safe(l.service)}</td><td>${currency(l.value)}</td><td>${statusPill(l.status)}</td><td><button class="row-action" type="button" data-action="advance-lead" data-id="${l.id}">${l.status==='Won'||l.status==='Lost'?'View':'Move forward ↗'}</button></td></tr>`).join('');}
+      function renderPipeline(){
+        document.getElementById('app-greeting-title').textContent='Sales Pipeline';
+        const stages=['New','Qualified','Proposal','Won','Lost'];
+        panel.innerHTML=pageIntro('Track opportunities from first enquiry to decision.','Sales Pipeline',`<button class="app-outline-btn" type="button" data-view="leads">View all leads</button><button class="app-primary-btn" type="button" data-action="add-lead">＋ Add opportunity</button>`)+
+          `<div class="dashboard-metrics">${metricCard('Open opportunities',leads.filter(l=>!['Won','Lost'].includes(l.status)).length,'Sample opportunities','◎')}${metricCard('Pipeline value',currency(leads.filter(l=>!['Won','Lost'].includes(l.status)).reduce((a,b)=>a+b.value,0)),'Illustrative value','↗','purple')}${metricCard('Won',leads.filter(l=>l.status==='Won').length,'Sample closed deals','✓','green')}${metricCard('Needs attention',tasks.filter(t=>!t.done).length,'Open follow-up tasks','◷','gold')}</div>`+
+          `<div class="kanban-board">${stages.map(stage=>{const items=leads.filter(l=>l.status===stage);return `<section class="kanban-column"><div class="kanban-head"><span>${stage}</span><b>${items.length}</b></div>${items.map(l=>`<article class="kanban-card"><strong>${safe(l.name)}</strong><small>${safe(l.company)} · ${safe(l.source)}</small><b>${currency(l.value)}</b>${!['Won','Lost'].includes(stage)?`<button class="row-action" type="button" data-action="advance-lead" data-id="${l.id}">Move to ${stages[stages.indexOf(stage)+1]} →</button>`:''}</article>`).join('')||'<p class="muted" style="font-size:.62rem;padding:8px 3px">No opportunities</p>'}</section>`}).join('')}</div><p class="muted" style="font-size:.61rem;margin-top:10px">Sample opportunities are fictional. Stage changes only affect this local demonstration.</p>`;
+      }
+      function renderQuotes(){
+        document.getElementById('app-greeting-title').textContent='Quotes & Invoices';
+        panel.innerHTML=pageIntro('Keep proposals, invoices and payment statuses together.','Quotes & Invoices',`<button class="app-outline-btn" type="button" data-action="add-quote" data-kind="Quote">＋ New quote</button><button class="app-primary-btn" type="button" data-action="add-quote" data-kind="Invoice">＋ New invoice</button>`)+
+          `<div class="quote-summary">${metricCard('Draft quotes',quotes.filter(q=>q.type==='Quote'&&q.status==='Draft').length,'Awaiting completion','▤')}${metricCard('Sent for approval',quotes.filter(q=>q.status==='Sent').length,'Sample quotes','↗','purple')}${metricCard('Outstanding',currency(quotes.filter(q=>q.status==='Overdue'||q.status==='Sent').reduce((a,b)=>a+b.amount,0)),'Illustrative total','◷','gold')}</div>`+
+          `<section class="app-card"><div class="app-card-head"><div><h4>Recent documents</h4><p>Sample quotations and invoices. Values shown in USD.</p></div><button class="app-outline-btn" type="button" data-action="export-quotes">Export CSV</button></div><div class="table-overflow"><table class="app-data-table"><thead><tr><th>Reference</th><th>Client</th><th>Type</th><th>Date</th><th>Amount</th><th>Status</th><th>Action</th></tr></thead><tbody>${quotes.map(q=>`<tr><td>${safe(q.id)}</td><td>${safe(q.client)}</td><td>${safe(q.type)}</td><td>${safe(q.date)}</td><td>${currency(q.amount)}</td><td>${statusPill(q.status)}</td><td><button class="row-action" type="button" data-action="cycle-document" data-id="${safe(q.id)}">Update status</button></td></tr>`).join('')}</tbody></table></div></section>`;
+      }
+      function renderFollowups(){
+        document.getElementById('app-greeting-title').textContent='Follow-up system';
+        panel.innerHTML=pageIntro('Keep conversations moving with clear next actions.','Follow-up Automation',`<button class="app-primary-btn" type="button" data-action="add-task">＋ Add follow-up</button>`)+
+          `<div class="workflow-header-card"><div><h4>Lead follow-up sequence</h4><p>Example workflow: new lead → wait → send follow-up → notify the team.</p></div><label class="switch-control" aria-label="Toggle follow-up workflow"><input type="checkbox" data-toggle-flow="followups" ${workflowState.followups?'checked':''}><span class="switch-track"></span></label></div>`+
+          `<div class="workflow-builder"><div class="workflow-canvas"><div class="workflow-canvas-top"><div><strong>Follow-up workflow</strong><small>Visual overview · sample configuration</small></div><span class="status-pill ${workflowState.followups?'green':'grey'}">${workflowState.followups?'Active demo':'Paused'}</span></div><div class="flow-node"><div class="flow-node-head"><span class="flow-node-icon">⚡</span><span><strong>Trigger: New enquiry received</strong><small>Website, referral or social channel</small></span><span class="flow-node-status">TRIGGER</span></div></div><div class="flow-node"><div class="flow-node-head"><span class="flow-node-icon">◈</span><span><strong>Condition: Check lead status</strong><small>Skip if already contacted or marked won</small></span><span class="flow-node-status">FILTER</span></div></div><div class="flow-node"><div class="flow-node-head"><span class="flow-node-icon">✉</span><span><strong>Action: Prepare follow-up message</strong><small>Use approved template and business details</small></span><span class="flow-node-status">ACTION</span></div></div><div class="flow-node"><div class="flow-node-head"><span class="flow-node-icon">♧</span><span><strong>Notify owner and create task</strong><small>Human review and next-step reminder</small></span><span class="flow-node-status">DONE</span></div></div></div><aside class="workflow-inspector"><h4>Workflow details</h4><p>This visual is a planning preview. Production automation requires connected accounts, approved templates and a tested integration.</p><div class="inspector-line"><strong>Trigger</strong><span>New lead created</span></div><div class="inspector-line"><strong>Delay</strong><span>1 business day (example)</span></div><div class="inspector-line"><strong>Action</strong><span>Draft follow-up + team notification</span></div><div class="inspector-line"><strong>Human control</strong><span>Review before sending</span></div></aside></div>`+
+          `<section class="app-card" style="margin-top:14px"><div class="app-card-head"><div><h4>Follow-up tasks</h4><p>Tick off tasks in this interactive demo.</p></div><span class="status-pill">${tasks.filter(t=>!t.done).length} open</span></div><div class="focus-list">${tasks.map(t=>`<label class="focus-item"><input class="focus-check" type="checkbox" data-task-check="${t.id}" ${t.done?'checked':''}><span><strong>${safe(t.title)}</strong><small>${safe(t.detail)}</small></span></label>`).join('')}</div></section>`;
+      }
+      function appointmentFor(date,hour){return appointments.find(a=>sameDay(a.date,date)&&parseInt(a.time.slice(0,2),10)===hour);}
+      function calendarEvent(a){if(!a)return '';return `<button type="button" class="calendar-event ${a.status}" data-action="appointment-details" data-id="${a.id}" aria-label="${safe(a.title)} at ${safe(a.time)}"><strong>${safe(a.title)}</strong><small>${safe(a.time)} · ${safe(a.contact)}</small></button>`;}
+      function renderWeekCalendar(){
+        const first=startOfWeek(calendarCursor),days=Array.from({length:7},(_,i)=>addDays(first,i)),hours=Array.from({length:11},(_,i)=>i+7);
+        let out='<div class="week-calendar"><div class="calendar-corner">TIME</div>'+days.map(d=>`<div class="calendar-day-head ${sameDay(d,new Date())?'is-today':''}"><div><strong>${d.toLocaleDateString('en-ZA',{weekday:'short'})}</strong><small>${d.toLocaleDateString('en-ZA',{day:'2-digit',month:'short'})}</small></div></div>`).join('');
+        hours.forEach(hour=>{out+=`<div class="calendar-time">${String(hour).padStart(2,'0')}:00</div>`;days.forEach(day=>{const a=appointmentFor(day,hour);out+=`<div class="calendar-cell">${calendarEvent(a)}</div>`;});});
+        return out+'</div>';
+      }
+      function renderDayCalendar(){
+        const hours=Array.from({length:11},(_,i)=>i+7);return `<div class="day-calendar"><div class="calendar-corner">TIME</div><div class="calendar-day-head"><strong>${calendarCursor.toLocaleDateString('en-ZA',{weekday:'long'})}</strong><small>${calendarCursor.toLocaleDateString('en-ZA',{day:'numeric',month:'long'})}</small></div>${hours.map(hour=>{const a=appointmentFor(calendarCursor,hour);return `<div class="calendar-time">${String(hour).padStart(2,'0')}:00</div><div class="day-slot">${calendarEvent(a)}</div>`;}).join('')}</div>`;
+      }
+      function renderMonthCalendar(){
+        const first=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth(),1),start=new Date(first);start.setDate(1-((first.getDay()+6)%7));const days=Array.from({length:42},(_,i)=>addDays(start,i));
+        return `<div class="month-calendar">${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(d=>`<div class="month-day-label">${d}</div>`).join('')}${days.map(d=>{const events=appointments.filter(a=>sameDay(a.date,d));return `<div class="month-day ${d.getMonth()!==calendarCursor.getMonth()?'outside':''} ${sameDay(d,new Date())?'today':''}"><span class="month-date">${d.getDate()}</span>${events.slice(0,2).map(a=>`<button class="month-event ${a.status}" type="button" data-action="appointment-details" data-id="${a.id}">${safe(a.time)} ${safe(a.title)}</button>`).join('')}${events.length>2?`<small>+${events.length-2} more</small>`:''}</div>`;}).join('')}</div>`;
+      }
+      function renderBookings(){
+        document.getElementById('app-greeting-title').textContent='Booking system';
+        const current=calendarMode==='week'?renderWeekCalendar():calendarMode==='day'?renderDayCalendar():renderMonthCalendar();
+        panel.innerHTML=pageIntro('View appointments, availability and booking status.','Booking Calendar',`<button class="app-primary-btn" type="button" data-action="add-booking">＋ Add booking</button>`)+
+          `<section class="app-card"><div class="calendar-toolbar"><div class="calendar-date-controls"><button type="button" data-action="calendar-prev" aria-label="Previous period">‹</button><button type="button" data-action="calendar-today">Today</button><button type="button" data-action="calendar-next" aria-label="Next period">›</button><strong>${dateHeading()}</strong></div><div class="calendar-view-switch" role="group" aria-label="Calendar view">${['month','week','day'].map(mode=>`<button type="button" data-calendar-mode="${mode}" class="${calendarMode===mode?'is-active':''}" aria-pressed="${calendarMode===mode}">${titleCase(mode)}</button>`).join('')}</div></div><div class="calendar-staff"><span class="staff-person"><i class="staff-avatar">LL</i> Lilly</span><span class="staff-person"><i class="staff-avatar">SM</i> Sophie M.</span><span class="staff-person"><i class="staff-avatar">JW</i> James W.</span><span class="staff-person"><i class="staff-avatar">AR</i> Amelia R.</span><span class="staff-person"><i class="staff-avatar">OC</i> Oliver C.</span></div><div class="calendar-scroll">${current}</div><div class="calendar-legend"><span><i class="legend-dot" style="background:#19B78B"></i>Confirmed</span><span><i class="legend-dot" style="background:#D79A32"></i>Pending</span><span><i class="legend-dot" style="background:#357DC1"></i>Completed</span><span><i class="legend-dot" style="background:#D56C6C"></i>Cancelled</span></div></section><p class="muted" style="font-size:.61rem;margin-top:10px">Calendar is interactive sample data. Connecting Calendly, Google Calendar or another booking tool is a separate integration step.</p>`;
+      }
+      function renderReviews(){
+        document.getElementById('app-greeting-title').textContent='Review system';
+        panel.innerHTML=pageIntro('Organise review requests and prepare thoughtful responses.','Review Management',`<button class="app-primary-btn" type="button" data-action="send-review-request">＋ Create review request</button>`)+
+          `<div class="review-grid"><div class="review-stat"><span>Average rating · sample</span><strong>4.8 / 5</strong><small class="review-rating">★★★★★</small></div><div class="review-stat"><span>Requests sent · sample</span><strong id="review-request-count">32</strong><small class="muted">This month</small></div><div class="review-stat"><span>Awaiting response · sample</span><strong>4</strong><small class="muted">Requires review</small></div></div>`+
+          `<div class="workflow-header-card"><div><h4>Post-service review request</h4><p>Booking completed → wait → prepare a review request → notify the team.</p></div><label class="switch-control" aria-label="Toggle review workflow"><input type="checkbox" data-toggle-flow="reviews" ${workflowState.reviews?'checked':''}><span class="switch-track"></span></label></div>`+
+          `<section class="app-card"><div class="app-card-head"><div><h4>Review response queue</h4><p>Fictional sample feedback. Approve replies before publishing.</p></div><span class="status-pill gold">Human approval</span></div><div id="review-queue"><article class="review-card"><div><div class="review-rating">★★★★★</div><h5>Positive service experience</h5><p>“The team made the booking process easy and kept everything organised.”<br>Sample customer · Website review</p></div><div class="review-card-actions"><button type="button" data-action="draft-review" data-review="positive">Draft reply</button><button type="button" data-action="approve-review">Approve draft</button></div></article><article class="review-card"><div><div class="review-rating">★★★☆☆</div><h5>Feedback needing attention</h5><p>“I would have appreciated a clearer update before the appointment.”<br>Sample customer · Review platform</p></div><div class="review-card-actions"><button type="button" data-action="draft-review" data-review="mixed">Draft reply</button><button type="button" data-action="approve-review">Approve draft</button></div></article></div><div class="insight-callout" id="review-draft-output" aria-live="polite">AI-assisted replies can be prepared for staff review. Nothing is posted publicly from this demonstration.</div></section>`;
+      }
+      function renderSupport(){
+        document.getElementById('app-greeting-title').textContent='AI customer support';
+        panel.innerHTML=pageIntro('Preview how a business assistant can answer common questions.','AI Customer Support',`<span class="status-pill">Scripted demo</span>`)+
+          `<section class="app-card"><div class="app-card-head"><div><h4>Website enquiry assistant</h4><p>Try asking about services, prices or booking a consultation.</p></div><span class="status-pill green">Preview available</span></div><div class="support-chat-shell"><div class="support-chat-head"><span class="support-avatar">CL</span><span><strong>Casa di Lilly Assistant</strong><small>Sample conversation · not connected to a live AI service</small></span></div><div class="support-chat-messages" id="support-chat-messages"><div class="support-chat-message">Hello! I can show how a website assistant might answer common questions and guide a visitor to the right next step. What would you like to know?</div></div><form class="support-chat-form" id="support-chat-form"><input type="text" id="support-chat-input" maxlength="240" required placeholder="Ask about services, pricing or bookings…" aria-label="Ask the sample support assistant"><button type="submit">Send</button></form></div><p class="muted" style="font-size:.61rem;margin-top:10px">This preview uses scripted sample answers. A production assistant would be configured with approved business information and human handover rules.</p></section>`;
+      }
+      function renderModal(type,kind){
+        modalType=type;let title='',fields='';
+        const field=(label,name,placeholder='',type='text',full=false,required=true)=>`<div class="modal-field ${full?'full':''}"><label for="modal-${name}">${label}</label><input id="modal-${name}" name="${name}" type="${type}" placeholder="${placeholder}" ${required?'required':''}></div>`;
+        const select=(label,name,options,full=false)=>`<div class="modal-field ${full?'full':''}"><label for="modal-${name}">${label}</label><select id="modal-${name}" name="${name}">${options.map(o=>`<option value="${o}">${o}</option>`).join('')}</select></div>`;
+        if(type==='lead'){title='Add a new lead';fields=field('Contact name','name','e.g. Taylor Smith')+field('Company','company','Business name')+field('Email','email','name@example.com','email')+field('Estimated value (USD)','value','e.g. 1200','number')+select('Lead source','source',['Website','WhatsApp','Instagram','LinkedIn','Referral','Email','Other'])+select('Lead status','status',['New','Qualified','Proposal','Won','Lost'])+field('Service required','service','e.g. Booking automation','text',true);}
+        if(type==='task'){title='Add a follow-up task';fields=field('Task','title','e.g. Follow up with new enquiry','text',true)+field('Contact or client','detail','e.g. Taylor Smith')+field('Due date','due','', 'date',true);}
+        if(type==='booking'){title='Add a booking';fields=field('Appointment title','title','e.g. Discovery consultation','text',true)+field('Contact name','contact','Customer name')+field('Date','date',dateKey(new Date()),'date')+field('Start time','time','09:00','time')+select('Status','status',['confirmed','pending','completed','cancelled'])+field('Service','service','e.g. Consultation','text',true);}
+        if(type==='quote'){title=`Create ${kind.toLowerCase()}`;fields=select('Document type','type',['Quote','Invoice'])+field('Client','client','Client or company')+field('Amount (USD)','amount','e.g. 1500','number')+select('Status','status',['Draft','Sent','Paid','Overdue'])+field('Reference (optional)','reference','Auto-generated if blank','text',true,false);}
+        document.getElementById('modal-title').textContent=title;modalFields.innerHTML=fields;modal.dataset.modalType=type;modal.dataset.documentKind=kind||'Quote';modal.showModal();
+      }
+      function closeModal(){if(modal.open)modal.close();modalType='';}
+      function handleModalSubmit(event){
+        event.preventDefault();const data=Object.fromEntries(new FormData(modalForm).entries());
+        if(modalType==='lead'){leads.unshift({id:Date.now(),name:data.name,company:data.company,email:data.email,source:data.source,service:data.service,value:Number(data.value)||0,status:data.status});document.getElementById('lead-count').textContent=leads.length;activeView='leads';}
+        if(modalType==='task'){tasks.unshift({id:Date.now(),title:data.title,detail:`${data.detail||'Internal task'} · Due ${data.due||'date not set'}`,done:false});activeView='followups';}
+        if(modalType==='booking'){appointments.push({id:Date.now(),title:data.title,contact:data.contact,service:data.service,date:new Date(`${data.date}T12:00:00`),time:data.time,status:data.status});activeView='bookings';calendarCursor=new Date(`${data.date}T12:00:00`);}
+        if(modalType==='quote'){const id=data.reference||`${data.type==='Quote'?'Q':'INV'}-${Math.floor(1000+Math.random()*8999)}`;quotes.unshift({id,client:data.client,type:data.type,date:formatLong(new Date()),amount:Number(data.amount)||0,status:data.status});activeView='quotes';}
+        closeModal();setView(activeView);
+      }
+      function downloadCSV(name,rows){const csv=rows.map(row=>row.map(v=>`"${String(v??'').replace(/"/g,'""')}"`).join(',')).join('\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;a.click();URL.revokeObjectURL(url);}
+      function handleAction(action,target){
+        const id=Number(target.dataset.id);
+        if(action==='add-lead')renderModal('lead');
+        if(action==='add-task')renderModal('task');
+        if(action==='add-booking')renderModal('booking');
+        if(action==='add-quote')renderModal('quote',target.dataset.kind||'Quote');
+        if(action==='close-modal')closeModal();
+        if(action==='advance-lead'){const l=leads.find(x=>x.id===id);if(l){const order=['New','Qualified','Proposal','Won','Lost'];if(l.status!=='Lost'&&l.status!=='Won')l.status=order[Math.min(order.indexOf(l.status)+1,3)];renderView();}}
+        if(action==='calendar-prev'){if(calendarMode==='month')calendarCursor.setMonth(calendarCursor.getMonth()-1);else calendarCursor=addDays(calendarCursor,calendarMode==='week'?-7:-1);renderBookings();}
+        if(action==='calendar-next'){if(calendarMode==='month')calendarCursor.setMonth(calendarCursor.getMonth()+1);else calendarCursor=addDays(calendarCursor,calendarMode==='week'?7:1);renderBookings();}
+        if(action==='calendar-today'){calendarCursor=new Date();renderBookings();}
+        if(action==='export-report'){downloadCSV('casa-di-lilly-demo-report.csv',[['Name','Company','Source','Service','Value USD','Status'],...leads.map(l=>[l.name,l.company,l.source,l.service,l.value,l.status])]);}
+        if(action==='export-quotes'){downloadCSV('casa-di-lilly-demo-quotes.csv',[['Reference','Client','Type','Date','Amount USD','Status'],...quotes.map(q=>[q.id,q.client,q.type,q.date,q.amount,q.status])]);}
+        if(action==='cycle-document'){const q=quotes.find(x=>x.id===target.dataset.id);if(q){const order=q.type==='Invoice'?['Draft','Sent','Paid','Overdue']:['Draft','Sent','Paid'];q.status=order[(order.indexOf(q.status)+1)%order.length];renderQuotes();}}
+        if(action==='send-review-request'){const count=document.getElementById('review-request-count');if(count)count.textContent=String(Number(count.textContent)+1);const out=document.getElementById('review-draft-output');if(out)out.textContent='Sample review request prepared. In a real system, the message would be sent only through an approved connected channel.';}
+        if(action==='draft-review'){const out=document.getElementById('review-draft-output');if(out){out.textContent=target.dataset.review==='positive'?'Draft: Thank you for sharing your feedback. We’re pleased the process felt easy and appreciate you choosing our team.':'Draft: Thank you for your feedback. We’re sorry the update was not as clear as expected. A team member would be happy to review your experience and follow up.';}}
+        if(action==='approve-review'){const out=document.getElementById('review-draft-output');if(out)out.textContent='Approval recorded in this demo only. No public review response has been posted.';}
+        if(action==='appointment-details'){const a=appointments.find(x=>x.id===id);if(a)alert(`${a.title}\n${a.contact}\n${formatLong(a.date)} at ${a.time}\nStatus: ${a.status}\n\nSample appointment only.`);}
+      }
+      sidebarButtons.forEach(btn=>btn.addEventListener('click',()=>setView(btn.dataset.view)));
+      workflowParent.addEventListener('click',()=>{const open=workflowParent.getAttribute('aria-expanded')==='true';workflowParent.setAttribute('aria-expanded',String(!open));if(window.innerWidth<761)workflowSubnav.classList.toggle('mobile-open',!open);else workflowSubnav.hidden=open;});
+      workflowSubnav.hidden=false;
+      if(window.innerWidth<761){workflowParent.setAttribute('aria-expanded','false');workflowSubnav.classList.remove('mobile-open');}
+      document.querySelectorAll('[data-view="overview"], [data-view="pipeline"]').forEach(btn=>btn.addEventListener('click',()=>setView(btn.dataset.view)));
+      document.querySelector('.app-top-actions [data-action="add-lead"]')?.addEventListener('click',()=>renderModal('lead'));
+      document.getElementById('business-modal-form').addEventListener('submit',handleModalSubmit);
+      document.getElementById('demo-panel').addEventListener('click',event=>{
+        const actionTarget=event.target.closest('[data-action]');if(actionTarget){handleAction(actionTarget.dataset.action,actionTarget);return;}
+        const viewTarget=event.target.closest('[data-view]');if(viewTarget){setView(viewTarget.dataset.view);return;}
+        const modeTarget=event.target.closest('[data-calendar-mode]');if(modeTarget){calendarMode=modeTarget.dataset.calendarMode;renderBookings();return;}
+      });
+      document.getElementById('demo-panel').addEventListener('change',event=>{
+        const task=event.target.closest('[data-task-check]');if(task){const t=tasks.find(x=>x.id===Number(task.dataset.taskCheck));if(t)t.done=task.checked;return;}
+        const toggle=event.target.closest('[data-toggle-flow]');if(toggle){workflowState[toggle.dataset.toggleFlow]=toggle.checked;renderView();}
+      });
+      modal.addEventListener('click',event=>{if(event.target===modal)closeModal();});
+      document.getElementById('global-search').addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();const value=event.target.value.trim();setView('leads');const search=document.getElementById('lead-search');if(search){search.value=value;search.dispatchEvent(new Event('input'));}document.getElementById('lead-search')?.focus();}});
+      document.getElementById('support-chat-form')?.addEventListener('submit',()=>{});
+      panel.addEventListener('submit',event=>{
+        if(event.target.id!=='support-chat-form')return;
+        event.preventDefault();const input=document.getElementById('support-chat-input'),messages=document.getElementById('support-chat-messages');const q=input.value.trim();if(!q)return;
+        const user=document.createElement('div');user.className='support-chat-message user';user.textContent=q;messages.appendChild(user);
+        const lower=q.toLowerCase();let answer;
+        if(lower.includes('price')||lower.includes('cost'))answer='Our published service sheet includes defined USD setup prices. For example, the Website Enquiry Agent starts at US$295 standalone. Third-party usage and subscriptions are separate.';
+        else if(lower.includes('book')||lower.includes('appointment'))answer='You can book a consultation using the Book a Strategy Call link on this page. A configured booking workflow can also check calendar availability and send supported reminders.';
+        else answer='Casa di Lilly helps with AI customer support, CRM and lead management, booking automation, follow-ups and connected business workflows. A team member can help confirm the right scope.';
+        const bot=document.createElement('div');bot.className='support-chat-message';bot.textContent=answer;messages.appendChild(bot);input.value='';
+      });
+      const dateLabel=document.getElementById('app-date-label');dateLabel.textContent=new Date().toLocaleDateString('en-ZA',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).toUpperCase();
+      document.querySelectorAll('[data-action="close-modal"]').forEach(btn=>btn.addEventListener('click',closeModal));
+      setView('overview');
     });
   </script>
 </body>
