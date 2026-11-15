@@ -623,6 +623,8 @@
       ];
       const workflowState = {followups:true,bookings:true,reviews:false,support:true};
       const formatAmount = value => Number(value||0).toLocaleString('en-ZA',{maximumFractionDigits:0});
+      // Display illustrative dashboard values without exposing service prices or assuming a currency.
+      const currency = value => formatAmount(value);
       const safe = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
       const titleCase = value => value.charAt(0).toUpperCase()+value.slice(1);
       function startOfWeek(date){const d=new Date(date);d.setHours(0,0,0,0);d.setDate(d.getDate()-((d.getDay()+6)%7));return d;}
